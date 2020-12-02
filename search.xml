@@ -8,7 +8,7 @@
 
 <h3 id="音频测试"><a href="#音频测试" class="headerlink" title="音频测试"></a>音频测试</h3><h4 id="照片"><a href="#照片" class="headerlink" title="照片"></a>照片</h4><img src="/images/1.jpg"/>
 
-<h4 id="音乐"><a href="#音乐" class="headerlink" title="音乐"></a>音乐</h4><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1477539203&auto=1&height=66"></iframe>
+<h4 id="音乐"><a href="#音乐" class="headerlink" title="音乐"></a>音乐</h4><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=400 height=86 src="//music.163.com/outchain/player?type=2&id=1477539203&auto=1&height=66"></iframe>
 
 <h4 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h4><video src='/video/1.mp4' heigth='500px' controls>
 
