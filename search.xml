@@ -260,7 +260,7 @@
 <p>栈是一种具有特殊的访问方式的存储空间。特点为“先进后出，后进先出”</p>
 </blockquote>
 <h2 id="栈顶超界问题"><a href="#栈顶超界问题" class="headerlink" title="栈顶超界问题"></a>栈顶超界问题</h2><p>当栈顶超过了栈空间，栈外面的数据将被覆盖</p>
-<img src="/huibian/1.jpg" height="350" width="350/">
+<img src="/images/4.jpg" height="400" width="350" />
 
 <h2 id="栈段"><a href="#栈段" class="headerlink" title="栈段"></a>栈段</h2><blockquote>
 <p>在编程时，可以根据需要，将一组内存单元定义为一个段</p>
