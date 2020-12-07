@@ -272,7 +272,7 @@
       </tags>
   </entry>
   <entry>
-    <title>post</title>
+    <title>debug</title>
     <url>/2020/12/07/dos/</url>
     <content><![CDATA[<h1 id="win64位系统进入debug"><a href="#win64位系统进入debug" class="headerlink" title="win64位系统进入debug"></a>win64位系统进入debug</h1><blockquote>
 <p>最近一直在看汇编语言，想要实操，于是要进入debug模式，但是发现win64位系统无法直接进入，但最后经过几次尝试终于成功进入</p>
