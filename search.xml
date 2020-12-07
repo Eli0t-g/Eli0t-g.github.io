@@ -288,7 +288,7 @@
 <h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><p>打开DOSBox.exe，输入以下指令</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mount c d:\debug</span><br><span class="line">c:</span><br><span class="line">debug</span><br></pre></td></tr></table></figure>
 
-<img src="/images/6.jpg" height="400" width="350" />
+<img src="/images/6.jpg" height="600" width="600" />
 
 <p>之后就进入了debug模式</p>
 <h1 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h1><p>如果嫌每次进入都需要输入很麻烦，可以在<strong>DOSBox 0.74 Options.bat</strong>的脚本文件进行修改，步骤如下：</p>
@@ -297,10 +297,10 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mount c d:\debug</span><br><span class="line">c:</span><br></pre></td></tr></table></figure>
 
 <p>3、保存退出</p>
-<img src="/images/7.jpg" height="400" width="350" />
+<img src="/images/7.jpg" height="600" width="600" />
 
 <h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>开 <strong>DOSBox</strong> 会同时打开两个窗口，其中一个是黑色的控制台窗口，在控制台窗口中指明了配置文件的绝对路径</p>
-<img src="/images/8.jpg" height="400" width="350" />]]></content>
+<img src="/images/8.jpg" height="600" width="600" />]]></content>
       <tags>
         <tag>学习</tag>
       </tags>
