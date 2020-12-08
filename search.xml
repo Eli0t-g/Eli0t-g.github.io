@@ -43,21 +43,21 @@
     <title>markdown语法</title>
     <url>/2020/12/04/markdown/</url>
     <content><![CDATA[<blockquote>
-<p><em>经过了几天的学习了解，学到了一些，在此分享一下</em></p>
+<p>经过了几天的学习了解，学到了一些，在此分享一下</p>
 </blockquote>
 <a id="more"></a>
 
-<h1 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h1><p><em>“#”一级标题</em></p>
-<p><em>“##”二级标题</em></p>
-<p><em>……（共六级标题，“#”后面要空一格）</em></p>
+<h1 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h1><p>“#”一级标题</p>
+<p>“##”二级标题</p>
+<p>……（共六级标题，“#”后面要空一格）</p>
 <p>效果如图</p>
 <img src="https://upload-images.jianshu.io/upload_images/13623636-1be77fac16e71320.png" height="350" width="400" />
 
 
 
-<h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><p><em>&lt;一级引用</em></p>
-<p><em>&lt;&lt;二级引用</em></p>
-<p><em>&lt;&lt;&lt;三级引用</em></p>
+<h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><p>&lt;一级引用</p>
+<p>&lt;&lt;二级引用</p>
+<p>&lt;&lt;&lt;三级引用</p>
 <p>……(可不断嵌套）</p>
 <p>效果如图</p>
 <img src="https://upload-images.jianshu.io/upload_images/13623636-1aabce7718f76dab.png" height="350" width="600" />
@@ -72,7 +72,7 @@
 
 
 
-<h1 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h1><p><em>可用三个或三个以上“ - ”或者“ _ ”生成分割线（两个个效果都一样)</em></p>
+<h1 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h1><p>可用三个或三个以上“ - ”或者“ _ ”生成分割线（两个个效果都一样)</p>
 <h1 id="隐藏内容"><a href="#隐藏内容" class="headerlink" title="隐藏内容"></a>隐藏内容</h1><p><em>(隐藏内容不会直接显示在博客主页，需要点进去看)</em></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">在&lt;!--more--&gt;输入的文章内容不会直接显示在博客页面</span><br></pre></td></tr></table></figure>
 
@@ -80,11 +80,11 @@
 
 
 
-<h1 id="图片引用"><a href="#图片引用" class="headerlink" title="图片引用"></a>图片引用</h1><h3 id="链接引用"><a href="#链接引用" class="headerlink" title="链接引用"></a>链接引用</h3><p><em>在src=后面加入照片地址，width指照片宽度，height指照片高度</em></p>
-<p><em>例如</em></p>
+<h1 id="图片引用"><a href="#图片引用" class="headerlink" title="图片引用"></a>图片引用</h1><h3 id="链接引用"><a href="#链接引用" class="headerlink" title="链接引用"></a>链接引用</h3><p>在src=后面加入照片地址，width指照片宽度，height指照片高度</p>
+<p>例如</p>
 <figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line">&lt;img src=<span class="string">&quot;http://pic11.photophoto.cn/20090626/0036036341009653_b.jpg&quot;</span> width=<span class="string">&quot;251&quot;</span> height=<span class="string">&quot;350&quot;</span> &gt;</span><br></pre></td></tr></table></figure>
 
-<h3 id="本地引用"><a href="#本地引用" class="headerlink" title="本地引用"></a>本地引用</h3><p><em>与链接引用类似，不过需要将网址改为路径（如果在相同目录里面，只需要将填写对应文件夹即可）</em></p>
+<h3 id="本地引用"><a href="#本地引用" class="headerlink" title="本地引用"></a>本地引用</h3><p>与链接引用类似，不过需要将网址改为路径（如果在相同目录里面，只需要将填写对应文件夹即可）</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;img src&#x3D;&quot;&#x2F;images&#x2F;1.jpg&quot; height&#x3D;&quot;400&quot; width&#x3D;&quot;350&quot; &#x2F;&gt;</span><br></pre></td></tr></table></figure>
 
 
@@ -105,10 +105,10 @@
 
 <h1 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h1><h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- 列表内容</span><br><span class="line">+ 列表内容</span><br><span class="line">* 列表内容</span><br><span class="line"></span><br><span class="line">注意：- + * 跟内容之间都要有一个空格</span><br></pre></td></tr></table></figure>
 
-<p><em>三个效果都一样</em></p>
-<h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><p><em>数字加点</em></p>
-<h3 id="列表嵌套"><a href="#列表嵌套" class="headerlink" title="列表嵌套"></a>列表嵌套</h3><p><em>上一级和下一级之间敲三个空格即可</em></p>
-<p><em>例如</em></p>
+<p>三个效果都一样</p>
+<h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><p>数字加点</p>
+<h3 id="列表嵌套"><a href="#列表嵌套" class="headerlink" title="列表嵌套"></a>列表嵌套</h3><p>上一级和下一级之间敲三个空格即可</p>
+<p>例如</p>
 <ul>
 <li><p>一级无序列表内容</p>
 <ul>
@@ -141,7 +141,7 @@
 </ol>
 </li>
 </ol>
-<h1 id="视频引用"><a href="#视频引用" class="headerlink" title="视频引用"></a>视频引用</h1><p><em>与照片引用类似</em></p>
+<h1 id="视频引用"><a href="#视频引用" class="headerlink" title="视频引用"></a>视频引用</h1><p>与照片引用类似</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;video src&#x3D;&#39;&#x2F;视频路径&#x2F;选择视频&#39; heigth&#x3D;&#39;高度&#39; controls&gt;</span><br><span class="line">例如：&lt;video src&#x3D;&#39;&#x2F;video&#x2F;1.mp4&#39; heigth&#x3D;&#39;500px&#39; controls&gt;</span><br></pre></td></tr></table></figure>
 
 
@@ -243,7 +243,7 @@
 <img src="/images/10.jpg" height="600" width="400" />
 
 <p>程序运行过程中，对于动态的内存占用请求（比如新建对象，或者使用<code>malloc</code>命令），系统就会从预先分配好的那段内存之中，划出一部分给用户，具体规则是从起始地址开始划分（实际上，起始地址会有一段静态数据，这里忽略）。举例来说，用户要求得到10个字节内存，那么从起始地址<code>0x1000</code>开始给他分配，一直分配到地址<code>0x100A</code>，如果再要求得到22个字节，那么就分配到<code>0x1020</code>。</p>
-<img src="/images/10.jpg" height="600" width="400" />
+<img src="/images/11.jpg" height="600" width="400" />
 
 <h2 id="Stack-栈"><a href="#Stack-栈" class="headerlink" title="Stack(栈)"></a>Stack(栈)</h2><ul>
 <li><p>除了内存模型 (Heap) 以外，其他的内存占用叫做 Stack（栈）。简单说，Stack 是由于函数运行而临时占用的内存区域。</p>
@@ -314,6 +314,8 @@
 <p>debug是一个DOS实用程序，是供程序员使用的程序调试工具，可以用它检查内存中任何地方的字节以及修改任何地方的字节。它可以用于逐指令执行某个程序以验证程序运行的正确性，也可以追踪执行过程、比较一个指令执行前后的值以及比较与移动内存中数据的范围，读写文件与磁盘</p>
 </blockquote>
 <p>具体请参考<a href="https://blog.csdn.net/liuer2004_82/article/details/52638516">网页连接</a></p>
+<p>如何进入debug模式请参考我的另一篇文章</p>
+<p><a href="https://eli0t-g.github.io/2020/12/07/dos/">win64位系统进入debug</a></p>
 ]]></content>
       <tags>
         <tag>学习</tag>
