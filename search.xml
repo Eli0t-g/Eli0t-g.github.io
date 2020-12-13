@@ -1,6 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>C语言基础知识</title>
+    <url>/2020/12/10/cyuyan/</url>
+    <content><![CDATA[<a id="more"></a>
+
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>原本早就开始学习C语言，但是因为过于心急直接开始实操（如果只是对C语言感兴趣或者想要了解一下C语言，个人推荐《啊哈C》），最后发现学习难以进行下去，于是重新开始再学一遍。</p>
+<p>在学习C语言之前，个人建议先学习汇编语言，汇编语言可以加深对计算机的理解，方便日后的学习。</p>
+<hr>
+<h1 id="初步认识"><a href="#初步认识" class="headerlink" title="初步认识"></a>初步认识</h1><p>C 语言是一种通用的、面向过程式的计算机程序设计语言，C 语言是一种通用的高级语言。C语言的特点有：</p>
+<ul>
+<li>易于学习</li>
+<li>结构化语言</li>
+<li>它产生高效率的程序</li>
+<li>它可以处理底层的活动</li>
+<li>它可以在多种计算机平台上编译</li>
+</ul>
+<hr>
+<h1 id="C语言程序的结构"><a href="#C语言程序的结构" class="headerlink" title="C语言程序的结构"></a>C语言程序的结构</h1><p><strong>C语言程序主要是有函数构成，函数是C语言程序的基本单位。</strong>一个C语言源程序必须有一个main函数（也叫主函数），其中可以包含一个main函数和若干个其他函数，但<strong>C语言bai程序主函数只能有1个。C程序中main()称之为主函数，是所有程序运行的入口。</strong>同时，<strong>程序执行总是从main函数开始，如果有有其他函数，则完成对其他函数的调用后再返回到主函数，最后由main函数结束整个程序。</strong></p>
+<h2 id="函数组成"><a href="#函数组成" class="headerlink" title="函数组成"></a>函数组成</h2><p>函数首部，函数体</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span>                  <span class="comment">//主函数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">max</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>;    <span class="comment">//对调用函数max的声明</span></span><br><span class="line">    <span class="keyword">int</span> x,y,z;               <span class="comment">//定义整数型变量x,y,z</span></span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;x,&amp;y);      <span class="comment">//输入变量x,y的值</span></span><br><span class="line">    z=max (x,y);             <span class="comment">//调用函数max，将得到的值赋给z</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Max is %d\n&quot;</span>,z); <span class="comment">//输出z</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">max</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span>         <span class="comment">//定义max函数</span></span></span><br><span class="line"><span class="function"></span>&#123;                            <span class="comment">//定义变量z为整数型</span></span><br><span class="line">    <span class="keyword">int</span> z;                   <span class="comment">//如果x&gt;y，则将x的值赋给变量z</span></span><br><span class="line">    <span class="keyword">if</span> (x&gt;y) z=x;            <span class="comment">//否则，将y的值赋给变量z </span></span><br><span class="line">    <span class="keyword">else</span> z=y;                <span class="comment">//将z的值返回到主函数中调用函数的位置</span></span><br><span class="line">    <span class="keyword">return</span> (z);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>int main()和int max(int x,int y)都是函数首部</p>
+</li>
+<li><p>函数下面的{}内的部分是函数体。函数体包括<strong>声明部分</strong>和<strong>执行部分</strong></p>
+<hr>
+</li>
+</ul>
+<h1 id="运行C程序的步骤"><a href="#运行C程序的步骤" class="headerlink" title="运行C程序的步骤"></a>运行C程序的步骤</h1><p>1、上机输入和编辑源程序</p>
+<p>2、对源程序进行编译</p>
+<p>3、进行连接处理</p>
+<p>4、运行可执行程序，得到运行结果</p>
+<img src="/images/14.jpg" height="500" width="350"/>
+
+<hr>
+<h1 id="程序"><a href="#程序" class="headerlink" title="程序"></a>程序</h1><p><strong>算法+数据结构=程序</strong></p>
+<ul>
+<li><p><strong>数据结构</strong></p>
+<p>在程序中要指定用哪些数据和这些数据的类型以及数据的组织形式，这就是数据结构</p>
+</li>
+<li><p><strong>算法</strong></p>
+<p>算法是解决“做什么”和“怎么做”的问题。程序中的操作语句，就是算法的体现</p>
+<p>表示算法的方法：自然语言、传统流程图、结构化流程图、伪代码等</p>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>汇编语言(持续更新中)</title>
     <url>/2020/12/08/huibian/</url>
     <content><![CDATA[<blockquote>
@@ -8,8 +58,7 @@
 </blockquote>
 <a id="more"></a>
 
-
-
+<h1 id="学习目的"><a href="#学习目的" class="headerlink" title="学习目的"></a>学习目的</h1><p>通过用汇编语言进行编程而深入地理解计算机底层的基本工作机理，达到随心所欲地控制计算机的目的</p>
 <h1 id="汇编语言的由来"><a href="#汇编语言的由来" class="headerlink" title="汇编语言的由来"></a>汇编语言的由来</h1><p>对于人类来说，二进制程序是不可读的，根本看不出来机器干了什么。为了解决可读性的问题，以及偶尔的编辑需求，就诞生了汇编语言。</p>
 <hr>
 <h1 id="汇编语言的特点"><a href="#汇编语言的特点" class="headerlink" title="汇编语言的特点"></a>汇编语言的特点</h1><ul>

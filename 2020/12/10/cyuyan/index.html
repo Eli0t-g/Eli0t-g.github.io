@@ -9,7 +9,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    汇编语言(持续更新中) |  桂的小基地
+    C语言基础知识 |  桂的小基地
   </title>
   <meta name="generator" content="hexo-theme-ayer">
   
@@ -66,7 +66,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-huibian"
+  id="post-cyuyan"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -77,22 +77,22 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  汇编语言(持续更新中)
+  C语言基础知识
 </h1>
  
 
     </header>
      
     <div class="article-meta">
-      <a href="/2020/12/08/huibian/" class="article-date">
-  <time datetime="2020-12-08T12:45:27.000Z" itemprop="datePublished">2020-12-08</time>
+      <a href="/2020/12/10/cyuyan/" class="article-date">
+  <time datetime="2020-12-10T02:18:47.000Z" itemprop="datePublished">2020-12-10</time>
 </a>   
 <div class="word_count">
     <span class="post-time">
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">2k</span>
+            <span class="post-count">741</span>
         </span>
     </span>
 
@@ -101,7 +101,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">7 分钟</span>
+            <span class="post-count">2 分钟</span>
         </span>
     </span>
 </div>
@@ -116,186 +116,48 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <blockquote>
-<p>这是本人学习汇编语言的一些笔记</p>
-</blockquote>
-<a id="more"></a>
+  <a id="more"></a>
 
-<h1 id="学习目的"><a href="#学习目的" class="headerlink" title="学习目的"></a>学习目的</h1><p>通过用汇编语言进行编程而深入地理解计算机底层的基本工作机理，达到随心所欲地控制计算机的目的</p>
-<h1 id="汇编语言的由来"><a href="#汇编语言的由来" class="headerlink" title="汇编语言的由来"></a>汇编语言的由来</h1><p>对于人类来说，二进制程序是不可读的，根本看不出来机器干了什么。为了解决可读性的问题，以及偶尔的编辑需求，就诞生了汇编语言。</p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>原本早就开始学习C语言，但是因为过于心急直接开始实操（如果只是对C语言感兴趣或者想要了解一下C语言，个人推荐《啊哈C》），最后发现学习难以进行下去，于是重新开始再学一遍。</p>
+<p>在学习C语言之前，个人建议先学习汇编语言，汇编语言可以加深对计算机的理解，方便日后的学习。</p>
 <hr>
-<h1 id="汇编语言的特点"><a href="#汇编语言的特点" class="headerlink" title="汇编语言的特点"></a>汇编语言的特点</h1><ul>
-<li><p>机器相关性：</p>
-<p>一种面向机器的低级语言，几乎接近机器语言</p>
-</li>
-<li><p>不可移植：</p>
-<p>不同类型的CPU有不同的机器指令系统，也就有不同的汇编语言</p>
-</li>
-<li><p>操作对象：</p>
-<p>汇编语言是直接面向处理器（Processor）的程序设计语言，它所操作的对象不是具体的数据,而是寄存器或者存储器</p>
-</li>
-<li><p>高速度和高效率：</p>
-<p>汇编语言保持了机器语言的优点，具有直接和简捷的特点，可有效地访问、控制计算机的各种硬件设备，如磁盘、存储器、CPU、I/O端口等，且占用内存少，执行速度快，是高效的程序设计语言</p>
-</li>
-<li><p>编写和调试的复杂性</p>
-<p>由于是直接控制硬件，且简单的任务也需要很多汇编语言语句，因此在进行程序设计时必须面面俱到，需要考虑到一切可能的问题，合理调配和使用各种软、硬件资源。这样，就不可避免地加重了程序员的负担。与此相同，在程序调试时，一旦程序的运行出了问题，就很难发现</p>
-</li>
+<h1 id="初步认识"><a href="#初步认识" class="headerlink" title="初步认识"></a>初步认识</h1><p>C 语言是一种通用的、面向过程式的计算机程序设计语言，C 语言是一种通用的高级语言。C语言的特点有：</p>
+<ul>
+<li>易于学习</li>
+<li>结构化语言</li>
+<li>它产生高效率的程序</li>
+<li>它可以处理底层的活动</li>
+<li>它可以在多种计算机平台上编译</li>
 </ul>
 <hr>
-<h1 id="汇编语言的组成"><a href="#汇编语言的组成" class="headerlink" title="汇编语言的组成"></a>汇编语言的组成</h1><h2 id="汇编指令"><a href="#汇编指令" class="headerlink" title="汇编指令"></a>汇编指令</h2><blockquote>
-<p>机器码的助记符，有对应的机器码，最终被cpu执行</p>
-</blockquote>
-<p>具体请参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/bjbz_cxy/article/details/79467688">网页链接</a></p>
-<h2 id="伪指令"><a href="#伪指令" class="headerlink" title="伪指令"></a>伪指令</h2><blockquote>
-<p>没有对应的机器码，由编译器执行，计算机不执行</p>
-</blockquote>
-<h2 id="其它符号"><a href="#其它符号" class="headerlink" title="其它符号"></a>其它符号</h2><blockquote>
-<p>如+、-、*、/等，由编译器识别，没有对应的机器码</p>
-</blockquote>
-<p>以下为一段简单的汇编语言源程序</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">assume cs:codesg</span><br><span class="line">codesg segment</span><br><span class="line">       mov ax,0123H</span><br><span class="line">       mov bx,0456H</span><br><span class="line">       add ax,bx</span><br><span class="line">       add ax,ax</span><br><span class="line">       </span><br><span class="line">       mov ax,4c00</span><br><span class="line">       int 21H</span><br><span class="line">codesg ends</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<h1 id="C语言程序的结构"><a href="#C语言程序的结构" class="headerlink" title="C语言程序的结构"></a>C语言程序的结构</h1><p><strong>C语言程序主要是有函数构成，函数是C语言程序的基本单位。</strong>一个C语言源程序必须有一个main函数（也叫主函数），其中可以包含一个main函数和若干个其他函数，但<strong>C语言bai程序主函数只能有1个。C程序中main()称之为主函数，是所有程序运行的入口。</strong>同时，<strong>程序执行总是从main函数开始，如果有有其他函数，则完成对其他函数的调用后再返回到主函数，最后由main函数结束整个程序。</strong></p>
+<h2 id="函数组成"><a href="#函数组成" class="headerlink" title="函数组成"></a>函数组成</h2><p>函数首部，函数体</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span>                  <span class="comment">//主函数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">max</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>;    <span class="comment">//对调用函数max的声明</span></span><br><span class="line">    <span class="keyword">int</span> x,y,z;               <span class="comment">//定义整数型变量x,y,z</span></span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;x,&amp;y);      <span class="comment">//输入变量x,y的值</span></span><br><span class="line">    z=max (x,y);             <span class="comment">//调用函数max，将得到的值赋给z</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Max is %d\n&quot;</span>,z); <span class="comment">//输出z</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">max</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span>         <span class="comment">//定义max函数</span></span></span><br><span class="line"><span class="function"></span>&#123;                            <span class="comment">//定义变量z为整数型</span></span><br><span class="line">    <span class="keyword">int</span> z;                   <span class="comment">//如果x&gt;y，则将x的值赋给变量z</span></span><br><span class="line">    <span class="keyword">if</span> (x&gt;y) z=x;            <span class="comment">//否则，将y的值赋给变量z </span></span><br><span class="line">    <span class="keyword">else</span> z=y;                <span class="comment">//将z的值返回到主函数中调用函数的位置</span></span><br><span class="line">    <span class="keyword">return</span> (z);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li><p>XXX segment,XXX ends,end,assume都是伪指令</p>
+<li><p>int main()和int max(int x,int y)都是函数首部</p>
 </li>
-<li><p>mov,add，int 21H都是汇编指令</p>
-</li>
-<li><p><strong>补上一个注意细节：汇编语言时不允许数据用字母开头（重要！！）</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mov AX, FFFFH	;这是错误写法，会报错！！</span><br><span class="line">mov AX, 0FFFFH	;这样写就对了，写个0为了使数据开头不是字母</span><br></pre></td></tr></table></figure>
-
-
-
+<li><p>函数下面的{}内的部分是函数体。函数体包括<strong>声明部分</strong>和<strong>执行部分</strong></p>
+<hr>
 </li>
 </ul>
-<hr>
-<h1 id="编译器"><a href="#编译器" class="headerlink" title="编译器"></a>编译器</h1><p>编译器的作用，就是将高级语言写好的程序，翻译成一条条操作码。</p>
-<img src="/images/9.jpg" height="400" width="350" />
-
-
+<h1 id="运行C程序的步骤"><a href="#运行C程序的步骤" class="headerlink" title="运行C程序的步骤"></a>运行C程序的步骤</h1><p>1、上机输入和编辑源程序</p>
+<p>2、对源程序进行编译</p>
+<p>3、进行连接处理</p>
+<p>4、运行可执行程序，得到运行结果</p>
+<img src="/images/14.jpg" height="500" width="350"/>
 
 <hr>
-<h1 id="寄存器-8086CPU"><a href="#寄存器-8086CPU" class="headerlink" title="寄存器(8086CPU)"></a>寄存器(8086CPU)</h1><blockquote>
-<p>CPU 还自带寄存器（register），用来储存最常用的数据。那些最频繁读写的数据（比如循环变量），都会放在寄存器里面，CPU 优先读写寄存器，再由寄存器跟内存交换数据。</p>
-</blockquote>
+<h1 id="程序"><a href="#程序" class="headerlink" title="程序"></a>程序</h1><p><strong>算法+数据结构=程序</strong></p>
 <ul>
-<li><p>所有寄存器：AX、BX、CX、DX、SI、DI、SP、BP、IP、CS、SS、DS、ES、PSW</p>
+<li><p><strong>数据结构</strong></p>
+<p>在程序中要指定用哪些数据和这些数据的类型以及数据的组织形式，这就是数据结构</p>
 </li>
-<li><p>AX、BX、CX、DX</p>
-<ul>
-<li>存放一般性数据的通用寄存器</li>
-<li>可分为两部分，如AX可以为AH和AL</li>
-</ul>
-</li>
-<li><p>CS、DS、SS、ES都是段寄存器</p>
-<ul>
-<li>在8086cpu中不支持将数据直接送入段寄存器中</li>
-</ul>
-</li>
-<li><p>CS和IP</p>
-<ul>
-<li>CS为代码段寄存器</li>
-<li>IP为指令指针寄存器</li>
-<li>CS和IP使cpu读取指定单元</li>
-</ul>
-</li>
-<li><p>DS</p>
-<p>DS通常用来存放要访问数据的段地址</p>
-<p>比如要读取10000H单元的数据，可以按如下程序段进行：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mov bx,1000H</span><br><span class="line"></span><br><span class="line">mov ds, bx(bx起中转作用)</span><br><span class="line"></span><br><span class="line">mov al,[0]([]代表一个内存单元，[]里面的数代表偏移地址，段地址默认为ds中的数据)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>SS和SP</p>
-<ul>
-<li>栈顶的段地址存放在段寄存器SS中</li>
-<li>栈顶的偏移地址存放在寄存器SP中</li>
-<li>任何时候，SS：SP指向栈顶元素</li>
-<li>当有元素入栈后，SP=SP－2；当有元素出栈后,SP=SP＋2</li>
-<li>执行t命令时，执行与ss相关的指令后自动执行与sp相关的指令</li>
-</ul>
+<li><p><strong>算法</strong></p>
+<p>算法是解决“做什么”和“怎么做”的问题。程序中的操作语句，就是算法的体现</p>
+<p>表示算法的方法：自然语言、传统流程图、结构化流程图、伪代码等</p>
 </li>
 </ul>
-<hr>
-<h1 id="内存模型"><a href="#内存模型" class="headerlink" title="内存模型"></a>内存模型</h1><blockquote>
-<p>寄存器只能存放很少量的数据，大多数时候，CPU 要指挥寄存器，直接跟内存交换数据。所以，除了寄存器，还必须了解内存怎么储存数据。</p>
-</blockquote>
-<h2 id="Heap（堆）"><a href="#Heap（堆）" class="headerlink" title="Heap（堆）"></a>Heap（堆）</h2><blockquote>
-<p>用户主动请求而划分出来的内存区域，叫做 Heap（堆）。它由起始地址开始，从低位（地址）向高位（地址）增长。</p>
-<p>Heap 的一个重要特点就是不会自动消失，必须手动释放，或者由垃圾回收机制来回收。</p>
-</blockquote>
-<p>程序运行的时候，操作系统会给它分配一段内存，用来储存程序和运行产生的数据。这段内存有起始地址和结束地址，比如从<code>0x1000</code>到<code>0x8000</code>，起始地址是较小的那个地址，结束地址是较大的那个地址。</p>
-<img src="/images/10.jpg" height="600" width="400" />
-
-<p>程序运行过程中，对于动态的内存占用请求（比如新建对象，或者使用<code>malloc</code>命令），系统就会从预先分配好的那段内存之中，划出一部分给用户，具体规则是从起始地址开始划分（实际上，起始地址会有一段静态数据，这里忽略）。举例来说，用户要求得到10个字节内存，那么从起始地址<code>0x1000</code>开始给他分配，一直分配到地址<code>0x100A</code>，如果再要求得到22个字节，那么就分配到<code>0x1020</code>。</p>
-<img src="/images/11.jpg" height="600" width="400" />
-
-<h2 id="Stack-栈"><a href="#Stack-栈" class="headerlink" title="Stack(栈)"></a>Stack(栈)</h2><blockquote>
-<p>除了内存模型 (Heap) 以外，其他的内存占用叫做 Stack（栈）。简单说，Stack 是由于函数运行而临时占用的内存区域。</p>
-<p>栈是一种具有特殊的访问方式的存储空间。特点为“先进后出，后进先出”</p>
-</blockquote>
-<h3 id="栈顶超界问题"><a href="#栈顶超界问题" class="headerlink" title="栈顶超界问题"></a>栈顶超界问题</h3><p>当栈顶超过了栈空间，栈外面的数据将被覆盖</p>
-<img src="/images/4.jpg" height="400" width="350" />
-
-<h3 id="栈段"><a href="#栈段" class="headerlink" title="栈段"></a>栈段</h3><blockquote>
-<p>在编程时，可以根据需要，将一组内存单元定义为一个段</p>
-</blockquote>
-<p>一个栈段最大可设为64KB（因为一个栈段最多从0~FFFFH）</p>
-<hr>
-<h1 id="数据宽度"><a href="#数据宽度" class="headerlink" title="数据宽度"></a>数据宽度</h1><blockquote>
-<p>在计算机中，由于受硬件的制约，数据都是有长度限制的，超过最多宽度的数据会被丢弃</p>
-</blockquote>
-<ul>
-<li>计算机中常见的数据宽度</li>
-</ul>
-<p>位（bit）、字节（byte）、字（word）、双字（doubleword）</p>
-<ul>
-<li>存储范围</li>
-</ul>
-<p>字节：0~0×FF</p>
-<p>字：0~0×FFFF</p>
-<p>双字：0~0×FFFFFFFF</p>
-<p>(“0×”代表十六进制)</p>
-<hr>
-<h1 id="存储单元"><a href="#存储单元" class="headerlink" title="存储单元"></a>存储单元</h1><ul>
-<li><p>电子计算机最小信息单位是bit,也就是一个二进制位</p>
-</li>
-<li><p>存储单元可以存储1byte，即两个十六进制位</p>
-</li>
-<li><p>存储单元从零开始顺序编号</p>
-</li>
-</ul>
-<hr>
-<h1 id="总线"><a href="#总线" class="headerlink" title="总线"></a>总线</h1><ul>
-<li><p>地址总线</p>
-<ul>
-<li>N根地址线，则地址总线的宽度为N，寻址能力为2^N Byte</li>
-<li>内存地址空间大小受cpu地址总线宽度的限制</li>
-</ul>
-</li>
-<li><p>数据总线</p>
-<p>N根数据总线一次传输N个二进制位</p>
-</li>
-<li><p>控制总线</p>
-<p>控制总线的宽度决定了cpu对外部器件的控制能力</p>
-</li>
-</ul>
-<hr>
-<h1 id="存储器"><a href="#存储器" class="headerlink" title="存储器"></a>存储器</h1><blockquote>
-<p>从读写属性分类</p>
-</blockquote>
-<ul>
-<li><p>随机存储器(RAM)</p>
-<p>用于存放供cpu使用的绝大部分程序和数据(可随时读写，但一旦断电，数据就会消失)</p>
-</li>
-<li><p>只读存储器(ROM)</p>
-<p>只能读出无法写入信息，信息一旦写入后就固定下来，即使切断电源，信息也不会丢失，所以又称为固定存储器</p>
-</li>
-</ul>
-<hr>
-<h1 id="debug命令"><a href="#debug命令" class="headerlink" title="debug命令"></a>debug命令</h1><blockquote>
-<p>debug是一个DOS实用程序，是供程序员使用的程序调试工具，可以用它检查内存中任何地方的字节以及修改任何地方的字节。它可以用于逐指令执行某个程序以验证程序运行的正确性，也可以追踪执行过程、比较一个指令执行前后的值以及比较与移动内存中数据的范围，读写文件与磁盘</p>
-</blockquote>
-<p>具体请参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/liuer2004_82/article/details/52638516">网页连接</a></p>
-<p>如何进入debug模式请参考我的另一篇文章</p>
-<p><a target="_blank" rel="noopener" href="https://eli0t-g.github.io/2020/12/07/dos/">win64位系统进入debug</a></p>
  
       <!-- reward -->
       
@@ -360,30 +222,23 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2020/12/08/huibian/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2020/12/10/cyuyan/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li></ul>
+
     </footer>
   </div>
 
    
   <nav class="article-nav">
     
-      <a href="/2020/12/10/cyuyan/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            C语言基础知识
-          
-        </div>
-      </a>
     
-    
-      <a href="/2020/12/07/markdown/" class="article-nav-link">
+      <a href="/2020/12/08/huibian/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">markdown语法</div>
+        <div class="article-nav-title">汇编语言(持续更新中)</div>
       </a>
     
   </nav>
