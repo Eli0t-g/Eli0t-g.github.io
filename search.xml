@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>我的第一篇文章</title>
+    <url>/2020/11/21/My-First-Post/</url>
+    <content><![CDATA[<h2 id="新的开始"><a href="#新的开始" class="headerlink" title="新的开始"></a>新的开始</h2><p><em>这是本人第一次搭博客，走了许多弯路，经过了无数次的失败，浪费了大量的时间，但最终还是搭建完成。在这其中，我请教了石师兄和高师兄，借鉴了B站的视频，才最终成功。最后，我希望迈出这一小步后能够继续向前，并成为我想成为的人。</em></p>
+<a id="more"></a>
+
+<h3 id="音频测试"><a href="#音频测试" class="headerlink" title="音频测试"></a>音频测试</h3><h4 id="照片"><a href="#照片" class="headerlink" title="照片"></a>照片</h4><img src="/images/1.jpg" height="400" width="350" />
+
+<h4 id="音乐"><a href="#音乐" class="headerlink" title="音乐"></a>音乐</h4><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=400 height=86 src="//music.163.com/outchain/player?type=2&id=1477539203&auto=1&height=66"></iframe>
+
+<h4 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h4><video src='/video/1.mp4' heigth='500px' controls>
+
+
+
+]]></content>
+      <tags>
+        <tag>感想</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>C语言基础知识</title>
     <url>/2020/12/10/cyuyan/</url>
     <content><![CDATA[<p><em>原本早就开始学习C语言，但是因为过于心急直接开始实操（如果只是对C语言感兴趣或者想要了解一下C语言，个人推荐《啊哈C》），最后发现学习难以进行下去，于是重新开始再学一遍。在学习C语言之前，个人建议先学习汇编语言，汇编语言可以加深对计算机的理解，方便日后的学习。</em></p>
@@ -45,6 +64,60 @@
 </li>
 </ul>
 ]]></content>
+      <tags>
+        <tag>学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2020/11/20/hexo/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<a id="more"></a>
+
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>dos</title>
+    <url>/2020/12/06/dos/</url>
+    <content><![CDATA[<h1 id="win64位系统进入debug"><a href="#win64位系统进入debug" class="headerlink" title="win64位系统进入debug"></a>win64位系统进入debug</h1><blockquote>
+<p>最近一直在看汇编语言，想要实操，于是要进入debug模式，但是发现win64位系统无法直接进入，但最后经过几次尝试终于成功进入</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>1、首先要下载安装DOSBox，也就是下面这个东西</p>
+<img src="/images/5.jpg" height="400" width="350" />
+
+<p>安装地址：链接：<a href="https://pan.baidu.com/s/1B0dzSc--Ok_ds67ai4flmQ">https://pan.baidu.com/s/1B0dzSc--Ok_ds67ai4flmQ</a>     提取码：a7tp </p>
+<p>2、因为软件比较小，为了避免麻烦，我直接默认安装在C:\Program Files (x86)中</p>
+<p>3、找到 <strong>debug.exe</strong>，并把你喜欢的位置上，记住目录（等会用到）这里我放在<strong>D:\Debug</strong>目录下</p>
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><p>打开DOSBox.exe，输入以下指令</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mount c d:\debug</span><br><span class="line">c:</span><br><span class="line">debug</span><br></pre></td></tr></table></figure>
+
+<img src="/images/6.jpg" height="600" width="600" />
+
+<p>之后就进入了debug模式</p>
+<h1 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h1><p>如果嫌每次进入都需要输入很麻烦，可以在<strong>DOSBox 0.74 Options.bat</strong>的脚本文件进行修改，步骤如下：</p>
+<p>1、找到<strong>DOSBox 0.74 Options.bat</strong>，双击点开</p>
+<p>2、点开后拉至最底下输入</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mount c d:\debug</span><br><span class="line">c:</span><br></pre></td></tr></table></figure>
+
+<p>3、保存退出</p>
+<img src="/images/7.jpg" height="600" width="600" />
+
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>开 <strong>DOSBox</strong> 会同时打开两个窗口，其中一个是黑色的控制台窗口，在控制台窗口中指明了配置文件的绝对路径</p>
+<img src="/images/8.jpg" height="600" width="600" />]]></content>
       <tags>
         <tag>学习</tag>
       </tags>
@@ -375,78 +448,5 @@
       <tags>
         <tag>学习</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>dos</title>
-    <url>/2020/12/06/dos/</url>
-    <content><![CDATA[<h1 id="win64位系统进入debug"><a href="#win64位系统进入debug" class="headerlink" title="win64位系统进入debug"></a>win64位系统进入debug</h1><blockquote>
-<p>最近一直在看汇编语言，想要实操，于是要进入debug模式，但是发现win64位系统无法直接进入，但最后经过几次尝试终于成功进入</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>1、首先要下载安装DOSBox，也就是下面这个东西</p>
-<img src="/images/5.jpg" height="400" width="350" />
-
-<p>安装地址：链接：<a href="https://pan.baidu.com/s/1B0dzSc--Ok_ds67ai4flmQ">https://pan.baidu.com/s/1B0dzSc--Ok_ds67ai4flmQ</a>     提取码：a7tp </p>
-<p>2、因为软件比较小，为了避免麻烦，我直接默认安装在C:\Program Files (x86)中</p>
-<p>3、找到 <strong>debug.exe</strong>，并把你喜欢的位置上，记住目录（等会用到）这里我放在<strong>D:\Debug</strong>目录下</p>
-<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><p>打开DOSBox.exe，输入以下指令</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mount c d:\debug</span><br><span class="line">c:</span><br><span class="line">debug</span><br></pre></td></tr></table></figure>
-
-<img src="/images/6.jpg" height="600" width="600" />
-
-<p>之后就进入了debug模式</p>
-<h1 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h1><p>如果嫌每次进入都需要输入很麻烦，可以在<strong>DOSBox 0.74 Options.bat</strong>的脚本文件进行修改，步骤如下：</p>
-<p>1、找到<strong>DOSBox 0.74 Options.bat</strong>，双击点开</p>
-<p>2、点开后拉至最底下输入</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mount c d:\debug</span><br><span class="line">c:</span><br></pre></td></tr></table></figure>
-
-<p>3、保存退出</p>
-<img src="/images/7.jpg" height="600" width="600" />
-
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>开 <strong>DOSBox</strong> 会同时打开两个窗口，其中一个是黑色的控制台窗口，在控制台窗口中指明了配置文件的绝对路径</p>
-<img src="/images/8.jpg" height="600" width="600" />]]></content>
-      <tags>
-        <tag>学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>我的第一篇文章</title>
-    <url>/2020/11/21/My-First-Post/</url>
-    <content><![CDATA[<h2 id="新的开始"><a href="#新的开始" class="headerlink" title="新的开始"></a>新的开始</h2><p><em>这是本人第一次搭博客，走了许多弯路，经过了无数次的失败，浪费了大量的时间，但最终还是搭建完成。在这其中，我请教了石师兄和高师兄，借鉴了B站的视频，才最终成功。最后，我希望迈出这一小步后能够继续向前，并成为我想成为的人。</em></p>
-<a id="more"></a>
-
-<h3 id="音频测试"><a href="#音频测试" class="headerlink" title="音频测试"></a>音频测试</h3><h4 id="照片"><a href="#照片" class="headerlink" title="照片"></a>照片</h4><img src="/images/1.jpg" height="400" width="350" />
-
-<h4 id="音乐"><a href="#音乐" class="headerlink" title="音乐"></a>音乐</h4><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=400 height=86 src="//music.163.com/outchain/player?type=2&id=1477539203&auto=1&height=66"></iframe>
-
-<h4 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h4><video src='/video/1.mp4' heigth='500px' controls>
-
-
-
-]]></content>
-      <tags>
-        <tag>感想</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2020/11/20/hexo/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<a id="more"></a>
-
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
   </entry>
 </search>
