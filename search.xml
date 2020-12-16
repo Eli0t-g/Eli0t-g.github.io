@@ -4,9 +4,6 @@
     <title>C语言基础知识</title>
     <url>/2020/12/10/cyuyan/</url>
     <content><![CDATA[<p><em>原本早就开始学习C语言，但是因为过于心急直接开始实操（如果只是对C语言感兴趣或者想要了解一下C语言，个人推荐《啊哈C》），最后发现学习难以进行下去，于是重新开始再学一遍。在学习C语言之前，个人建议先学习汇编语言，汇编语言可以加深对计算机的理解，方便日后的学习。</em></p>
-<hr>
-<a id="more"></a>
-
 <h1 id="初步认识"><a href="#初步认识" class="headerlink" title="初步认识"></a>初步认识</h1><p>C 语言是一种通用的、面向过程式的计算机程序设计语言，C 语言是一种通用的高级语言。C语言的特点有：</p>
 <ul>
 <li>易于学习</li>
@@ -44,6 +41,55 @@
 <p>表示算法的方法：自然语言、传统流程图、结构化流程图、伪代码等</p>
 </li>
 </ul>
+<h1 id="数型数据的存储空间和数值范围"><a href="#数型数据的存储空间和数值范围" class="headerlink" title="数型数据的存储空间和数值范围"></a>数型数据的存储空间和数值范围</h1><table>
+<thead>
+<tr>
+<th align="left">类型</th>
+<th>字节数</th>
+<th>取值范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">[ signed] int (基本整型)</td>
+<td>4</td>
+<td>-214783648 <del>21474867     （-2^31</del>2^31-1）</td>
+</tr>
+<tr>
+<td align="left">unsigned int (无符号基本整型)</td>
+<td>4</td>
+<td>0<del>4294967295                      （0</del>2^31-1）</td>
+</tr>
+<tr>
+<td align="left">[ signed ]short [ int ] (短整型)</td>
+<td>2</td>
+<td>-32768<del>32767                       （-2^15</del>2^15-1）</td>
+</tr>
+<tr>
+<td align="left">unsigned short [ int ] (无符号短整型)</td>
+<td>2</td>
+<td>0<del>65535                                 （0</del>2^16-1）</td>
+</tr>
+<tr>
+<td align="left">long [int] (长整型)</td>
+<td>4</td>
+<td>-2147483648<del>2147483647 （-2^31</del>2^31-1）</td>
+</tr>
+<tr>
+<td align="left">unsigned long [ int ] (无符号长整型)</td>
+<td>4</td>
+<td>0<del>4294967295                      （0</del>2^32-1）</td>
+</tr>
+<tr>
+<td align="left">long long [ int ] (双长型)(c99支持)</td>
+<td>8</td>
+<td>-2^63~2^63-1</td>
+</tr>
+<tr>
+<td align="left">unsigned long long [ int ] (无符号双长整型)</td>
+<td>8</td>
+<td>0~2^64-1</td>
+</tr>
+</tbody></table>
 ]]></content>
       <tags>
         <tag>学习</tag>
@@ -233,7 +279,7 @@
 <hr>
 <h1 id="程序从写出到执行的过程"><a href="#程序从写出到执行的过程" class="headerlink" title="程序从写出到执行的过程"></a>程序从写出到执行的过程</h1><ul>
 <li><p>编写</p>
-<p>在编译器上编写代码，结果是产生了一个存储源代码的文本文件</p>
+<p>在<!--编译器-->上编写代码，结果是产生了一个存储源代码的文本文件</p>
 <p><strong>编译器是一种特殊的程序，它可以把以特定编程语言写成的程序变为机器可以运行的机器码。</strong></p>
 </li>
 <li><p>编译链接</p>
