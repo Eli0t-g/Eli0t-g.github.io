@@ -10,13 +10,9 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="Fechin,"> 
-    <meta name="description" content="
-这是本人学习汇编语言的一些笔记
-
-
-
+    <meta name="description" content="[TOC]
 学习目的通过用汇编语言进行编程而深入地理解计算机底层的基本工作机理，达到随心所欲地控制计算机的目的
-汇编语言的由来对于人类来说，二进制程序是不可读的，根本看不,"> 
+汇编语言的由来对于人类来说，二进制程序是不可读的，根本看不出来机器干了什么。为了解决可,"> 
     <meta name="author" content="Eli0t-g"> 
     <link rel="alternative" href="atom.xml" title="桂的小基地" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -63,14 +59,12 @@
         <div class="stuff">
             <span>十二月 08, 2020</span>
             
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li></ul>
+
 
         </div>
         <div class="content markdown">
-            <blockquote>
-<p>这是本人学习汇编语言的一些笔记</p>
-</blockquote>
-<a id="more"></a>
-
+            <p>[TOC]</p>
 <h1 id="学习目的"><a href="#学习目的" class="headerlink" title="学习目的"></a>学习目的</h1><p>通过用汇编语言进行编程而深入地理解计算机底层的基本工作机理，达到随心所欲地控制计算机的目的</p>
 <h1 id="汇编语言的由来"><a href="#汇编语言的由来" class="headerlink" title="汇编语言的由来"></a>汇编语言的由来</h1><p>对于人类来说，二进制程序是不可读的，根本看不出来机器干了什么。为了解决可读性的问题，以及偶尔的编辑需求，就诞生了汇编语言。</p>
 <hr>
@@ -244,8 +238,38 @@
 <p>debug是一个DOS实用程序，是供程序员使用的程序调试工具，可以用它检查内存中任何地方的字节以及修改任何地方的字节。它可以用于逐指令执行某个程序以验证程序运行的正确性，也可以追踪执行过程、比较一个指令执行前后的值以及比较与移动内存中数据的范围，读写文件与磁盘</p>
 </blockquote>
 <p>具体请参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/liuer2004_82/article/details/52638516">网页连接</a></p>
+<blockquote>
+<p>由于win10不再像win7可以直接进入debug模式，所以需要其它方法进入</p>
+</blockquote>
 <p>如何进入debug模式请参考我的另一篇文章</p>
 <p><a target="_blank" rel="noopener" href="https://eli0t-g.github.io/2020/12/07/dos/">win64位系统进入debug</a></p>
+<hr>
+<h1 id="程序从写出到执行的过程"><a href="#程序从写出到执行的过程" class="headerlink" title="程序从写出到执行的过程"></a>程序从写出到执行的过程</h1><ul>
+<li><p>编写</p>
+<p>在编译器上编写代码，结果是产生了一个存储源代码的文本文件</p>
+<p><strong>编译器是一种特殊的程序，它可以把以特定编程语言写成的程序变为机器可以运行的机器码。</strong></p>
+</li>
+<li><p>编译链接</p>
+<ul>
+<li><p>编译</p>
+<p>编译的意思就是把程序语言写成机器可以运行的机器码的过程，此过程需要用到编译器。</p>
+</li>
+<li><p>连接</p>
+<p>在对源程序进行编译得到目标文件后，我们需要对目标文件进行连接，从而得到可执行文件。</p>
+<p><strong>对于连接的过程，可执行文件是我们要得到的最终结果</strong></p>
+<p>其作用：</p>
+<ul>
+<li>当源程序很大时，可以将它分为多个源程序文件来编译，每个源程序编译成为目标文件后，再用连接程序将它们连接到一起，生成一个可执行文件</li>
+<li>程序中调用了某个库文件中的子程序，需要将这个库文件和该程序生成的目标文件连接到一起，生成一个可执行 文件</li>
+<li>一个源程序编译后，得到了存有机器码的目标文件，目标文件中的有些内容还不能直接用来生成可执行文件，连接程序将这些内容处理为最终的可执行信息。所以，在只有一个源程序文件，而又不需要调用某个库中的子程序的情况下，也必须用连接程序对目标文件进行处理，生成可执行文件。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>执行</p>
+<p>操作系统依照可执行文件中的描述信息，将可执行文件中的机器码和数据加载入内存，并进行相关的初始化，然后由CPU执行程序</p>
+</li>
+</ul>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
@@ -281,7 +305,7 @@
     </div>
     
         <div class='side'>
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%A6%E4%B9%A0%E7%9B%AE%E7%9A%84"><span class="toc-number">1.</span> <span class="toc-text">学习目的</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E7%9A%84%E7%94%B1%E6%9D%A5"><span class="toc-number">2.</span> <span class="toc-text">汇编语言的由来</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-number">3.</span> <span class="toc-text">汇编语言的特点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E7%9A%84%E7%BB%84%E6%88%90"><span class="toc-number">4.</span> <span class="toc-text">汇编语言的组成</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4"><span class="toc-number">4.1.</span> <span class="toc-text">汇编指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%AA%E6%8C%87%E4%BB%A4"><span class="toc-number">4.2.</span> <span class="toc-text">伪指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E5%AE%83%E7%AC%A6%E5%8F%B7"><span class="toc-number">4.3.</span> <span class="toc-text">其它符号</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E5%99%A8"><span class="toc-number">5.</span> <span class="toc-text">编译器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AF%84%E5%AD%98%E5%99%A8-8086CPU"><span class="toc-number">6.</span> <span class="toc-text">寄存器(8086CPU)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B"><span class="toc-number">7.</span> <span class="toc-text">内存模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Heap%EF%BC%88%E5%A0%86%EF%BC%89"><span class="toc-number">7.1.</span> <span class="toc-text">Heap（堆）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Stack-%E6%A0%88"><span class="toc-number">7.2.</span> <span class="toc-text">Stack(栈)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%88%E9%A1%B6%E8%B6%85%E7%95%8C%E9%97%AE%E9%A2%98"><span class="toc-number">7.2.1.</span> <span class="toc-text">栈顶超界问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%88%E6%AE%B5"><span class="toc-number">7.2.2.</span> <span class="toc-text">栈段</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%AE%BD%E5%BA%A6"><span class="toc-number">8.</span> <span class="toc-text">数据宽度</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E5%8D%95%E5%85%83"><span class="toc-number">9.</span> <span class="toc-text">存储单元</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BA%BF"><span class="toc-number">10.</span> <span class="toc-text">总线</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E5%99%A8"><span class="toc-number">11.</span> <span class="toc-text">存储器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#debug%E5%91%BD%E4%BB%A4"><span class="toc-number">12.</span> <span class="toc-text">debug命令</span></a></li></ol>	
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%A6%E4%B9%A0%E7%9B%AE%E7%9A%84"><span class="toc-number">1.</span> <span class="toc-text">学习目的</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E7%9A%84%E7%94%B1%E6%9D%A5"><span class="toc-number">2.</span> <span class="toc-text">汇编语言的由来</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-number">3.</span> <span class="toc-text">汇编语言的特点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E7%9A%84%E7%BB%84%E6%88%90"><span class="toc-number">4.</span> <span class="toc-text">汇编语言的组成</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4"><span class="toc-number">4.1.</span> <span class="toc-text">汇编指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%AA%E6%8C%87%E4%BB%A4"><span class="toc-number">4.2.</span> <span class="toc-text">伪指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E5%AE%83%E7%AC%A6%E5%8F%B7"><span class="toc-number">4.3.</span> <span class="toc-text">其它符号</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E5%99%A8"><span class="toc-number">5.</span> <span class="toc-text">编译器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AF%84%E5%AD%98%E5%99%A8-8086CPU"><span class="toc-number">6.</span> <span class="toc-text">寄存器(8086CPU)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B"><span class="toc-number">7.</span> <span class="toc-text">内存模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Heap%EF%BC%88%E5%A0%86%EF%BC%89"><span class="toc-number">7.1.</span> <span class="toc-text">Heap（堆）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Stack-%E6%A0%88"><span class="toc-number">7.2.</span> <span class="toc-text">Stack(栈)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%88%E9%A1%B6%E8%B6%85%E7%95%8C%E9%97%AE%E9%A2%98"><span class="toc-number">7.2.1.</span> <span class="toc-text">栈顶超界问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%88%E6%AE%B5"><span class="toc-number">7.2.2.</span> <span class="toc-text">栈段</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%AE%BD%E5%BA%A6"><span class="toc-number">8.</span> <span class="toc-text">数据宽度</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E5%8D%95%E5%85%83"><span class="toc-number">9.</span> <span class="toc-text">存储单元</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BA%BF"><span class="toc-number">10.</span> <span class="toc-text">总线</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E5%99%A8"><span class="toc-number">11.</span> <span class="toc-text">存储器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#debug%E5%91%BD%E4%BB%A4"><span class="toc-number">12.</span> <span class="toc-text">debug命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E4%BB%8E%E5%86%99%E5%87%BA%E5%88%B0%E6%89%A7%E8%A1%8C%E7%9A%84%E8%BF%87%E7%A8%8B"><span class="toc-number">13.</span> <span class="toc-text">程序从写出到执行的过程</span></a></li></ol>	
         </div>
     
 </div>
