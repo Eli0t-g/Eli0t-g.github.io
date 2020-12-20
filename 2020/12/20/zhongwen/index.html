@@ -1,0 +1,215 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>C语言中文输入 - 桂的小基地</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="
+突发奇想，想如何用输入中文（虽然几乎用不到，但还是想尝试一下），于是花了一晚上去尝试，虽然花费挺久的，但最终还是成功搞定
+
+要想存储中文，肯定要用char,一个中文需要两个字节，所以肯定需要数组，,"> 
+    <meta name="author" content="Eli0t-g"> 
+    <link rel="alternative" href="atom.xml" title="桂的小基地" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">桂的小基地</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">C语言中文输入</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">C语言中文输入</h1>
+        <div class="stuff">
+            <span>十二月 20, 2020</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E5%AD%A6%E4%B9%A0-%E5%BF%83%E5%BE%97/" rel="tag">-学习 -心得</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <blockquote>
+<p>突发奇想，想如何用输入中文（虽然几乎用不到，但还是想尝试一下），于是花了一晚上去尝试，虽然花费挺久的，但最终还是成功搞定</p>
+</blockquote>
+<p>要想存储中文，肯定要用char,一个中文需要两个字节，所以肯定需要数组，所以是这样的</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> str[<span class="number">100</span>];</span><br></pre></td></tr></table></figure>
+
+<p>接下来就应该是输入（因为用的是visual studio所以输入相对于dev c++有点不同）</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scanf_s(<span class="string">&quot;%s&quot;</span>, str, <span class="keyword">sizeof</span>(str));</span><br></pre></td></tr></table></figure>
+
+<p>其中要加_s是因为VS认为scanf不安全，读入字符串时可能造成数组越界，因此自己搞了个scanf_s函数。sizeof(str)是防止溢出，之所以加sizeof(str)不是加2，是因为scanf_s函数的输入限制给小了（之前一直卡在这里/(ㄒoㄒ)/~~）</p>
+<p>如何让计算机判断你输入的函数也是个问题，于是我上网查了一下，判断中文是不是指定数据，可以用strcmp()函数来进行比较，如果相匹配sizeof就会返回0，所以就应该是这样的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if (strcmp(str, &quot;输入要匹配的数&quot;) &#x3D;&#x3D; 0)</span><br></pre></td></tr></table></figure>
+
+<p>在整理一下，完整代码如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> str[<span class="number">100</span>];</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;请输入中文: &quot;</span>);</span><br><span class="line">    scanf_s(<span class="string">&quot;%s&quot;</span>, str,<span class="keyword">sizeof</span>(str));</span><br><span class="line">    <span class="keyword">if</span> ( <span class="built_in">strcmp</span>(str,<span class="string">&quot;你好&quot;</span>)==<span class="number">0</span> ) <span class="comment">//两个字符串相等时，strcmp返回0</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;我很好\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;你输入的是：%s\n&quot;</span>, str );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>结合今天发现的制作爱心的代码，就成了这样子：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;windows.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> I 20</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> R 340</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">char</span> str[<span class="number">100</span>];</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;请输入你的名字:&quot;</span>);</span><br><span class="line">		scanf_s(<span class="string">&quot;%s&quot;</span>, str, <span class="keyword">sizeof</span>(str));</span><br><span class="line">		<span class="keyword">if</span> (<span class="built_in">strcmp</span>(str, <span class="string">&quot;你想匹配的名字&quot;</span>) == <span class="number">0</span>)<span class="comment">//在这里添加想要匹配的名字</span></span><br><span class="line">		&#123;</span><br><span class="line">			system(<span class="string">&quot;cls&quot;</span>);<span class="comment">//清屏</span></span><br><span class="line">			<span class="keyword">int</span> i, j, e;</span><br><span class="line">			<span class="keyword">int</span> a;</span><br><span class="line">			<span class="keyword">long</span> time;</span><br><span class="line">			<span class="keyword">for</span> (i = <span class="number">1</span>, a = I; i &lt; I / <span class="number">2</span>; i++, a--)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">for</span> (j = (<span class="keyword">int</span>)(I - <span class="built_in">sqrt</span>(I*I - (a - i)*(a - i))); j &gt; <span class="number">0</span>; j--)</span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">&quot; &quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (e = <span class="number">1</span>; e &lt;= <span class="number">2</span> * <span class="built_in">sqrt</span>(I*I - (a - i)*(a - i)); e++)</span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">&quot;\3&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (j = (<span class="keyword">int</span>)</span><br><span class="line">					(<span class="number">2</span> * (I - <span class="built_in">sqrt</span>(I*I - (a - i)*(a - i)))); j &gt; <span class="number">0</span>; j--)</span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">&quot; &quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (e = <span class="number">1</span>; e &lt;= <span class="number">2</span> * <span class="built_in">sqrt</span>(I*I - (a - i)*(a - i)); e++)</span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">&quot;\3&quot;</span>);</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt; <span class="number">80</span>; i++)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span> (i == <span class="number">25</span>)</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">&quot;        %s        &quot;</span>,str);<span class="comment">//这里需要有23个字（包括空格）</span></span><br><span class="line">					i += <span class="number">30</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;\3&quot;</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">			<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= R / <span class="number">2</span>; i++)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span> (i % <span class="number">2</span> || i % <span class="number">3</span>)</span><br><span class="line">					<span class="keyword">continue</span>;</span><br><span class="line">				<span class="keyword">for</span> (j = (<span class="keyword">int</span>)(R - <span class="built_in">sqrt</span>(R*R - i * i)); j &gt; <span class="number">0</span>; j--)</span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">&quot; &quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (e = <span class="number">1</span>; e &lt;= <span class="number">2</span> * (<span class="built_in">sqrt</span>(R*R - i * i) - (R - <span class="number">2</span> * I)); e++)</span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">&quot;\3&quot;</span>);</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">for</span> (; ; )</span><br><span class="line">			&#123;</span><br><span class="line">				system(<span class="string">&quot;color a&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color b&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color c&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color d&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color e&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color f&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++);</span><br><span class="line">				system(<span class="string">&quot;color 0&quot;</span>); <span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++);</span><br><span class="line">				system(<span class="string">&quot;color 1&quot;</span>); <span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++);</span><br><span class="line">				system(<span class="string">&quot;color 2&quot;</span>); <span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++);</span><br><span class="line">				system(<span class="string">&quot;color 3&quot;</span>); <span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++);</span><br><span class="line">				system(<span class="string">&quot;color 4&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color 5&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color 6&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color 7&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color 8&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color 9&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color ab&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color ac&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color ad&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color ae&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color af&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;输入错误\n&quot;</span>);<span class="comment">//不匹配输出的结果</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='false'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o='Eli0t-g'
+        data-a='Eli0t-g'
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+        <div class='side'>
+				
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
+
+
+
+```xml
+<!--浏览器搞笑标题-->
+<script type="text/javascript" src="\js\FunnyTitle.js"></script>
+```
+
+```xml
+<!-- 雪花特效 -->
+<script type="text/javascript" src="\js\snow.js"></script>
+```
+
