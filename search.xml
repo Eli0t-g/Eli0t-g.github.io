@@ -1,22 +1,162 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>我的第一篇文章</title>
-    <url>/2020/11/21/My-First-Post/</url>
-    <content><![CDATA[<h2 id="新的开始"><a href="#新的开始" class="headerlink" title="新的开始"></a>新的开始</h2><p><em>这是本人第一次搭博客，走了许多弯路，经过了无数次的失败，浪费了大量的时间，但最终还是搭建完成。在这其中，我请教了石师兄和高师兄，借鉴了B站的视频，才最终成功。最后，我希望迈出这一小步后能够继续向前，并成为我想成为的人。</em></p>
-<a id="more"></a>
+    <title>bugku</title>
+    <url>/2021/02/02/bugku/</url>
+    <content><![CDATA[<h1 id="BUGKU-misc部分"><a href="#BUGKU-misc部分" class="headerlink" title="BUGKU misc部分"></a>BUGKU misc部分</h1><h2 id="1-这是一张单纯的图片"><a href="#1-这是一张单纯的图片" class="headerlink" title="1 这是一张单纯的图片"></a>1 这是一张单纯的图片</h2><p>先看了一下属性，发现并没有什么有用的信息，打开就是上面那张图，没有上面异样，</p>
+<img src="/images/21.png" height="250" width="200" />
 
-<h3 id="音频测试"><a href="#音频测试" class="headerlink" title="音频测试"></a>音频测试</h3><h4 id="照片"><a href="#照片" class="headerlink" title="照片"></a>照片</h4><img src="/images/1.jpg" height="400" width="350" />
+<p>直接丢winhex，拖至最底，发现是unicode加密</p>
+<img src="/images/22.png" height="300" width="600" />
 
-<h4 id="音乐"><a href="#音乐" class="headerlink" title="音乐"></a>音乐</h4><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=400 height=86 src="//music.163.com/outchain/player?type=2&id=1477539203&auto=1&height=66"></iframe>
+<p>发现是unicode加密，直接解码成ASCII，得到flag</p>
+<img src="/images/23.png" height="100" width="200" />
 
-<h4 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h4><video src='/video/1.mp4' heigth='500px' controls>
+<hr>
+<h2 id="2-隐写"><a href="#2-隐写" class="headerlink" title="2 隐写"></a>2 隐写</h2><p>看到题目就知道是图片隐写，对图片进行校验和，发现结果有问题，说明照片高度被修改了</p>
+<img src="/images/24.png" height="500" width="600" />
+
+<p>修改高度得到flag</p>
+<img src="/images/25.png" height="400" width="300" />
+
+<hr>
+<h2 id="3-telnet"><a href="#3-telnet" class="headerlink" title="3 telnet"></a>3 telnet</h2><p>下载附件后打开，直接追踪TCP流就得到了flag</p>
+<img src="/images/26.png" height="500" width="600" />
+
+<hr>
+<h2 id="4-眼见非实"><a href="#4-眼见非实" class="headerlink" title="4 眼见非实"></a>4 眼见非实</h2><p>打开后发现文件是损坏的而且出现了PK字符，猜测里面藏有压缩包，于是改成压缩包形式打开</p>
+<img src="/images/27.png" height="400" width="500" />
+
+<p>在word里面的document.xml里面发现了flag</p>
+<img src="/images/28.png" height="450" width="600" />
+
+<hr>
+<h2 id="5-啊哒"><a href="#5-啊哒" class="headerlink" title="5 啊哒"></a>5 啊哒</h2><p>老规矩，打开照片看属性，发现照相机型号有东西，之后应该用得上</p>
+<img src="/images/29.png" height="600" width="500" />
+
+<p>用binwalk查看，发现里面藏有一个压缩包，用foremost进行分离得到压缩包，打开发现是加密的，尝试了照相机型号，发现密码错误，分析了一下那串照相机型号，发现是十六进制，之后解码得到密码</p>
+<img src="/images/30.png" height="600" width="500" />
+
+<p>打开得到flag</p>
+<img src="/images/31.png" height="600" width="500" />
+
+<hr>
+<h2 id="6-ping"><a href="#6-ping" class="headerlink" title="6 ping"></a>6 ping</h2><p>用wireshark打开后发现十六进制旁边一个f，打开其它的发现组合起来是flag</p>
+<img src="/images/32.png" height="600" width="500" />
+
+<hr>
+<h2 id="7-赛博朋克"><a href="#7-赛博朋克" class="headerlink" title="7 赛博朋克"></a>7 赛博朋克</h2><p>打开后发现就一个光秃秃的加密文件，不用猜都知道是伪加密，丢进winhex修改一下就可以打开了</p>
+<img src="/images/33.png" height="600" width="500" />
+
+<p>打开文件后发现是一堆乱码，丢进winhex发现是png格式照片</p>
+<img src="/images/34.png" height="600" width="400" />
+
+<p>修改一下后缀名图片就出来了，不过好像flag还没出来，属性里面也没什么东西，校验和也正确，binwalk也没查出问题</p>
+<img src="/images/35.png" height="600" width="400" />
+
+<img src="/images/36.png" height="400" width="600" />
+
+<p>最后推测一个是lsb隐写，果不其然，得到flag</p>
+<img src="/images/37.png" height="500" width="600" />
+
+<hr>
+<h2 id="8-贝斯手"><a href="#8-贝斯手" class="headerlink" title="8 贝斯手"></a>8 贝斯手</h2><p>打开介绍发现是对图片上人物介绍，刚想关闭发现最下面还有东西，发现密码是四位数和这个贝斯手有关</p>
+<img src="/images/38.png" height="500" width="600" />
+
+<p>懒得搜直接暴力破解</p>
+<img src="/images/39.png" height="500" width="600" />
+
+<p>打开后发现是一串加密字符，5+58应该加密方式MD5和base58</p>
+<img src="/images/40.png" height="500" width="600" />
+
+<p>解码得到flag</p>
+<img src="/images/41.png" height="500" width="500" />
+
+<img src="/images/42.png" height="500" width="600" />
 
 
 
 ]]></content>
       <tags>
-        <tag>感想</tag>
+        <tag>wp</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>排序</title>
+    <url>/2020/12/23/paixu/</url>
+    <content><![CDATA[<blockquote>
+<p>最近开始学习算法，看了半天发现并没有想象的那么简单。最后再总结一下，大致如下</p>
+</blockquote>
+<p>第一个是桶排序，这个排序方法易懂，但缺点也多，比如耗费空间较多，对排序的数的大小也有要求，难度也较高。桶排序的代码如下：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> book[<span class="number">1001</span>], i, j, t, n;  <span class="comment">//我们需要1001个桶，来表示0~1000之间每一个数出现的次数</span></span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt;= <span class="number">1000</span>; i++)  <span class="comment">//初始化</span></span><br><span class="line">		book[i] = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请输入有多少个数需要排序\n&quot;</span>);</span><br><span class="line">	scanf_s(<span class="string">&quot;%d&quot;</span>, &amp;n,<span class="keyword">sizeof</span>(n));  <span class="comment">//输入共有多少数排序</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请依次输入要排序的数(数字范围是0~1000))\n&quot;</span>);</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= n; i++)  <span class="comment">//循环读入n个数，并进行桶排序 </span></span><br><span class="line">	&#123;</span><br><span class="line">		scanf_s(<span class="string">&quot;%d&quot;</span>, &amp;t,<span class="keyword">sizeof</span>(t));</span><br><span class="line">		book[t]++;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">1000</span>; i &gt;= <span class="number">0</span>; i--)  <span class="comment">//依次判断a[0]~a[10]</span></span><br><span class="line">		<span class="keyword">for</span> (j = <span class="number">1</span>; j &lt;= book[i]; j++)</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, i);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>由于第一种方法缺点较多，所以有了第二种排序方法，叫做冒泡排序。</p>
+]]></content>
+      <tags>
+        <tag>学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C语言中文输入</title>
+    <url>/2020/12/20/zhongwen/</url>
+    <content><![CDATA[<blockquote>
+<p>突发奇想，想如何用输入中文（虽然几乎用不到，但还是想尝试一下），于是花了一晚上去尝试，虽然花费挺久的，但最终还是成功搞定</p>
+</blockquote>
+<p>要想存储中文，肯定要用char,一个中文需要两个字节，所以肯定需要数组，所以是这样的</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">char</span> str[<span class="number">100</span>];</span><br></pre></td></tr></table></figure>
+
+<p>接下来就应该是输入（因为用的是visual studio所以输入相对于dev c++有点不同）</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">scanf_s(<span class="string">&quot;%s&quot;</span>, str, <span class="keyword">sizeof</span>(str));</span><br></pre></td></tr></table></figure>
+
+<p>其中要加_s是因为VS认为scanf不安全，读入字符串时可能造成数组越界，因此自己搞了个scanf_s函数。sizeof(str)是防止溢出，之所以加sizeof(str)不是加2，是因为scanf_s函数的输入限制给小了（之前一直卡在这里/(ㄒoㄒ)/~~）</p>
+<p>如何让计算机判断你输入的函数也是个问题，于是我上网查了一下，判断中文是不是指定数据，可以用strcmp()函数来进行比较，如果相匹配sizeof就会返回0，所以就应该是这样的</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">if (strcmp(str, &quot;输入要匹配的数&quot;) &#x3D;&#x3D; 0)</span><br></pre></td></tr></table></figure>
+
+<p>在整理一下，完整代码如下：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">		<span class="keyword">char</span> str[<span class="number">100</span>];</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;请输入你的名字:&quot;</span>);</span><br><span class="line">		scanf_s(<span class="string">&quot;%s&quot;</span>, str, <span class="keyword">sizeof</span>(str));</span><br><span class="line">		<span class="keyword">if</span> (<span class="built_in">strcmp</span>(str, <span class="string">&quot;你好&quot;</span>) == <span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;我很好&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;输入错误\n&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>结合今天发现的制作爱心的代码，就成了这样子：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;windows.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> I 20</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> R 340</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">char</span> str[<span class="number">100</span>];</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;请输入你的名字:&quot;</span>);</span><br><span class="line">		scanf_s(<span class="string">&quot;%s&quot;</span>, str, <span class="keyword">sizeof</span>(str));</span><br><span class="line">		<span class="keyword">if</span> (<span class="built_in">strcmp</span>(str, <span class="string">&quot;你想匹配的名字&quot;</span>) == <span class="number">0</span>)<span class="comment">//在这里添加想要匹配的名字</span></span><br><span class="line">		&#123;</span><br><span class="line">			system(<span class="string">&quot;cls&quot;</span>);<span class="comment">//清屏</span></span><br><span class="line">			<span class="keyword">int</span> i, j, e;</span><br><span class="line">			<span class="keyword">int</span> a;</span><br><span class="line">			<span class="keyword">long</span> time;</span><br><span class="line">			<span class="keyword">for</span> (i = <span class="number">1</span>, a = I; i &lt; I / <span class="number">2</span>; i++, a--)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">for</span> (j = (<span class="keyword">int</span>)(I - <span class="built_in">sqrt</span>(I*I - (a - i)*(a - i))); j &gt; <span class="number">0</span>; j--)</span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">&quot; &quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (e = <span class="number">1</span>; e &lt;= <span class="number">2</span> * <span class="built_in">sqrt</span>(I*I - (a - i)*(a - i)); e++)</span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">&quot;\3&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (j = (<span class="keyword">int</span>)</span><br><span class="line">					(<span class="number">2</span> * (I - <span class="built_in">sqrt</span>(I*I - (a - i)*(a - i)))); j &gt; <span class="number">0</span>; j--)</span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">&quot; &quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (e = <span class="number">1</span>; e &lt;= <span class="number">2</span> * <span class="built_in">sqrt</span>(I*I - (a - i)*(a - i)); e++)</span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">&quot;\3&quot;</span>);</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt; <span class="number">80</span>; i++)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span> (i == <span class="number">25</span>)</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">&quot;        %s        &quot;</span>,str);<span class="comment">//这里需要有23个字（包括空格）</span></span><br><span class="line">					i += <span class="number">30</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;\3&quot;</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">			<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= R / <span class="number">2</span>; i++)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span> (i % <span class="number">2</span> || i % <span class="number">3</span>)</span><br><span class="line">					<span class="keyword">continue</span>;</span><br><span class="line">				<span class="keyword">for</span> (j = (<span class="keyword">int</span>)(R - <span class="built_in">sqrt</span>(R*R - i * i)); j &gt; <span class="number">0</span>; j--)</span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">&quot; &quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (e = <span class="number">1</span>; e &lt;= <span class="number">2</span> * (<span class="built_in">sqrt</span>(R*R - i * i) - (R - <span class="number">2</span> * I)); e++)</span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">&quot;\3&quot;</span>);</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">for</span> (; ; )</span><br><span class="line">			&#123;</span><br><span class="line">				system(<span class="string">&quot;color a&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color b&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color c&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color d&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color e&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color f&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++);</span><br><span class="line">				system(<span class="string">&quot;color 0&quot;</span>); <span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++);</span><br><span class="line">				system(<span class="string">&quot;color 1&quot;</span>); <span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++);</span><br><span class="line">				system(<span class="string">&quot;color 2&quot;</span>); <span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++);</span><br><span class="line">				system(<span class="string">&quot;color 3&quot;</span>); <span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++);</span><br><span class="line">				system(<span class="string">&quot;color 4&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color 5&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color 6&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color 7&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color 8&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color 9&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color ab&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color ac&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color ad&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color ae&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color af&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;输入错误\n&quot;</span>);<span class="comment">//不匹配输出的结果</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <tags>
+        <tag>学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>快乐周五</title>
+    <url>/2020/12/19/tuoli/</url>
+    <content><![CDATA[<blockquote>
+<p>这是这几个月最值得纪念的周五，体验了脱离学校的快乐</p>
+</blockquote>
+<p>2020.12.13</p>
+<p>  晚上和社团其它人一起谋划着“出校大计”，原本定在周六，但是由于学校要体测（挺佩服学校挑时间的能力🤬），不得不将时间改成周五，让快乐减少了一半😔</p>
+<p>2020.12.15</p>
+<p>  果然到了周末就会发现屁事很多😔，一个个周末都有事，只剩几个大男人可以出去，这次出校也变成了“罗汉出行”，照这样下去，不知道之后几天会发生什么😱</p>
+<p>2020.12.17</p>
+<p>  原本课上得好好的，突然一个朋友说周六体测取消了，改了时间，我直接当场爆炸🤬，没办法假条都上交了，时间也不能修改，只能认命</p>
+<p>2020.12.18</p>
+<p>  原本计划好的五个人，要走的时候最后一个人掉链子😔，最后变成四罗汉出行。</p>
+<p>开始打算看电影，但是觉得没什么好看的电影加上时间不够，所以改成了密室逃脱（补充一下，有个当地人带路非常重要😃）</p>
+<img src="/images/17.jpg" height="400" width="350" />
+
+<img src="/images/16.jpg" height="400" width="350" />
+
+<img src="/images/15.jpg" height="400" width="350" />
+
+<p>游戏体验还不错（除了那个怕鬼的师兄），还送了一个纪念品（下面的是买奶茶送的纪念品）😃</p>
+<img src="/images/20.jpg" height="400" width="350" />
+
+<p>最后去吃了碗拉面，味道还是相当不错的，就是价格有点小贵/(ㄒoㄒ)/~~</p>
+<p>饭后去逛了一下，带点东西给室友，最后打的回校</p>
+<img src="/images/19.jpg" height="400" width="350" />
+
+<p>  这次行程还是不错的（比呆在学校好多了），发现南昌还是蛮好玩的，但就是不知道下次出去是什么时候了😔</p>
+]]></content>
+      <tags>
+        <tag>生活</tag>
       </tags>
   </entry>
   <entry>
@@ -113,60 +253,6 @@
       <tags>
         <tag>学习</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>dos</title>
-    <url>/2020/12/06/dos/</url>
-    <content><![CDATA[<h1 id="win64位系统进入debug"><a href="#win64位系统进入debug" class="headerlink" title="win64位系统进入debug"></a>win64位系统进入debug</h1><blockquote>
-<p>最近一直在看汇编语言，想要实操，于是要进入debug模式，但是发现win64位系统无法直接进入，但最后经过几次尝试终于成功进入</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>1、首先要下载安装DOSBox，也就是下面这个东西</p>
-<img src="/images/5.jpg" height="400" width="350" />
-
-<p>安装地址：链接：<a href="https://pan.baidu.com/s/1B0dzSc--Ok_ds67ai4flmQ">https://pan.baidu.com/s/1B0dzSc--Ok_ds67ai4flmQ</a>     提取码：a7tp </p>
-<p>2、因为软件比较小，为了避免麻烦，我直接默认安装在C:\Program Files (x86)中</p>
-<p>3、找到 <strong>debug.exe</strong>，并把你喜欢的位置上，记住目录（等会用到）这里我放在<strong>D:\Debug</strong>目录下</p>
-<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><p>打开DOSBox.exe，输入以下指令</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mount c d:\debug</span><br><span class="line">c:</span><br><span class="line">debug</span><br></pre></td></tr></table></figure>
-
-<img src="/images/6.jpg" height="600" width="600" />
-
-<p>之后就进入了debug模式</p>
-<h1 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h1><p>如果嫌每次进入都需要输入很麻烦，可以在<strong>DOSBox 0.74 Options.bat</strong>的脚本文件进行修改，步骤如下：</p>
-<p>1、找到<strong>DOSBox 0.74 Options.bat</strong>，双击点开</p>
-<p>2、点开后拉至最底下输入</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mount c d:\debug</span><br><span class="line">c:</span><br></pre></td></tr></table></figure>
-
-<p>3、保存退出</p>
-<img src="/images/7.jpg" height="600" width="600" />
-
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>开 <strong>DOSBox</strong> 会同时打开两个窗口，其中一个是黑色的控制台窗口，在控制台窗口中指明了配置文件的绝对路径</p>
-<img src="/images/8.jpg" height="600" width="600" />]]></content>
-      <tags>
-        <tag>学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2020/11/20/hexo/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<a id="more"></a>
-
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
   </entry>
   <entry>
     <title>汇编语言(持续更新中)</title>
@@ -494,81 +580,76 @@
       </tags>
   </entry>
   <entry>
-    <title>排序</title>
-    <url>/2020/12/23/paixu/</url>
-    <content><![CDATA[<blockquote>
-<p>最近开始学习算法，看了半天发现并没有想象的那么简单。最后再总结一下，大致如下</p>
+    <title>dos</title>
+    <url>/2020/12/06/dos/</url>
+    <content><![CDATA[<h1 id="win64位系统进入debug"><a href="#win64位系统进入debug" class="headerlink" title="win64位系统进入debug"></a>win64位系统进入debug</h1><blockquote>
+<p>最近一直在看汇编语言，想要实操，于是要进入debug模式，但是发现win64位系统无法直接进入，但最后经过几次尝试终于成功进入</p>
 </blockquote>
-<p>第一个是桶排序，这个排序方法易懂，但缺点也多，比如耗费空间较多，对排序的数的大小也有要求，难度也较高。桶排序的代码如下：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> book[<span class="number">1001</span>], i, j, t, n;  <span class="comment">//我们需要1001个桶，来表示0~1000之间每一个数出现的次数</span></span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt;= <span class="number">1000</span>; i++)  <span class="comment">//初始化</span></span><br><span class="line">		book[i] = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请输入有多少个数需要排序\n&quot;</span>);</span><br><span class="line">	scanf_s(<span class="string">&quot;%d&quot;</span>, &amp;n,<span class="keyword">sizeof</span>(n));  <span class="comment">//输入共有多少数排序</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请依次输入要排序的数(数字范围是0~1000))\n&quot;</span>);</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= n; i++)  <span class="comment">//循环读入n个数，并进行桶排序 </span></span><br><span class="line">	&#123;</span><br><span class="line">		scanf_s(<span class="string">&quot;%d&quot;</span>, &amp;t,<span class="keyword">sizeof</span>(t));</span><br><span class="line">		book[t]++;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">1000</span>; i &gt;= <span class="number">0</span>; i--)  <span class="comment">//依次判断a[0]~a[10]</span></span><br><span class="line">		<span class="keyword">for</span> (j = <span class="number">1</span>; j &lt;= book[i]; j++)</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, i);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 
-<p>由于第一种方法缺点较多，所以有了第二种排序方法，叫做冒泡排序。</p>
-]]></content>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>1、首先要下载安装DOSBox，也就是下面这个东西</p>
+<img src="/images/5.jpg" height="400" width="350" />
+
+<p>安装地址：链接：<a href="https://pan.baidu.com/s/1B0dzSc--Ok_ds67ai4flmQ">https://pan.baidu.com/s/1B0dzSc--Ok_ds67ai4flmQ</a>     提取码：a7tp </p>
+<p>2、因为软件比较小，为了避免麻烦，我直接默认安装在C:\Program Files (x86)中</p>
+<p>3、找到 <strong>debug.exe</strong>，并把你喜欢的位置上，记住目录（等会用到）这里我放在<strong>D:\Debug</strong>目录下</p>
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><p>打开DOSBox.exe，输入以下指令</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mount c d:\debug</span><br><span class="line">c:</span><br><span class="line">debug</span><br></pre></td></tr></table></figure>
+
+<img src="/images/6.jpg" height="600" width="600" />
+
+<p>之后就进入了debug模式</p>
+<h1 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h1><p>如果嫌每次进入都需要输入很麻烦，可以在<strong>DOSBox 0.74 Options.bat</strong>的脚本文件进行修改，步骤如下：</p>
+<p>1、找到<strong>DOSBox 0.74 Options.bat</strong>，双击点开</p>
+<p>2、点开后拉至最底下输入</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mount c d:\debug</span><br><span class="line">c:</span><br></pre></td></tr></table></figure>
+
+<p>3、保存退出</p>
+<img src="/images/7.jpg" height="600" width="600" />
+
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>开 <strong>DOSBox</strong> 会同时打开两个窗口，其中一个是黑色的控制台窗口，在控制台窗口中指明了配置文件的绝对路径</p>
+<img src="/images/8.jpg" height="600" width="600" />]]></content>
       <tags>
         <tag>学习</tag>
       </tags>
   </entry>
   <entry>
-    <title>快乐周五</title>
-    <url>/2020/12/19/tuoli/</url>
-    <content><![CDATA[<blockquote>
-<p>这是这几个月最值得纪念的周五，体验了脱离学校的快乐</p>
-</blockquote>
-<p>2020.12.13</p>
-<p>  晚上和社团其它人一起谋划着“出校大计”，原本定在周六，但是由于学校要体测（挺佩服学校挑时间的能力🤬），不得不将时间改成周五，让快乐减少了一半😔</p>
-<p>2020.12.15</p>
-<p>  果然到了周末就会发现屁事很多😔，一个个周末都有事，只剩几个大男人可以出去，这次出校也变成了“罗汉出行”，照这样下去，不知道之后几天会发生什么😱</p>
-<p>2020.12.17</p>
-<p>  原本课上得好好的，突然一个朋友说周六体测取消了，改了时间，我直接当场爆炸🤬，没办法假条都上交了，时间也不能修改，只能认命</p>
-<p>2020.12.18</p>
-<p>  原本计划好的五个人，要走的时候最后一个人掉链子😔，最后变成四罗汉出行。</p>
-<p>开始打算看电影，但是觉得没什么好看的电影加上时间不够，所以改成了密室逃脱（补充一下，有个当地人带路非常重要😃）</p>
-<img src="/images/17.jpg" height="400" width="350" />
+    <title>我的第一篇文章</title>
+    <url>/2020/11/21/My-First-Post/</url>
+    <content><![CDATA[<h2 id="新的开始"><a href="#新的开始" class="headerlink" title="新的开始"></a>新的开始</h2><p><em>这是本人第一次搭博客，走了许多弯路，经过了无数次的失败，浪费了大量的时间，但最终还是搭建完成。在这其中，我请教了石师兄和高师兄，借鉴了B站的视频，才最终成功。最后，我希望迈出这一小步后能够继续向前，并成为我想成为的人。</em></p>
+<a id="more"></a>
 
-<img src="/images/16.jpg" height="400" width="350" />
+<h3 id="音频测试"><a href="#音频测试" class="headerlink" title="音频测试"></a>音频测试</h3><h4 id="照片"><a href="#照片" class="headerlink" title="照片"></a>照片</h4><img src="/images/1.jpg" height="400" width="350" />
 
-<img src="/images/15.jpg" height="400" width="350" />
+<h4 id="音乐"><a href="#音乐" class="headerlink" title="音乐"></a>音乐</h4><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=400 height=86 src="//music.163.com/outchain/player?type=2&id=1477539203&auto=1&height=66"></iframe>
 
-<p>游戏体验还不错（除了那个怕鬼的师兄），还送了一个纪念品（下面的是买奶茶送的纪念品）😃</p>
-<img src="/images/20.jpg" height="400" width="350" />
+<h4 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h4><video src='/video/1.mp4' heigth='500px' controls>
 
-<p>最后去吃了碗拉面，味道还是相当不错的，就是价格有点小贵/(ㄒoㄒ)/~~</p>
-<p>饭后去逛了一下，带点东西给室友，最后打的回校</p>
-<img src="/images/19.jpg" height="400" width="350" />
 
-<p>  这次行程还是不错的（比呆在学校好多了），发现南昌还是蛮好玩的，但就是不知道下次出去是什么时候了😔</p>
+
 ]]></content>
       <tags>
-        <tag>生活</tag>
+        <tag>感想</tag>
       </tags>
   </entry>
   <entry>
-    <title>C语言中文输入</title>
-    <url>/2020/12/20/zhongwen/</url>
-    <content><![CDATA[<blockquote>
-<p>突发奇想，想如何用输入中文（虽然几乎用不到，但还是想尝试一下），于是花了一晚上去尝试，虽然花费挺久的，但最终还是成功搞定</p>
-</blockquote>
-<p>要想存储中文，肯定要用char,一个中文需要两个字节，所以肯定需要数组，所以是这样的</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">char</span> str[<span class="number">100</span>];</span><br></pre></td></tr></table></figure>
+    <title>Hello World</title>
+    <url>/2020/11/20/hexo/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<a id="more"></a>
 
-<p>接下来就应该是输入（因为用的是visual studio所以输入相对于dev c++有点不同）</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">scanf_s(<span class="string">&quot;%s&quot;</span>, str, <span class="keyword">sizeof</span>(str));</span><br></pre></td></tr></table></figure>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
-<p>其中要加_s是因为VS认为scanf不安全，读入字符串时可能造成数组越界，因此自己搞了个scanf_s函数。sizeof(str)是防止溢出，之所以加sizeof(str)不是加2，是因为scanf_s函数的输入限制给小了（之前一直卡在这里/(ㄒoㄒ)/~~）</p>
-<p>如何让计算机判断你输入的函数也是个问题，于是我上网查了一下，判断中文是不是指定数据，可以用strcmp()函数来进行比较，如果相匹配sizeof就会返回0，所以就应该是这样的</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">if (strcmp(str, &quot;输入要匹配的数&quot;) &#x3D;&#x3D; 0)</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 
-<p>在整理一下，完整代码如下：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">		<span class="keyword">char</span> str[<span class="number">100</span>];</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;请输入你的名字:&quot;</span>);</span><br><span class="line">		scanf_s(<span class="string">&quot;%s&quot;</span>, str, <span class="keyword">sizeof</span>(str));</span><br><span class="line">		<span class="keyword">if</span> (<span class="built_in">strcmp</span>(str, <span class="string">&quot;你好&quot;</span>) == <span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;我很好&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;输入错误\n&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 
-<p>结合今天发现的制作爱心的代码，就成了这样子：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;windows.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> I 20</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> R 340</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">char</span> str[<span class="number">100</span>];</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;请输入你的名字:&quot;</span>);</span><br><span class="line">		scanf_s(<span class="string">&quot;%s&quot;</span>, str, <span class="keyword">sizeof</span>(str));</span><br><span class="line">		<span class="keyword">if</span> (<span class="built_in">strcmp</span>(str, <span class="string">&quot;你想匹配的名字&quot;</span>) == <span class="number">0</span>)<span class="comment">//在这里添加想要匹配的名字</span></span><br><span class="line">		&#123;</span><br><span class="line">			system(<span class="string">&quot;cls&quot;</span>);<span class="comment">//清屏</span></span><br><span class="line">			<span class="keyword">int</span> i, j, e;</span><br><span class="line">			<span class="keyword">int</span> a;</span><br><span class="line">			<span class="keyword">long</span> time;</span><br><span class="line">			<span class="keyword">for</span> (i = <span class="number">1</span>, a = I; i &lt; I / <span class="number">2</span>; i++, a--)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">for</span> (j = (<span class="keyword">int</span>)(I - <span class="built_in">sqrt</span>(I*I - (a - i)*(a - i))); j &gt; <span class="number">0</span>; j--)</span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">&quot; &quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (e = <span class="number">1</span>; e &lt;= <span class="number">2</span> * <span class="built_in">sqrt</span>(I*I - (a - i)*(a - i)); e++)</span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">&quot;\3&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (j = (<span class="keyword">int</span>)</span><br><span class="line">					(<span class="number">2</span> * (I - <span class="built_in">sqrt</span>(I*I - (a - i)*(a - i)))); j &gt; <span class="number">0</span>; j--)</span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">&quot; &quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (e = <span class="number">1</span>; e &lt;= <span class="number">2</span> * <span class="built_in">sqrt</span>(I*I - (a - i)*(a - i)); e++)</span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">&quot;\3&quot;</span>);</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt; <span class="number">80</span>; i++)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span> (i == <span class="number">25</span>)</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">&quot;        %s        &quot;</span>,str);<span class="comment">//这里需要有23个字（包括空格）</span></span><br><span class="line">					i += <span class="number">30</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;\3&quot;</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">			<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= R / <span class="number">2</span>; i++)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span> (i % <span class="number">2</span> || i % <span class="number">3</span>)</span><br><span class="line">					<span class="keyword">continue</span>;</span><br><span class="line">				<span class="keyword">for</span> (j = (<span class="keyword">int</span>)(R - <span class="built_in">sqrt</span>(R*R - i * i)); j &gt; <span class="number">0</span>; j--)</span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">&quot; &quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (e = <span class="number">1</span>; e &lt;= <span class="number">2</span> * (<span class="built_in">sqrt</span>(R*R - i * i) - (R - <span class="number">2</span> * I)); e++)</span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">&quot;\3&quot;</span>);</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">for</span> (; ; )</span><br><span class="line">			&#123;</span><br><span class="line">				system(<span class="string">&quot;color a&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color b&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color c&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color d&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color e&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color f&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++);</span><br><span class="line">				system(<span class="string">&quot;color 0&quot;</span>); <span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++);</span><br><span class="line">				system(<span class="string">&quot;color 1&quot;</span>); <span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++);</span><br><span class="line">				system(<span class="string">&quot;color 2&quot;</span>); <span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++);</span><br><span class="line">				system(<span class="string">&quot;color 3&quot;</span>); <span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++);</span><br><span class="line">				system(<span class="string">&quot;color 4&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color 5&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color 6&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color 7&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color 8&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color 9&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color ab&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color ac&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color ad&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color ae&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color af&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;输入错误\n&quot;</span>);<span class="comment">//不匹配输出的结果</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
-
-
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
-      <tags>
-        <tag>学习</tag>
-      </tags>
   </entry>
 </search>
