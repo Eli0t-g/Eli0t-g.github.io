@@ -25,20 +25,20 @@
 
 <hr>
 <h2 id="4-眼见非实"><a href="#4-眼见非实" class="headerlink" title="4 眼见非实"></a>4 眼见非实</h2><p>打开后发现文件是损坏的而且出现了PK字符，猜测里面藏有压缩包，于是改成压缩包形式打开</p>
-<img src="/images/27.png" height="400" width="500" />
+<img src="/images/27.png" height="500" width="600" />
 
 <p>在word里面的document.xml里面发现了flag</p>
-<img src="/images/28.png" height="450" width="600" />
+<img src="/images/28.png" height="500" width="600" />
 
 <hr>
 <h2 id="5-啊哒"><a href="#5-啊哒" class="headerlink" title="5 啊哒"></a>5 啊哒</h2><p>老规矩，打开照片看属性，发现照相机型号有东西，之后应该用得上</p>
-<img src="/images/29.png" height="600" width="500" />
+<img src="/images/29.png" height="600" width="600" />
 
 <p>用binwalk查看，发现里面藏有一个压缩包，用foremost进行分离得到压缩包，打开发现是加密的，尝试了照相机型号，发现密码错误，分析了一下那串照相机型号，发现是十六进制，之后解码得到密码</p>
-<img src="/images/30.png" height="600" width="500" />
+<img src="/images/30.png" height="600" width="600" />
 
 <p>打开得到flag</p>
-<img src="/images/31.png" height="600" width="500" />
+<img src="/images/31.png" height="600" width="600" />
 
 <hr>
 <h2 id="6-ping"><a href="#6-ping" class="headerlink" title="6 ping"></a>6 ping</h2><p>用wireshark打开后发现十六进制旁边一个f，打开其它的发现组合起来是flag</p>
@@ -74,8 +74,50 @@
 
 <img src="/images/42.png" height="500" width="600" />
 
+<hr>
+<h2 id="9-又一张图片，还单纯吗"><a href="#9-又一张图片，还单纯吗" class="headerlink" title="9 又一张图片，还单纯吗"></a>9 又一张图片，还单纯吗</h2><p>打开属性发现没有有用的信息，丢进winhex里面也没发现什么，用binwalk查看发现照片里面有其它jpg照片，用forem分离</p>
+<img src="/images/43.png" height="500" width="600" />
 
+<p>发现图片里面有flag（不过这个flag有点长，有点离谱）</p>
+<img src="/images/44.png" height="500" width="600" />
 
+<hr>
+<h2 id="10-猜"><a href="#10-猜" class="headerlink" title="10 猜"></a>10 猜</h2><p>签到题，百度识图，发现是刘亦菲，得到flag（注意flag格式）</p>
+<hr>
+<h2 id="11-宽带信息泄露"><a href="#11-宽带信息泄露" class="headerlink" title="11 宽带信息泄露"></a>11 宽带信息泄露</h2><p>下载RouterPassView，用这个搜索username（用户名）</p>
+<img src="/images/53.png" height="500" width="600" />
+
+<hr>
+<h2 id="12-隐写2"><a href="#12-隐写2" class="headerlink" title="12 隐写2"></a>12 隐写2</h2><p>直接丢进winhex，发现jpg图片结尾后面有压缩包的字符</p>
+<img src="/images/45.png" height="500" width="600" />
+
+<p>用foremost分离得到一个加密的文件和密码提示，解密（直接爆破，反正是三位数）得到一张图片</p>
+<img src="/images/46.png" height="500" width="600" />
+
+<p>老规矩丢winhex，发现最后有flag</p>
+<img src="/images/47.png" height="500" width="600" />
+
+<hr>
+<h2 id="13-多种方法解决"><a href="#13-多种方法解决" class="headerlink" title="13 多种方法解决"></a>13 多种方法解决</h2><p>这道题提示说有二维码，打开附件发现是一个exe可执行文件（尝试打开发现无法运行），直接丢winhex</p>
+<img src="/images/48.png" height="500" width="600" />
+
+<p>发现是旁边是加密的图片编码，直接在线解码得到flag</p>
+<img src="/images/49.png" height="500" width="600" />
+
+<hr>
+<h2 id="14-闪的好快"><a href="#14-闪的好快" class="headerlink" title="14 闪的好快"></a>14 闪的好快</h2><p>emmmm，这道题挺简单的就是好烦，用Stegsolve.jar一帧一帧看，扫码，flag就出来了</p>
+<hr>
+<h2 id="15-come-game"><a href="#15-come-game" class="headerlink" title="15 come_game"></a>15 come_game</h2><p>打开后是个游戏，每次死亡都会多个文件，找到save1将它丢尽winhex里面，将2AC改成5AC在进游戏就可以得到flag，当然如果觉得能闯过去也应该能得到flag。（我没试过，不确定能不能行，提醒一下这个游戏打开了好像不能关闭）</p>
+<img src="/images/50.png" height="500" width="600" />
+
+<hr>
+<h2 id="16-白哥的鸽子"><a href="#16-白哥的鸽子" class="headerlink" title="16 白哥的鸽子"></a>16 白哥的鸽子</h2><p>直接丢进winhex里面，发现照片结尾后面多出一些字符，分析一下就知道是栅栏加密</p>
+<img src="/images/51.png" height="500" width="600" />
+
+<p>解密（密匙我是一个一个试的，不过还好就是3，后面才知道那个提示“咕咕咕”好像就代表key=3）</p>
+<img src="/images/52.png" height="500" width="600" />
+
+<h2 id="17-linux"><a href="#17-linux" class="headerlink" title="17 linux"></a>17 linux</h2><p>看到题目就知道要用Linux系统</p>
 ]]></content>
       <tags>
         <tag>wp</tag>
