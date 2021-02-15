@@ -242,7 +242,7 @@
 <p>表示算法的方法：自然语言、传统流程图、结构化流程图、伪代码等</p>
 </li>
 </ul>
-<h1 id="数型数据的存储空间和数值范围"><a href="#数型数据的存储空间和数值范围" class="headerlink" title="数型数据的存储空间和数值范围"></a>数型数据的存储空间和数值范围</h1><table>
+<h1 id="数型类型"><a href="#数型类型" class="headerlink" title="数型类型"></a>数型类型</h1><table>
 <thead>
 <tr>
 <th align="left">类型</th>
@@ -251,6 +251,21 @@
 </tr>
 </thead>
 <tbody><tr>
+<td align="left">char(字符型)</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">float(浮点型)</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">double(浮点型)</td>
+<td>8</td>
+<td></td>
+</tr>
+<tr>
 <td align="left">[ signed] int (基本整型)</td>
 <td>4</td>
 <td>-2^31~2^31-1</td>
@@ -291,7 +306,26 @@
 <td>0~2^64-1</td>
 </tr>
 </tbody></table>
-]]></content>
+<p>输出 char 类型数据需要  %c</p>
+<p>输出 float 类型数据需要  %f (默认是六位小数，如果想控制保留的位数需加“.x”x是所要保留的位数，如保留两位小数：%.2f)</p>
+<p>输出 double 类型数据需要  %f (输出时同float)</p>
+<p>输出 int 类型数据需要  %d (如果d前面加数字意思时补位)</p>
+<p>输出 unsigned int 类型数据需要  %u</p>
+<p>输出 short 类型数据需要  %hd</p>
+<p>输出 unsigned short 类型数据需要  %u</p>
+<p>输出 long 类型数据需要  %ld(也可以使用%d，但是这会给程序移植到其他系统（这两种数据类型的长度不一样的系统）带来麻烦，所以建议使用%ld)</p>
+<p>输出 unsigned long 类型数据需要  %lu</p>
+<p>输出 long long 类型数据需要  %lld</p>
+<p>输出 unsigned long long 类型数据需要  %llu</p>
+<p><strong>float 和 double 虽然类型都是浮点型，但是double更为精确，但是double更占内存，所以要根据情况而定</strong></p>
+<p><strong>不同位数计算机中数据类型所占字节数有些不同，上述所述为32位计算机</strong></p>
+<p><strong>如果规定输出格式，如输出的数据必须为八进制或十六进制则需要以下方式输出</strong></p>
+<p>八进制：%o  %#o(格式化)</p>
+<p>十六进制：%x  %#x(格式化)</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a;</span><br><span class="line">	a=<span class="number">100</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%O  %#o \n&quot;</span>,a,a);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%X  %#x&quot;</span>,a,a);</span><br><span class="line">	getchar(); </span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出</p>
+<img src="/images/56.png" height="400" width="400" />]]></content>
       <tags>
         <tag>学习</tag>
       </tags>
