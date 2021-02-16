@@ -306,6 +306,7 @@
 <td>0~2^64-1</td>
 </tr>
 </tbody></table>
+<h1 id="格式化输入输出"><a href="#格式化输入输出" class="headerlink" title="格式化输入输出"></a>格式化输入输出</h1><h2 id="输出数据"><a href="#输出数据" class="headerlink" title="输出数据"></a>输出数据</h2><p>输出字符串需要%s (虽然C语言中没有存储字符串的数据类型，但是可以采用使用数组的方式存储)</p>
 <p>输出 char 类型数据需要  %c</p>
 <p>输出 float 类型数据需要  %f (默认是六位小数，如果想控制保留的位数需加“.x”x是所要保留的位数，如保留两位小数：%.2f)</p>
 <p>输出 double 类型数据需要  %f (输出时同float)</p>
@@ -317,15 +318,39 @@
 <p>输出 unsigned long 类型数据需要  %lu</p>
 <p>输出 long long 类型数据需要  %lld</p>
 <p>输出 unsigned long long 类型数据需要  %llu</p>
-<p><strong>float 和 double 虽然类型都是浮点型，但是double更为精确，但是double更占内存，所以要根据情况而定</strong></p>
+<p><strong>float 和 double 虽然类型都是浮点型，但是double双精度更为精确，但是double更占内存，所以要根据情况而定，同时输入double时不是 ”%f“ 而是 ”%lf“</strong></p>
 <p><strong>不同位数计算机中数据类型所占字节数有些不同，上述所述为32位计算机</strong></p>
 <p><strong>如果规定输出格式，如输出的数据必须为八进制或十六进制则需要以下方式输出</strong></p>
-<p>八进制：%o  %#o(格式化)</p>
+<h2 id="按特定格式输出"><a href="#按特定格式输出" class="headerlink" title="按特定格式输出"></a>按特定格式输出</h2><p>八进制：%o  %#o(格式化)</p>
 <p>十六进制：%x  %#x(格式化)</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a;</span><br><span class="line">	a=<span class="number">100</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%O  %#o \n&quot;</span>,a,a);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%X  %#x&quot;</span>,a,a);</span><br><span class="line">	getchar(); </span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>输出</p>
-<img src="/images/56.png" height="400" width="400" />]]></content>
+<img src="/images/56.png" height="400" width="400" />
+
+<h2 id="输出特殊字符"><a href="#输出特殊字符" class="headerlink" title="输出特殊字符"></a>输出特殊字符</h2><p>输出 ？：/？</p>
+<p>输出 / ：//</p>
+<p>输出 % ：%%</p>
+<h1 id="define"><a href="#define" class="headerlink" title="define"></a>define</h1><blockquote>
+<p>之所以单独拿出来讲，是因为容易出错</p>
+</blockquote>
+<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>define作用类似于赋值，但它更加灵活，可以将用一些字符代替字符串，如：</p>
+<p>#define A “nihao”；#define A 0；#define A ‘a’</p>
+<p><strong>因为nihao是字符串，所以需要加双引号，如果只是数字就不需要，如果是字符就需要单引号。除此之外，虽然没有硬性规定define后面定义的字符要大写，但一般都是要遵守的</strong></p>
+<h2 id="易错点"><a href="#易错点" class="headerlink" title="易错点"></a>易错点</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> M 3+1</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a;</span><br><span class="line">    a=M*M/<span class="number">2</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,a);</span><br><span class="line">    getchar();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面代码输出结果很容易被认为是8，但实际输出结果是6</p>
+<p>错误原因：</p>
+<p>首先，M被定义为3+1，在计算a前不会编译器不会先计算3+1而是直接将3+1带入进去，所以a=M * M/2就变成了a=3+1 * 3+1,之后因为M是整型数据，所以会把小数点后面的数丢弃所以最终答案为6</p>
+<h2 id="与const的区别"><a href="#与const的区别" class="headerlink" title="与const的区别"></a>与const的区别</h2><ul>
+<li>编译器处理方式不同<br> 　#define宏是在预处理阶段展开。<br> 　const常量是编译运行阶段使用。</li>
+<li>类型和安全检查不同<br> 　#define宏没有类型，不做任何类型检查，仅仅是展开。<br> 　const常量有具体的类型，在编译阶段会执行类型检查。</li>
+<li>存储方式不同<br> 　#define宏仅仅是展开，有多少地方使用，就展开多少次，不会分配内存。（宏定义不分配内存，变量定义分配内存。）<br> 　const常量会在内存中分配(可以是堆中也可以是栈中)。</li>
+<li>const  可以节省空间，避免不必要的内存分配。 例如：<br> #define NUM 3.14159  //常量宏<br> const doulbe Num = 3.14159; //此时并未将Pi放入ROM中 ……<br> double i = Num; //此时为Pi分配内存，以后不再分配！<br> double  I= NUM; //编译期间进行宏替换，分配内存<br> double j = Num; //没有内存分配<br> double J = NUM; //再进行宏替换，又一次分配内存！<br> const定义常量从汇编的角度来看，只是给出了对应的内存地址，而不是象#define一样给出的是立即数，所以，const定义的常量在程序运行过程中只有一份拷贝（因为是全局的只读变量，存在静态区），而 #define定义的常量在内存中有若干个拷贝。</li>
+<li>提高了效率。 编译器通常不为普通const常量分配存储空间，而是将它们保存在符号表中，这使得它成为一个编译期间的常量，没有了存储与读内存的操作，使得它的效率也很高。</li>
+<li>宏替换只作替换，不做计算，不做表达式求解;<br> 宏预编译时就替换了，程序运行时，并不分配内存。</li>
+</ul>
+]]></content>
       <tags>
         <tag>学习</tag>
       </tags>
