@@ -14,17 +14,15 @@
 <p>作用：格式化字符串  </p>
 <p>用法：str.format()</p>
 <p>实例：</p>
-<ul>
-<li><pre><code class="python">&gt;&gt;&gt;print(&quot;&#123;&#125; &#123;&#125;&quot;.format(&quot;hello&quot;, &quot;world&quot;)&quot;)   # 不设置指定位置
-&#39;hello world&#39;
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">+ &#96;&#96;&#96;python</span><br><span class="line">  &gt;&gt;&gt;print(&quot;&#123;1&#125; &#123;0&#125; &#123;1&#125;&quot;.format(&quot;hello&quot;, &quot;world&quot;)&quot;)  # 设置指定位置</span><br><span class="line">  &#39;world hello world&#39;</span><br></pre></td></tr></table></figure></code></pre>
-</li>
-<li><pre><code class="python">&gt;&gt;&gt;print(&#39;Hello &#123;w&#125;&#39;.format(w=&#39;World&#39;)) # 指定参数
-Hello World
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">enumerate()  函数</span><br><span class="line"></span><br><span class="line">作用：遍历的数据对象组合为一个索引序列，同时列出数据和数据下标  </span><br><span class="line"></span><br><span class="line">用法：enumerate(sequence, [start&#x3D;0])</span><br><span class="line"></span><br><span class="line">实例：</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;python</span><br><span class="line">a &#x3D; [&#39;a&#39;,&#39;b&#39;,&#39;c&#39;]</span><br><span class="line">for x,y in enumerate(a):</span><br><span class="line">    print(x,y)</span><br></pre></td></tr></table></figure>
-</code></pre>
-</li>
-</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&gt;&gt;&gt;print(<span class="string">&quot;&#123;&#125; &#123;&#125;&quot;</span>.<span class="built_in">format</span>(<span class="string">&quot;hello&quot;</span>, <span class="string">&quot;world&quot;</span>)<span class="string">&quot;)   # 不设置指定位置</span></span><br><span class="line"><span class="string">&#x27;hello world&#x27;</span></span><br><span class="line"><span class="string">&gt;&gt;&gt;print(&quot;</span>&#123;<span class="number">1</span>&#125; &#123;<span class="number">0</span>&#125; &#123;<span class="number">1</span>&#125;<span class="string">&quot;.format(&quot;</span>hello<span class="string">&quot;, &quot;</span>world<span class="string">&quot;)&quot;</span>)  <span class="comment"># 设置指定位置</span></span><br><span class="line"><span class="string">&#x27;world hello world&#x27;</span>  </span><br><span class="line">&gt;&gt;&gt;print(<span class="string">&#x27;Hello &#123;w&#125;&#x27;</span>.<span class="built_in">format</span>(w=<span class="string">&#x27;World&#x27;</span>)) <span class="comment"># 指定参数</span></span><br><span class="line">Hello World</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>enumerate()  函数</p>
+<p>作用：遍历的数据对象组合为一个索引序列，同时列出数据和数据下标  </p>
+<p>用法：enumerate(sequence, [start=0])</p>
+<p>实例：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = [<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;c&#x27;</span>]</span><br><span class="line"><span class="keyword">for</span> x,y <span class="keyword">in</span> <span class="built_in">enumerate</span>(a):</span><br><span class="line">    print(x,y)</span><br></pre></td></tr></table></figure>
+
 <p>输出：</p>
 <p>0 a</p>
 <p>1 b</p>
