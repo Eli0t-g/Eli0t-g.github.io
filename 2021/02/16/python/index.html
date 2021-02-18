@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>python学习心得 - 桂的小基地</title>
+    <title>python学习心得 - Kirito</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
@@ -15,7 +15,7 @@
 
 编译器我认为目前有两个编译器比较好，一个是pycharm，另一个是VScode,"> 
     <meta name="author" content="Eli0t-g"> 
-    <link rel="alternative" href="atom.xml" title="桂的小基地" type="application/atom+xml"> 
+    <link rel="alternative" href="atom.xml" title="Kirito" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
     
     
@@ -34,7 +34,7 @@
 <meta name="generator" content="Hexo 5.2.0"></head>
 
 <body class="loading">
-    <span id="config-title" style="display:none">桂的小基地</span>
+    <span id="config-title" style="display:none">Kirito</span>
     <div id="loader"></div>
     <div id="single">
     <div id="top" style="display: block;">
@@ -69,6 +69,76 @@
 <p>寒假学习python是我没想到的，但是的确学到了不少知识。在这里分享一下我所学到的与我总结的关于python的知识</p>
 </blockquote>
 <h1 id="编译器"><a href="#编译器" class="headerlink" title="编译器"></a>编译器</h1><p>我认为目前有两个编译器比较好，一个是pycharm，另一个是VScode。这两个各有优劣，pycharm专业版比较正规，功能齐全，对初学者比较友好，但不支持其它编程语言。VScode支持非常多的插件，是当今主流编译器，而且十分简洁，还可以做成自己喜欢的风格，支持多语言，同时还非常小，但是功能却不如pycharm齐全。所以如果是主学python我推荐使用python，如果还学其它语言我推荐VScode。</p>
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><blockquote>
+<p>记录一些我容易忘记的，便于以后复习使用</p>
+</blockquote>
+<p>format() 函数</p>
+<p>作用：格式化字符串  </p>
+<p>用法：str.format()</p>
+<p>实例：</p>
+<ul>
+<li><pre><code class="python">&gt;&gt;&gt;print(&quot;&#123;&#125; &#123;&#125;&quot;.format(&quot;hello&quot;, &quot;world&quot;)&quot;)   # 不设置指定位置
+&#39;hello world&#39;
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">+ &#96;&#96;&#96;python</span><br><span class="line">  &gt;&gt;&gt;print(&quot;&#123;1&#125; &#123;0&#125; &#123;1&#125;&quot;.format(&quot;hello&quot;, &quot;world&quot;)&quot;)  # 设置指定位置</span><br><span class="line">  &#39;world hello world&#39;</span><br></pre></td></tr></table></figure></code></pre>
+</li>
+<li><pre><code class="python">&gt;&gt;&gt;print(&#39;Hello &#123;w&#125;&#39;.format(w=&#39;World&#39;)) # 指定参数
+Hello World
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">enumerate()  函数</span><br><span class="line"></span><br><span class="line">作用：遍历的数据对象组合为一个索引序列，同时列出数据和数据下标  </span><br><span class="line"></span><br><span class="line">用法：enumerate(sequence, [start&#x3D;0])</span><br><span class="line"></span><br><span class="line">实例：</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;python</span><br><span class="line">a &#x3D; [&#39;a&#39;,&#39;b&#39;,&#39;c&#39;]</span><br><span class="line">for x,y in enumerate(a):</span><br><span class="line">    print(x,y)</span><br></pre></td></tr></table></figure>
+</code></pre>
+</li>
+</ul>
+<p>输出：</p>
+<p>0 a</p>
+<p>1 b</p>
+<p>2 c</p>
+<hr>
+<p>ord()  函数</p>
+<p>作用：返回指定对象的ASCII码对应的十进制  </p>
+<p>用法：ord(object)</p>
+<p>实例：</p>
+<p>&gt;&gt;&gt;ord(‘a’) </p>
+<p>97</p>
+<hr>
+<p>divmod()  函数</p>
+<p>作用：输入除数和余数，返回商和余数  </p>
+<p>用法：divmod(number,number)</p>
+<p>实例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">divmod</span>(<span class="number">7</span>,<span class="number">3</span>)</span><br><span class="line">(<span class="number">2</span>, <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>abs()  函数</p>
+<p>作用：返回数字的绝对值 </p>
+<p>用法：abs(number)</p>
+<p>实例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">abs</span>(-<span class="number">10</span>)</span><br><span class="line"><span class="number">10</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>open() 函数</p>
+<p>作用：打开一个文件，创建一个 <strong>file</strong> 对象，相关的方法才可以调用它进行读写</p>
+<p>用法：open(name[, mode[, buffering]])</p>
+<p>实例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;f = <span class="built_in">open</span>(<span class="string">&#x27;test.txt&#x27;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f.read()</span><br><span class="line"><span class="string">&#x27;RUNOOB1\nRUNOOB2\n&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>sort() 函数</p>
+<p>作用：列表进行排序，如果指定参数，则使用比较函数指定的比较函数</p>
+<p>用法：list.sort(key=None, reverse=False)</p>
+<ul>
+<li>key：主要是用来进行比较的元素，只有一个参数，具体的函数的参数就是取自于可迭代对象中，指定可迭代对象中的一个元素来进行排序。</li>
+<li>reverse – 排序规则，<strong>reverse = True</strong> 降序， <strong>reverse = False</strong> 升序（默认）</li>
+</ul>
+<p>实例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">takeSecond</span>(<span class="params">elem</span>):</span></span><br><span class="line">    <span class="keyword">return</span> elem[<span class="number">1</span>]</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 列表</span></span><br><span class="line">random = [(<span class="number">2</span>, <span class="number">2</span>), (<span class="number">3</span>, <span class="number">4</span>), (<span class="number">4</span>, <span class="number">1</span>), (<span class="number">1</span>, <span class="number">3</span>)]</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 指定第二个元素排序</span></span><br><span class="line">random.sort(key=takeSecond)</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 输出类别</span></span><br><span class="line">print(<span class="string">&#x27;排序列表：&#x27;</span>)</span><br><span class="line">print(random)</span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">排序列表：</span><br><span class="line">[(4, 1), (2, 2), (1, 3), (3, 4)]</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 列表</span></span><br><span class="line">vowels = [<span class="string">&#x27;e&#x27;</span>, <span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;u&#x27;</span>, <span class="string">&#x27;o&#x27;</span>, <span class="string">&#x27;i&#x27;</span>]</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 降序</span></span><br><span class="line">vowels.sort(reverse=<span class="literal">True</span>)</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line">print(<span class="string">&#x27;降序输出:&#x27;</span>)</span><br><span class="line">print( vowels )</span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">降序输出:</span><br><span class="line">[&#39;u&#39;, &#39;o&#39;, &#39;i&#39;, &#39;e&#39;, &#39;a&#39;]</span><br></pre></td></tr></table></figure>
+
+<hr>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
@@ -104,7 +174,7 @@
     </div>
     
         <div class='side'>
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E5%99%A8"><span class="toc-number">1.</span> <span class="toc-text">编译器</span></a></li></ol>	
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E5%99%A8"><span class="toc-number">1.</span> <span class="toc-text">编译器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-number">2.</span> <span class="toc-text">函数</span></a></li></ol>	
         </div>
     
 </div>
