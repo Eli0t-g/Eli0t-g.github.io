@@ -4,20 +4,41 @@
     <title>python学习心得</title>
     <url>/2021/02/16/python/</url>
     <content><![CDATA[<blockquote>
-<p>寒假学习python是我没想到的，但是的确学到了不少知识。在这里分享一下我所学到的与我总结的关于python的知识</p>
+<p>寒假学习python是我没想到的，但是的确学到了不少知识。在这里分享一下我所学到的与我总结一些的关于python内置函数的知识</p>
 </blockquote>
-<h1 id="编译器"><a href="#编译器" class="headerlink" title="编译器"></a>编译器</h1><p>我认为目前有两个编译器比较好，一个是pycharm，另一个是VScode。这两个各有优劣，pycharm专业版比较正规，功能齐全，对初学者比较友好，但不支持其它编程语言。VScode支持非常多的插件，是当今主流编译器，而且十分简洁，还可以做成自己喜欢的风格，支持多语言，同时还非常小，但是功能却不如pycharm齐全。所以如果是主学python我推荐使用python，如果还学其它语言我推荐VScode。</p>
-<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><blockquote>
-<p>记录一些我容易忘记的，便于以后复习使用</p>
-</blockquote>
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="与字符相关的函数"><a href="#与字符相关的函数" class="headerlink" title="与字符相关的函数"></a>与字符相关的函数</h2><p>isinstance() </p>
+<p>作用：判断一个对象是否是一个已知的类型，类似 type()。</p>
+<p>用法：isinstance(object, classinfo)</p>
+<p>实例：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&gt;&gt;&gt;a = <span class="number">2</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">isinstance</span> (a,<span class="built_in">int</span>)</span><br><span class="line"><span class="literal">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">isinstance</span> (a,<span class="built_in">str</span>)</span><br><span class="line"><span class="literal">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">isinstance</span> (a,(<span class="built_in">str</span>,<span class="built_in">int</span>,<span class="built_in">list</span>))    <span class="comment"># 是元组中的一个返回 True</span></span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>divmod()  </p>
+<p>作用：输入除数和余数，返回商和余数  </p>
+<p>用法：divmod(number,number)</p>
+<p>实例：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">divmod</span>(<span class="number">7</span>,<span class="number">3</span>)</span><br><span class="line">(<span class="number">2</span>, <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>ord()  </p>
+<p>作用：返回指定对象的ASCII码对应的十进制  </p>
+<p>用法：ord(object)</p>
+<p>实例：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="built_in">ord</span>(<span class="string">&#x27;a&#x27;</span>) </span><br><span class="line"><span class="number">97</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="与字符串相关的函数"><a href="#与字符串相关的函数" class="headerlink" title="与字符串相关的函数"></a>与字符串相关的函数</h2><p>eval()</p>
+<p>作用：用来执行一个字符串表达式，并返回表达式的值</p>
+<p>用法：eval(string)</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="built_in">eval</span>(<span class="string">&#x27;5+3&#x27;</span>)</span><br><span class="line"><span class="number">8</span></span><br></pre></td></tr></table></figure>
+
+<hr>
 <p>format() 函数</p>
 <p>作用：格式化字符串  </p>
 <p>用法：str.format()</p>
 <p>实例：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt;&gt;&gt;print(&quot;&#123;&#125; &#123;&#125;&quot;.format(&quot;hello&quot;, &quot;world&quot;)&quot;)   # 不设置指定位置</span><br><span class="line">&#39;hello world&#39;</span><br><span class="line">&gt;&gt;&gt;print(&quot;&#123;1&#125; &#123;0&#125; &#123;1&#125;&quot;.format(&quot;hello&quot;, &quot;world&quot;)&quot;)  # 设置指定位置</span><br><span class="line">&#39;world hello world&#39;  </span><br><span class="line">&gt;&gt;&gt;print(&#39;Hello &#123;w&#125;&#39;.format(w&#x3D;&#39;World&#39;)) # 指定参数</span><br><span class="line">Hello World</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&gt;&gt;&gt;print(<span class="string">&quot;&#123;&#125; &#123;&#125;&quot;</span>.<span class="built_in">format</span>(<span class="string">&quot;hello&quot;</span>, <span class="string">&quot;world&quot;</span>)<span class="string">&quot;)   # 不设置指定位置</span></span><br><span class="line"><span class="string">&#x27;hello world&#x27;</span></span><br><span class="line"><span class="string">&gt;&gt;&gt;print(&quot;</span>&#123;<span class="number">1</span>&#125; &#123;<span class="number">0</span>&#125; &#123;<span class="number">1</span>&#125;<span class="string">&quot;.format(&quot;</span>hello<span class="string">&quot;, &quot;</span>world<span class="string">&quot;)&quot;</span>)  <span class="comment"># 设置指定位置</span></span><br><span class="line"><span class="string">&#x27;world hello world&#x27;</span>  </span><br><span class="line">&gt;&gt;&gt;print(<span class="string">&#x27;Hello &#123;w&#125;&#x27;</span>.<span class="built_in">format</span>(w=<span class="string">&#x27;World&#x27;</span>)) <span class="comment"># 指定参数</span></span><br><span class="line">Hello World</span><br></pre></td></tr></table></figure>
 
-<hr>
-<p>enumerate()  函数</p>
+<h2 id="与列表相关的函数"><a href="#与列表相关的函数" class="headerlink" title="与列表相关的函数"></a>与列表相关的函数</h2><p>enumerate()  函数</p>
 <p>作用：遍历的数据对象组合为一个索引序列，同时列出数据和数据下标  </p>
 <p>用法：enumerate(sequence, [start=0])</p>
 <p>实例：</p>
@@ -27,34 +48,6 @@
 <p>0 a</p>
 <p>1 b</p>
 <p>2 c</p>
-<hr>
-<p>ord()  函数</p>
-<p>作用：返回指定对象的ASCII码对应的十进制  </p>
-<p>用法：ord(object)</p>
-<p>实例：</p>
-<p>&gt;&gt;&gt;ord(‘a’) </p>
-<p>97</p>
-<hr>
-<p>divmod()  函数</p>
-<p>作用：输入除数和余数，返回商和余数  </p>
-<p>用法：divmod(number,number)</p>
-<p>实例：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">divmod</span>(<span class="number">7</span>,<span class="number">3</span>)</span><br><span class="line">(<span class="number">2</span>, <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>abs()  函数</p>
-<p>作用：返回数字的绝对值 </p>
-<p>用法：abs(number)</p>
-<p>实例：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">abs</span>(-<span class="number">10</span>)</span><br><span class="line"><span class="number">10</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>open() 函数</p>
-<p>作用：打开一个文件，创建一个 <strong>file</strong> 对象，相关的方法才可以调用它进行读写</p>
-<p>用法：open(name[, mode[, buffering]])</p>
-<p>实例：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&gt;&gt;&gt;f = <span class="built_in">open</span>(<span class="string">&#x27;test.txt&#x27;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f.read()</span><br><span class="line"><span class="string">&#x27;RUNOOB1\nRUNOOB2\n&#x27;</span></span><br></pre></td></tr></table></figure>
-
 <hr>
 <p>sort() 函数</p>
 <p>作用：列表进行排序，如果指定参数，则使用比较函数指定的比较函数</p>
@@ -73,6 +66,35 @@
 
 <p>输出：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">降序输出:</span><br><span class="line">[&#39;u&#39;, &#39;o&#39;, &#39;i&#39;, &#39;e&#39;, &#39;a&#39;]</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>zip()</p>
+<p>作用：用于将可迭代的对象作为参数，将对象中对应的元素打包成一个个元组，然后返回由这些元组组成的列表。</p>
+<p>用法：zip(iterable, …)</p>
+<p>实例：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&gt;&gt;&gt;a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = [<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>c = [<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>zipped = <span class="built_in">zip</span>(a,b)     <span class="comment"># 打包为元组的列表</span></span><br><span class="line">[(<span class="number">1</span>, <span class="number">4</span>), (<span class="number">2</span>, <span class="number">5</span>), (<span class="number">3</span>, <span class="number">6</span>)]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">zip</span>(a,c)              <span class="comment"># 元素个数与最短的列表一致</span></span><br><span class="line">[(<span class="number">1</span>, <span class="number">4</span>), (<span class="number">2</span>, <span class="number">5</span>), (<span class="number">3</span>, <span class="number">6</span>)]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">zip</span>(*zipped)          <span class="comment"># 与 zip 相反，*zipped 可理解为解压，返回二维矩阵式</span></span><br><span class="line">[(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>), (<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>)]</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>all()</p>
+<p>作用：用于判断给定的可迭代参数 iterable 中的所有元素是否都为 TRUE，如果是返回 True，否则返回 False。</p>
+<p>用法：all(iterable)</p>
+<p>实例：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">all</span>([<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;d&#x27;</span>])  <span class="comment"># 列表list，元素都不为空或0</span></span><br><span class="line"><span class="literal">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">all</span>([<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;d&#x27;</span>])   <span class="comment"># 列表list，存在一个为空的元素</span></span><br><span class="line"><span class="literal">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">all</span>([<span class="number">0</span>, <span class="number">1</span>，<span class="number">2</span>, <span class="number">3</span>])          <span class="comment"># 列表list，存在一个为0的元素</span></span><br><span class="line"><span class="literal">False</span></span><br><span class="line">   </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">all</span>((<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;d&#x27;</span>))  <span class="comment"># 元组tuple，元素都不为空或0</span></span><br><span class="line"><span class="literal">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">all</span>((<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;d&#x27;</span>))   <span class="comment"># 元组tuple，存在一个为空的元素</span></span><br><span class="line"><span class="literal">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">all</span>((<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>))          <span class="comment"># 元组tuple，存在一个为0的元素</span></span><br><span class="line"><span class="literal">False</span></span><br><span class="line">   </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">all</span>([])             <span class="comment"># 空列表</span></span><br><span class="line"><span class="literal">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">all</span>(())             <span class="comment"># 空元组</span></span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>sort()和sorted()</p>
+<p>作用：对所有可迭代的对象进行排序操作。</p>
+<p>用法：sorted(iterable, cmp=None, key=None, reverse=False)(sort也是一样)</p>
+<p>区别：sort会改变原对象的序列而sorted不会</p>
+<p>实例：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&gt;&gt;&gt;a = [<span class="number">5</span>,<span class="number">7</span>,<span class="number">6</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = <span class="built_in">sorted</span>(a)       <span class="comment"># 保留原列表</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a </span><br><span class="line">[<span class="number">5</span>, <span class="number">7</span>, <span class="number">6</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">2</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>]</span><br><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>L=[(<span class="string">&#x27;b&#x27;</span>,<span class="number">2</span>),(<span class="string">&#x27;a&#x27;</span>,<span class="number">1</span>),(<span class="string">&#x27;c&#x27;</span>,<span class="number">3</span>),(<span class="string">&#x27;d&#x27;</span>,<span class="number">4</span>)]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>(L, cmp=<span class="keyword">lambda</span> x,y:cmp(x[<span class="number">1</span>],y[<span class="number">1</span>]))   <span class="comment"># 利用cmp函数</span></span><br><span class="line">[(<span class="string">&#x27;a&#x27;</span>, <span class="number">1</span>), (<span class="string">&#x27;b&#x27;</span>, <span class="number">2</span>), (<span class="string">&#x27;c&#x27;</span>, <span class="number">3</span>), (<span class="string">&#x27;d&#x27;</span>, <span class="number">4</span>)]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>(L, key=<span class="keyword">lambda</span> x:x[<span class="number">1</span>])               <span class="comment"># 利用key</span></span><br><span class="line">[(<span class="string">&#x27;a&#x27;</span>, <span class="number">1</span>), (<span class="string">&#x27;b&#x27;</span>, <span class="number">2</span>), (<span class="string">&#x27;c&#x27;</span>, <span class="number">3</span>), (<span class="string">&#x27;d&#x27;</span>, <span class="number">4</span>)]</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>students = [(<span class="string">&#x27;john&#x27;</span>, <span class="string">&#x27;A&#x27;</span>, <span class="number">15</span>), (<span class="string">&#x27;jane&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="number">12</span>), (<span class="string">&#x27;dave&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="number">10</span>)]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>(students, key=<span class="keyword">lambda</span> s: s[<span class="number">2</span>])            <span class="comment"># 按年龄排序</span></span><br><span class="line">[(<span class="string">&#x27;dave&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="number">10</span>), (<span class="string">&#x27;jane&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="number">12</span>), (<span class="string">&#x27;john&#x27;</span>, <span class="string">&#x27;A&#x27;</span>, <span class="number">15</span>)]</span><br><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sorted</span>(students, key=<span class="keyword">lambda</span> s: s[<span class="number">2</span>], reverse=<span class="literal">True</span>)       <span class="comment"># 按降序</span></span><br><span class="line">[(<span class="string">&#x27;john&#x27;</span>, <span class="string">&#x27;A&#x27;</span>, <span class="number">15</span>), (<span class="string">&#x27;jane&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="number">12</span>), (<span class="string">&#x27;dave&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="number">10</span>)]</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>set()</p>
+<p>作用：删除列表里面重复的元素，（不会改变原有序列）</p>
+<p>用法：set(iterable)</p>
+<p>实例：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">list1=[<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;zhang&#x27;</span>,<span class="string">&#x27;kang&#x27;</span>,<span class="string">&#x27;a&#x27;</span>]</span><br><span class="line">list2=[<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;c&#x27;</span>,<span class="string">&#x27;d&#x27;</span>]</span><br><span class="line">s1=<span class="built_in">set</span>(list1)</span><br><span class="line">s2=<span class="built_in">set</span>(list2)</span><br><span class="line">print(s1)</span><br><span class="line">print(s2)</span><br><span class="line">print(list1)</span><br><span class="line"></span><br><span class="line">输出：</span><br><span class="line">&#123;<span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;kang&#x27;</span>, <span class="string">&#x27;zhang&#x27;</span>, <span class="string">&#x27;a&#x27;</span>&#125;</span><br><span class="line">&#123;<span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;d&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;a&#x27;</span>&#125;</span><br><span class="line">[<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;zhang&#x27;</span>, <span class="string">&#x27;kang&#x27;</span>, <span class="string">&#x27;a&#x27;</span>]</span><br></pre></td></tr></table></figure>
 
 <hr>
 ]]></content>
@@ -213,35 +235,6 @@
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> book[<span class="number">1001</span>], i, j, t, n;  <span class="comment">//我们需要1001个桶，来表示0~1000之间每一个数出现的次数</span></span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt;= <span class="number">1000</span>; i++)  <span class="comment">//初始化</span></span><br><span class="line">		book[i] = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请输入有多少个数需要排序\n&quot;</span>);</span><br><span class="line">	scanf_s(<span class="string">&quot;%d&quot;</span>, &amp;n,<span class="keyword">sizeof</span>(n));  <span class="comment">//输入共有多少数排序</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请依次输入要排序的数(数字范围是0~1000))\n&quot;</span>);</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= n; i++)  <span class="comment">//循环读入n个数，并进行桶排序 </span></span><br><span class="line">	&#123;</span><br><span class="line">		scanf_s(<span class="string">&quot;%d&quot;</span>, &amp;t,<span class="keyword">sizeof</span>(t));</span><br><span class="line">		book[t]++;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">1000</span>; i &gt;= <span class="number">0</span>; i--)  <span class="comment">//依次判断a[0]~a[10]</span></span><br><span class="line">		<span class="keyword">for</span> (j = <span class="number">1</span>; j &lt;= book[i]; j++)</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, i);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>由于第一种方法缺点较多，所以有了第二种排序方法，叫做冒泡排序。</p>
-]]></content>
-      <tags>
-        <tag>学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>C语言中文输入</title>
-    <url>/2020/12/20/zhongwen/</url>
-    <content><![CDATA[<blockquote>
-<p>突发奇想，想如何用输入中文（虽然几乎用不到，但还是想尝试一下），于是花了一晚上去尝试，虽然花费挺久的，但最终还是成功搞定</p>
-</blockquote>
-<p>要想存储中文，肯定要用char,一个中文需要两个字节，所以肯定需要数组，所以是这样的</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">char</span> str[<span class="number">100</span>];</span><br></pre></td></tr></table></figure>
-
-<p>接下来就应该是输入（因为用的是visual studio所以输入相对于dev c++有点不同）</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">scanf_s(<span class="string">&quot;%s&quot;</span>, str, <span class="keyword">sizeof</span>(str));</span><br></pre></td></tr></table></figure>
-
-<p>其中要加_s是因为VS认为scanf不安全，读入字符串时可能造成数组越界，因此自己搞了个scanf_s函数。sizeof(str)是防止溢出，之所以加sizeof(str)不是加2，是因为scanf_s函数的输入限制给小了（之前一直卡在这里/(ㄒoㄒ)/~~）</p>
-<p>如何让计算机判断你输入的函数也是个问题，于是我上网查了一下，判断中文是不是指定数据，可以用strcmp()函数来进行比较，如果相匹配sizeof就会返回0，所以就应该是这样的</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">if (strcmp(str, &quot;输入要匹配的数&quot;) &#x3D;&#x3D; 0)</span><br></pre></td></tr></table></figure>
-
-<p>在整理一下，完整代码如下：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">		<span class="keyword">char</span> str[<span class="number">100</span>];</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;请输入你的名字:&quot;</span>);</span><br><span class="line">		scanf_s(<span class="string">&quot;%s&quot;</span>, str, <span class="keyword">sizeof</span>(str));</span><br><span class="line">		<span class="keyword">if</span> (<span class="built_in">strcmp</span>(str, <span class="string">&quot;你好&quot;</span>) == <span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;我很好&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;输入错误\n&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>结合今天发现的制作爱心的代码，就成了这样子：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;windows.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> I 20</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> R 340</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">char</span> str[<span class="number">100</span>];</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;请输入你的名字:&quot;</span>);</span><br><span class="line">		scanf_s(<span class="string">&quot;%s&quot;</span>, str, <span class="keyword">sizeof</span>(str));</span><br><span class="line">		<span class="keyword">if</span> (<span class="built_in">strcmp</span>(str, <span class="string">&quot;你想匹配的名字&quot;</span>) == <span class="number">0</span>)<span class="comment">//在这里添加想要匹配的名字</span></span><br><span class="line">		&#123;</span><br><span class="line">			system(<span class="string">&quot;cls&quot;</span>);<span class="comment">//清屏</span></span><br><span class="line">			<span class="keyword">int</span> i, j, e;</span><br><span class="line">			<span class="keyword">int</span> a;</span><br><span class="line">			<span class="keyword">long</span> time;</span><br><span class="line">			<span class="keyword">for</span> (i = <span class="number">1</span>, a = I; i &lt; I / <span class="number">2</span>; i++, a--)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">for</span> (j = (<span class="keyword">int</span>)(I - <span class="built_in">sqrt</span>(I*I - (a - i)*(a - i))); j &gt; <span class="number">0</span>; j--)</span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">&quot; &quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (e = <span class="number">1</span>; e &lt;= <span class="number">2</span> * <span class="built_in">sqrt</span>(I*I - (a - i)*(a - i)); e++)</span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">&quot;\3&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (j = (<span class="keyword">int</span>)</span><br><span class="line">					(<span class="number">2</span> * (I - <span class="built_in">sqrt</span>(I*I - (a - i)*(a - i)))); j &gt; <span class="number">0</span>; j--)</span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">&quot; &quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (e = <span class="number">1</span>; e &lt;= <span class="number">2</span> * <span class="built_in">sqrt</span>(I*I - (a - i)*(a - i)); e++)</span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">&quot;\3&quot;</span>);</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt; <span class="number">80</span>; i++)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span> (i == <span class="number">25</span>)</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">&quot;        %s        &quot;</span>,str);<span class="comment">//这里需要有23个字（包括空格）</span></span><br><span class="line">					i += <span class="number">30</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;\3&quot;</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">			<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= R / <span class="number">2</span>; i++)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span> (i % <span class="number">2</span> || i % <span class="number">3</span>)</span><br><span class="line">					<span class="keyword">continue</span>;</span><br><span class="line">				<span class="keyword">for</span> (j = (<span class="keyword">int</span>)(R - <span class="built_in">sqrt</span>(R*R - i * i)); j &gt; <span class="number">0</span>; j--)</span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">&quot; &quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (e = <span class="number">1</span>; e &lt;= <span class="number">2</span> * (<span class="built_in">sqrt</span>(R*R - i * i) - (R - <span class="number">2</span> * I)); e++)</span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">&quot;\3&quot;</span>);</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">for</span> (; ; )</span><br><span class="line">			&#123;</span><br><span class="line">				system(<span class="string">&quot;color a&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color b&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color c&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color d&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color e&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color f&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++);</span><br><span class="line">				system(<span class="string">&quot;color 0&quot;</span>); <span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++);</span><br><span class="line">				system(<span class="string">&quot;color 1&quot;</span>); <span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++);</span><br><span class="line">				system(<span class="string">&quot;color 2&quot;</span>); <span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++);</span><br><span class="line">				system(<span class="string">&quot;color 3&quot;</span>); <span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++);</span><br><span class="line">				system(<span class="string">&quot;color 4&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color 5&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color 6&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color 7&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color 8&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color 9&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color ab&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color ac&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color ad&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color ae&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++); system(<span class="string">&quot;color af&quot;</span>);</span><br><span class="line">				<span class="keyword">for</span> (time = <span class="number">0</span>; time &lt; <span class="number">99999999</span>; time++);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;输入错误\n&quot;</span>);<span class="comment">//不匹配输出的结果</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
 ]]></content>
       <tags>
         <tag>学习</tag>
@@ -398,6 +391,7 @@
 <p>输出 unsigned long 类型数据需要  %lu</p>
 <p>输出 long long 类型数据需要  %lld</p>
 <p>输出 unsigned long long 类型数据需要  %llu</p>
+<p>输出 变量地址需要%p</p>
 <p><strong>在%后面加 * 是指宽度（自己决定），例如：printf(“%*d”,width,a)</strong></p>
 <p><strong>float 和 double 虽然类型都是浮点型，但是double双精度更为精确，但是double更占内存，所以要根据情况而定。</strong></p>
 <p><strong>不同位数计算机中数据类型所占字节数有些不同，上述所述为32位计算机</strong></p>
@@ -425,9 +419,19 @@
 <p><strong>输入时读取到空格和回车视为读取结束</strong></p>
 <p>如果输入时一开始就是空格，那么计算机就会一直往后读取直到遇到数字或者符号（例外%c可以读取空格）</p>
 <p>%后面加 “ * ” 意思是丢弃不读入，如：scanf(“%*d %c”,&amp;a)，其中a的值是读入的%c，前面的直接被丢弃</p>
+<hr>
+<h1 id="输入、输出函数"><a href="#输入、输出函数" class="headerlink" title="输入、输出函数"></a>输入、输出函数</h1><p>前面讲了格式化输入输出，但发现仅仅使用格式化输入输出有时会显得十分繁琐，所以需要我们学习其它的输入输出函数</p>
+<h2 id="字符输入输出（getchar-putchar）"><a href="#字符输入输出（getchar-putchar）" class="headerlink" title="字符输入输出（getchar/putchar）"></a>字符输入输出（getchar/putchar）</h2><blockquote>
+<p>有些时候，仅仅为了在显示器屏幕上打印或从控制台获取一个字符，此时使用功能强大的printf与scanf函数，则显得过于繁琐，C提供了一个库函数putchar/getchar来完成这个简单的任务。</p>
+</blockquote>
+<p>getchar()函数只能读取单个字符，有时只读取一个字符（注意是以字符的形式存储）时较为方便,例：a=getchar();scanf(“%c”,&amp;a);</p>
+<p>putchar()函数是字符输出函数， 其功能是在显示器上打印单个字符。putchar函数是一个标准的C语言库函数，它的函数原型在头文件“stdio.h”中。</p>
+<h2 id="字符串输入输出函数-（gets与puts）"><a href="#字符串输入输出函数-（gets与puts）" class="headerlink" title="字符串输入输出函数 （gets与puts）"></a>字符串输入输出函数 （gets与puts）</h2><p>gets函数从标准输入设备读字符串函数。可以无限读取，不会判断上限，以回车结束读取，所以程序员应该确保buffer的空间足够大，以便在执行读操作时不发生溢出。此函数在stdio.h头文件中定义的。当然，scanf也可以做到。例如：gets(a);scanf(“%[ ^\n ]”,a)（其中a是数组）</p>
+<p>puts函数功能非常单一，在显示器屏幕上输出一个字符串，并换行。</p>
 <h1 id="define"><a href="#define" class="headerlink" title="define"></a>define</h1><blockquote>
 <p>之所以单独拿出来讲，是因为容易出错</p>
 </blockquote>
+<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><p>**#define 标识符 常量 ** //注意, 最后没有分号，同时标识符和常量间只有一个空格</p>
 <h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>define作用类似于赋值，但它更加灵活，可以将用一些字符代替字符串，如：</p>
 <p>#define A “nihao”；#define A 0；#define A ‘a’</p>
 <p><strong>因为nihao是字符串，所以需要加双引号，如果只是数字就不需要，如果是字符就需要单引号。除此之外，虽然没有硬性规定define后面定义的字符要大写，但一般都是要遵守的</strong></p>
@@ -437,11 +441,14 @@
 <p>错误原因：</p>
 <p>首先，M被定义为3+1，在计算a前不会编译器不会先计算3+1而是直接将3+1带入进去，所以a=M * M/2就变成了a=3+1 * 3+1,之后因为M是整型数据，所以会把小数点后面的数丢弃所以最终答案为6</p>
 <h2 id="与const的区别"><a href="#与const的区别" class="headerlink" title="与const的区别"></a>与const的区别</h2><ul>
-<li>编译器处理方式不同<br> 　#define宏是在预处理阶段展开。<pre><code>　const常量是编译运行阶段使用。</code></pre>
+<li>编译器处理方式不同<br> 　#define宏是在预处理阶段展开。<pre><code>　const常量是编译运行阶段使用。
+</code></pre>
 </li>
-<li>类型和安全检查不同<br> 　#define宏没有类型，不做任何类型检查，仅仅是展开。<pre><code>　const常量有具体的类型，在编译阶段会执行类型检查。</code></pre>
+<li>类型和安全检查不同<br> 　#define宏没有类型，不做任何类型检查，仅仅是展开。<pre><code>　const常量有具体的类型，在编译阶段会执行类型检查。
+</code></pre>
 </li>
-<li>存储方式不同<br> 　#define宏仅仅是展开，有多少地方使用，就展开多少次，不会分配内存。（宏定义不分配内存，变量定义分配内存。）<pre><code>　const常量会在内存中分配(可以是堆中也可以是栈中)。</code></pre>
+<li>存储方式不同<br> 　#define宏仅仅是展开，有多少地方使用，就展开多少次，不会分配内存。（宏定义不分配内存，变量定义分配内存。）<pre><code>　const常量会在内存中分配(可以是堆中也可以是栈中)。
+</code></pre>
 </li>
 <li>const  可以节省空间，避免不必要的内存分配。 例如：<br> #define NUM 3.14159  //常量宏<br> const doulbe Num = 3.14159; //此时并未将Pi放入ROM中 ……<br> double i = Num; //此时为Pi分配内存，以后不再分配！<br> double  I= NUM; //编译期间进行宏替换，分配内存<br> double j = Num; //没有内存分配<br> double J = NUM; //再进行宏替换，又一次分配内存！<br> const定义常量从汇编的角度来看，只是给出了对应的内存地址，而不是象#define一样给出的是立即数，所以，const定义的常量在程序运行过程中只有一份拷贝（因为是全局的只读变量，存在静态区），而 #define定义的常量在内存中有若干个拷贝。</li>
 <li>提高了效率。 编译器通常不为普通const常量分配存储空间，而是将它们保存在符号表中，这使得它成为一个编译期间的常量，没有了存储与读内存的操作，使得它的效率也很高。</li>
@@ -459,6 +466,33 @@
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a;</span><br><span class="line">    <span class="keyword">float</span> b;</span><br><span class="line">    print(<span class="string">&quot;%d&quot;</span>,a/b);</span><br><span class="line">    getchar();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>在运算a/b时，a会自动升级为float型，当然，也可以强制转化，在a前面加（float）就可以使a转换为float型</p>
+<h1 id="定义函数"><a href="#定义函数" class="headerlink" title="定义函数"></a>定义函数</h1><h2 id="无参数"><a href="#无参数" class="headerlink" title="无参数"></a>无参数</h2><h3 id="有返回值"><a href="#有返回值" class="headerlink" title="有返回值"></a>有返回值</h3><p>如果函数不接收用户传递的数据，那么定义时可以不带参数。如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">dataType functionName()</span><br><span class="line">&#123;</span><br><span class="line">  &#x2F;&#x2F;body</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>dataType 是返回值类型，它可以是C语言中的任意数据类型，例如 int、float、char 等。</p>
+</li>
+<li><p>functionName 是函数名，它是<a href="http://c.biancheng.net/cpp/html/2927.html">标识符</a>的一种，命名规则和标识符相同。函数名后面的括号<code>( )</code>不能少。</p>
+</li>
+<li><p>body 是函数体，它是函数需要执行的代码，是函数的主体部分。即使只有一个语句，函数体也要由<code>&#123; &#125;</code>包围。</p>
+</li>
+<li><p>如果有返回值，在函数体中使用 return 语句返回。return 出来的数据的类型要和 dataType 一样。</p>
+<p>例：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">sum</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i, sum=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>; i&lt;=<span class="number">100</span>; i++)&#123;</span><br><span class="line">        sum+=i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="无返回值函数"><a href="#无返回值函数" class="headerlink" title="无返回值函数"></a>无返回值函数</h3><p>有的函数不需要返回值，或者返回值类型不确定（很少见），那么可以用 void 表示，例如：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">hello</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span> (<span class="string">&quot;Hello,world \n&quot;</span>);    <span class="comment">//没有返回值就不需要 return 语句</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="有参函数的定义"><a href="#有参函数的定义" class="headerlink" title="有参函数的定义"></a>有参函数的定义</h2><p>如果函数需要接收用户传递的数据，那么定义时就要带上参数。如下所示：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function">dataType <span class="title">functionName</span><span class="params">( dataType1 param1, dataType2 param2 ... )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="comment">//body</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>dataType1 param1, dataType2 param2 ...</code>是参数列表。函数可以只有一个参数，也可以有多个，多个参数之间由<code>,</code>分隔。参数本质上也是变量，定义时要指明类型和名称。与无参函数的定义相比，有参函数的定义仅仅是多了一个参数列表。</p>
+<p>例：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//计算从m加到n的值</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">sum</span><span class="params">(<span class="keyword">int</span> m, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">for</span> (i = m+<span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        m += i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> m;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a, b, total;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Input two numbers: &quot;</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d %d&quot;</span>, &amp;a, &amp;b);</span><br><span class="line">    total = sum(a, b);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;a=%d, b=%d\n&quot;</span>, a, b);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;total=%d\n&quot;</span>, total);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>函数定义处的 m、n 是形参，函数调用处的 a、b 是实参</p>
 ]]></content>
       <tags>
         <tag>学习</tag>
