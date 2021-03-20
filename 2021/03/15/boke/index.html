@@ -100,7 +100,8 @@
         <div class="else">
             <p class="animated fadeInDown">
                 
-                <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
+                <a href="/categories/学习"><b>「
+                    </b>学习<b> 」</b></a>
                 
                 March 15, 2021
             </p>
@@ -111,13 +112,13 @@
                 
                 <span>
                     <b class="iconfont icon-text2"></b> <i>Words count</i>
-                    2.2k
+                    3.5k
                 </span>
                 
                 
                 <span>
                     <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                    2 mins.
+                    3 mins.
                 </span>
                 
                 
@@ -156,13 +157,23 @@
 </blockquote>
 <p>搭建博客视频网上一大堆，这里就不多讲了，这里就讲一些错误和如何解决</p>
 <h1 id="ssh-connect-to-host-github-com-port-22-Connection-timed-out"><a href="#ssh-connect-to-host-github-com-port-22-Connection-timed-out" class="headerlink" title="ssh: connect to host github.com port 22: Connection timed out"></a>ssh: connect to host github.com port 22: Connection timed out</h1><p>这个问题烦了我几个小时，网上的解决方法参差不齐（反正我通过网上的方法没用解决），最后还是看官方的解决方法（官方是真的牛逼）<a target="_blank" rel="noopener" href="https://docs.github.com/en/github/authenticating-to-github/using-ssh-over-the-https-port">Using SSH over the HTTPS port</a>。</p>
-<p>出现这个问题是因为22端口被占用或者防火墙不允许ssh连接。解决方法是通过通过HTTPS启用SSH连接，命令：ssh -T -p 443 <a href="mailto:&#x67;&#x69;&#x74;&#64;&#x73;&#115;&#x68;&#x2e;&#103;&#105;&#x74;&#104;&#x75;&#98;&#x2e;&#x63;&#x6f;&#109;">&#x67;&#x69;&#x74;&#64;&#x73;&#115;&#x68;&#x2e;&#103;&#105;&#x74;&#104;&#x75;&#98;&#x2e;&#x63;&#x6f;&#109;</a>，运行时输入yes，这样可以强制连接，连接成功后就可以进行下一步操作了（不成功可以看官方给的<a target="_blank" rel="noopener" href="https://docs.github.com/en/articles/error-permission-denied-publickey">故障排除指南</a>），成功后，在.ssh文件夹中创建一个config文件（千万千万别加后缀名！）内容如下：</p>
+<p>出现这个问题是因为22端口被占用或者防火墙不允许ssh连接。解决方法是通过通过HTTPS启用SSH连接，命令：ssh -T -p 443 <a href="mailto:&#103;&#105;&#116;&#64;&#115;&#x73;&#104;&#46;&#103;&#105;&#116;&#104;&#117;&#x62;&#x2e;&#x63;&#111;&#109;">&#103;&#105;&#116;&#64;&#115;&#x73;&#104;&#46;&#103;&#105;&#116;&#104;&#117;&#x62;&#x2e;&#x63;&#111;&#109;</a>，运行时输入yes，这样可以强制连接，连接成功后就可以进行下一步操作了（不成功可以看官方给的<a target="_blank" rel="noopener" href="https://docs.github.com/en/articles/error-permission-denied-publickey">故障排除指南</a>），成功后，在.ssh文件夹中创建一个config文件（千万千万别加后缀名！）内容如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">  Hostname ssh.github.com</span><br><span class="line">  Port 443</span><br><span class="line">  User git</span><br></pre></td></tr></table></figure>
 
-<p>最后输入：ssh -T <a href="mailto:&#103;&#x69;&#x74;&#64;&#103;&#105;&#116;&#x68;&#117;&#x62;&#46;&#99;&#111;&#x6d;">&#103;&#x69;&#x74;&#64;&#103;&#105;&#116;&#x68;&#117;&#x62;&#46;&#99;&#111;&#x6d;</a>看是否成功连接</p>
+<p>最后输入：ssh -T <a href="mailto:&#103;&#105;&#x74;&#64;&#103;&#105;&#116;&#x68;&#117;&#98;&#46;&#x63;&#x6f;&#x6d;">&#103;&#105;&#x74;&#64;&#103;&#105;&#116;&#x68;&#117;&#98;&#46;&#x63;&#x6f;&#x6d;</a>看是否成功连接</p>
 <p>成功连接如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br><span class="line">&gt; Hi username! You&#39;ve successfully authenticated, but GitHub does not</span><br><span class="line">&gt; provide shell access.</span><br></pre></td></tr></table></figure>
 
+<p>简单介绍一下<a target="_blank" rel="noopener" href="https://ru.wikipedia.org/wiki/SSH">SSH</a>，博客上传时，如果没用通过ssh连接的话，需要输入密码，通过ssh远程连接以后就不需要了</p>
+<h1 id="hexo命令失效"><a href="#hexo命令失效" class="headerlink" title="hexo命令失效"></a>hexo命令失效</h1><p>原本搭建好了但是不知道为什么突然hexo一些命令失效了，在网上找了发现可能有几种原因：</p>
+<ol>
+<li>检查<code>_config.yml</code>中的内容<code>:</code>后面没有有一个空格。</li>
+<li>`package.json’，没有添加hexo信息用来标识这是一个hexo目录：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;hexo&quot;: &#123;</span><br><span class="line">    &quot;version&quot;: &quot;&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果实在不行就重新进行<code>hexo init</code>（最有效最直接的方法）</p>
+<h1 id="hexo-d命令报错-ERROR-Deployer-not-found-git"><a href="#hexo-d命令报错-ERROR-Deployer-not-found-git" class="headerlink" title="hexo d命令报错 ERROR Deployer not found: git"></a>hexo d命令报错 ERROR Deployer not found: git</h1><p>上网搜了一下，就是没安装好<code>hexo-deployer-git</code>插件，重新安装一下就好了。（命令：npm install hexo-deployer-git –save）</p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls"
@@ -221,7 +232,7 @@
                 </div>
                 <ul>
                     <li><a href="/">10 <p>Articles</p></a></li>
-                    <li><a href="/categories">0 <p>Categories</p></a></li>
+                    <li><a href="/categories">6 <p>Categories</p></a></li>
                     <li><a href="/tags">5 <p>Tags</p></a></li>
                 </ul>
             </div>
@@ -231,7 +242,7 @@
             <div class="box sticky animated fadeInRight faster">
                 <div id="toc" class="subbox">
                     <h4>Contents</h4>
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ssh-connect-to-host-github-com-port-22-Connection-timed-out"><span class="toc-number">1.</span> <span class="toc-text">ssh: connect to host github.com port 22: Connection timed out</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ssh-connect-to-host-github-com-port-22-Connection-timed-out"><span class="toc-number">1.</span> <span class="toc-text">ssh: connect to host github.com port 22: Connection timed out</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo%E5%91%BD%E4%BB%A4%E5%A4%B1%E6%95%88"><span class="toc-number">2.</span> <span class="toc-text">hexo命令失效</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo-d%E5%91%BD%E4%BB%A4%E6%8A%A5%E9%94%99-ERROR-Deployer-not-found-git"><span class="toc-number">3.</span> <span class="toc-text">hexo d命令报错 ERROR Deployer not found: git</span></a></li></ol>
                 </div>
             </div>
             
