@@ -113,13 +113,13 @@ x86的寄存器包括8位、16位、32位，其中32位寄存器可以分为16�
                 
                 <span>
                     <b class="iconfont icon-text2"></b> <i>Words count</i>
-                    1.4k
+                    2.9k
                 </span>
                 
                 
                 <span>
                     <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                    1 mins.
+                    3 mins.
                 </span>
                 
                 
@@ -165,13 +165,31 @@ x86的寄存器包括8位、16位、32位，其中32位寄存器可以分为16�
 <img src="/images/59.png" height="400" width="700" />
 
 <h2 id="ESP"><a href="#ESP" class="headerlink" title="ESP"></a>ESP</h2><p>ESP用于存储当前栈堆用到的地址</p>
-<h2 id="EFL（标志寄存器）"><a href="#EFL（标志寄存器）" class="headerlink" title="EFL（标志寄存器）"></a>EFL（标志寄存器）</h2><p>虽然它不是通用寄存器但是它用处还是挺大的，EFI的第十位（DF）如果是零，使用push，pop指令后ESP会加相应数值，如果是一，则减去相应数值。</p>
+<h2 id="EFL（标志寄存器）"><a href="#EFL（标志寄存器）" class="headerlink" title="EFL（标志寄存器）"></a>EFL（标志寄存器）</h2><p>EFI的第十位（DF）如果是零，使用push，pop指令后ESP会加相应数值，如果是一，则减去相应数值。</p>
+<h2 id="EIP"><a href="#EIP" class="headerlink" title="EIP"></a>EIP</h2><p>EIP用于存储计算机执行下一个指令的地址</p>
 <h1 id="堆栈"><a href="#堆栈" class="headerlink" title="堆栈"></a>堆栈</h1><blockquote>
 <p>堆栈本质就是一段内存，在程序启动前就已经被分配好了，堆栈会存储程序重要的信息，被称为“程序的心脏”</p>
 </blockquote>
 <p>32位上的应用大部分采用小端模式，手机上的应用大部分采用大端模式</p>
 <h2 id="小段模式"><a href="#小段模式" class="headerlink" title="小段模式"></a>小段模式</h2><p>从高地址开始存放，往低地址去</p>
 <h2 id="大端模式"><a href="#大端模式" class="headerlink" title="大端模式"></a>大端模式</h2><p>从低地址开始存放，往高地址去</p>
+<h1 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h1><h2 id="MOV-移动指令"><a href="#MOV-移动指令" class="headerlink" title="MOV(移动指令)"></a>MOV(移动指令)</h2><p>将指定的值移动指定位置（内存地址或寄存器）</p>
+<h2 id="ADD-加法指令"><a href="#ADD-加法指令" class="headerlink" title="ADD(加法指令)"></a>ADD(加法指令)</h2><p>将指定的两个值相加，结果返回到指定位置（内存地址或寄存器）</p>
+<h2 id="SUB-减法指令"><a href="#SUB-减法指令" class="headerlink" title="SUB(减法指令)"></a>SUB(减法指令)</h2><p>将指定的两个值相减，结果返回到指定位置（内存地址或寄存器）</p>
+<h2 id="AND-与运算指令"><a href="#AND-与运算指令" class="headerlink" title="AND(与运算指令)"></a>AND(与运算指令)</h2><p>与运算：两个为一才为一</p>
+<p>将指定的两个值进行与运算，结果返回到指定位置（内存地址或寄存器）</p>
+<h2 id="OR-或运算指令"><a href="#OR-或运算指令" class="headerlink" title="OR(或运算指令)"></a>OR(或运算指令)</h2><p>或运算：有一就为一</p>
+<p>将指定的两个值进行或运算，结果返回到指定位置（内存地址或寄存器）</p>
+<h2 id="XOR-异或运算指令"><a href="#XOR-异或运算指令" class="headerlink" title="XOR(异或运算指令)"></a>XOR(异或运算指令)</h2><p>异或运算：不一样为一</p>
+<p>将指定的两个值进行异或运算，结果返回到指定位置（内存地址或寄存器）</p>
+<h2 id="NOT-非运算指令"><a href="#NOT-非运算指令" class="headerlink" title="NOT(非运算指令)"></a>NOT(非运算指令)</h2><p>非运算：一为零，零为一</p>
+<p>将指定的一个值进行非运算，结果返回原位置（内存地址或寄存器）</p>
+<h2 id="SHL-左移指令"><a href="#SHL-左移指令" class="headerlink" title="SHL(左移指令)"></a>SHL(左移指令)</h2><p>shl（C语言：&lt;&lt;）</p>
+<p>高位丢弃,低位补零</p>
+<h2 id="右移指令"><a href="#右移指令" class="headerlink" title="右移指令"></a>右移指令</h2><p>汇编 shr：高位补零，低位丢弃</p>
+<p>​         sar：高位补符号位，地位丢弃（就是补最高位的数字）</p>
+<p>C语言 &gt;&gt; 无符号数：高位补零，低位丢弃</p>
+<p>​                 有符号数：高位补符号位，低位丢弃</p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls"
@@ -190,6 +208,10 @@ x86的寄存器包括8位、16位、32位，其中32位寄存器可以分为16�
             
             <div class="post-nav">
                 <hr>
+                
+                    <div class="post-nav-item">Previous Post:<a href="/2021/03/28/C%E8%AF%AD%E8%A8%80%E6%8C%87%E9%92%88/" rel="prev" 
+                        title="C语言指针">C语言指针
+                      </a></div>
                 
                 
                     <div class="post-nav-item">Next Post:<a href="/2021/03/15/boke/" rel="next" 
@@ -229,9 +251,9 @@ x86的寄存器包括8位、16位、32位，其中32位寄存器可以分为16�
                     </dl>
                 </div>
                 <ul>
-                    <li><a href="/">11 <p>Articles</p></a></li>
+                    <li><a href="/">12 <p>Articles</p></a></li>
                     <li><a href="/categories">6 <p>Categories</p></a></li>
-                    <li><a href="/tags">5 <p>Tags</p></a></li>
+                    <li><a href="/tags">6 <p>Tags</p></a></li>
                 </ul>
             </div>
             
@@ -240,7 +262,7 @@ x86的寄存器包括8位、16位、32位，其中32位寄存器可以分为16�
             <div class="box sticky animated fadeInRight faster">
                 <div id="toc" class="subbox">
                     <h4>Contents</h4>
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-number">1.</span> <span class="toc-text">寄存器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#EAX"><span class="toc-number">1.1.</span> <span class="toc-text">EAX</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ECX"><span class="toc-number">1.2.</span> <span class="toc-text">ECX</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#EDI%E5%92%8CESI"><span class="toc-number">1.3.</span> <span class="toc-text">EDI和ESI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ESP"><span class="toc-number">1.4.</span> <span class="toc-text">ESP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#EFL%EF%BC%88%E6%A0%87%E5%BF%97%E5%AF%84%E5%AD%98%E5%99%A8%EF%BC%89"><span class="toc-number">1.5.</span> <span class="toc-text">EFL（标志寄存器）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A0%86%E6%A0%88"><span class="toc-number">2.</span> <span class="toc-text">堆栈</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E6%AE%B5%E6%A8%A1%E5%BC%8F"><span class="toc-number">2.1.</span> <span class="toc-text">小段模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%A7%E7%AB%AF%E6%A8%A1%E5%BC%8F"><span class="toc-number">2.2.</span> <span class="toc-text">大端模式</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-number">1.</span> <span class="toc-text">寄存器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#EAX"><span class="toc-number">1.1.</span> <span class="toc-text">EAX</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ECX"><span class="toc-number">1.2.</span> <span class="toc-text">ECX</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#EDI%E5%92%8CESI"><span class="toc-number">1.3.</span> <span class="toc-text">EDI和ESI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ESP"><span class="toc-number">1.4.</span> <span class="toc-text">ESP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#EFL%EF%BC%88%E6%A0%87%E5%BF%97%E5%AF%84%E5%AD%98%E5%99%A8%EF%BC%89"><span class="toc-number">1.5.</span> <span class="toc-text">EFL（标志寄存器）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#EIP"><span class="toc-number">1.6.</span> <span class="toc-text">EIP</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A0%86%E6%A0%88"><span class="toc-number">2.</span> <span class="toc-text">堆栈</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E6%AE%B5%E6%A8%A1%E5%BC%8F"><span class="toc-number">2.1.</span> <span class="toc-text">小段模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%A7%E7%AB%AF%E6%A8%A1%E5%BC%8F"><span class="toc-number">2.2.</span> <span class="toc-text">大端模式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4"><span class="toc-number">3.</span> <span class="toc-text">指令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#MOV-%E7%A7%BB%E5%8A%A8%E6%8C%87%E4%BB%A4"><span class="toc-number">3.1.</span> <span class="toc-text">MOV(移动指令)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ADD-%E5%8A%A0%E6%B3%95%E6%8C%87%E4%BB%A4"><span class="toc-number">3.2.</span> <span class="toc-text">ADD(加法指令)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SUB-%E5%87%8F%E6%B3%95%E6%8C%87%E4%BB%A4"><span class="toc-number">3.3.</span> <span class="toc-text">SUB(减法指令)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AND-%E4%B8%8E%E8%BF%90%E7%AE%97%E6%8C%87%E4%BB%A4"><span class="toc-number">3.4.</span> <span class="toc-text">AND(与运算指令)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OR-%E6%88%96%E8%BF%90%E7%AE%97%E6%8C%87%E4%BB%A4"><span class="toc-number">3.5.</span> <span class="toc-text">OR(或运算指令)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#XOR-%E5%BC%82%E6%88%96%E8%BF%90%E7%AE%97%E6%8C%87%E4%BB%A4"><span class="toc-number">3.6.</span> <span class="toc-text">XOR(异或运算指令)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NOT-%E9%9D%9E%E8%BF%90%E7%AE%97%E6%8C%87%E4%BB%A4"><span class="toc-number">3.7.</span> <span class="toc-text">NOT(非运算指令)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SHL-%E5%B7%A6%E7%A7%BB%E6%8C%87%E4%BB%A4"><span class="toc-number">3.8.</span> <span class="toc-text">SHL(左移指令)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%B3%E7%A7%BB%E6%8C%87%E4%BB%A4"><span class="toc-number">3.9.</span> <span class="toc-text">右移指令</span></a></li></ol></li></ol>
                 </div>
             </div>
             
