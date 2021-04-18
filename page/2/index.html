@@ -175,6 +175,11 @@
             </span>
             
             
+            <span id="/2020/12/07/markdown/" class="leancloud_visitors" data-flag-title="">
+                <b class="iconfont icon-read"></b> <i>Read count</i>
+                <span class="leancloud-visitors-count">1000000</span>
+            </span>
+            
         </p>
         
         
@@ -237,6 +242,11 @@
                     </span>
                 
                 
+                    <span id="/2020/12/07/markdown/" class="leancloud_visitors" data-flag-title="">
+                        <b class="iconfont icon-read"></b> <i>Read count</i>
+                        <span class="leancloud-visitors-count">1000000</span>
+                    </span>
+                
             </p>
             
                 <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li></ul>
@@ -284,6 +294,11 @@
                     </span>
                 
                 
+                    <span id="/2020/12/06/dos/" class="leancloud_visitors" data-flag-title="">
+                        <b class="iconfont icon-read"></b> <i>Read count</i>
+                        <span class="leancloud-visitors-count">1000000</span>
+                    </span>
+                
             </p>
             
                 <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li></ul>
@@ -330,6 +345,11 @@
                         1 mins.
                     </span>
                 
+                
+                    <span id="/2020/11/21/My-First-Post/" class="leancloud_visitors" data-flag-title="">
+                        <b class="iconfont icon-read"></b> <i>Read count</i>
+                        <span class="leancloud-visitors-count">1000000</span>
+                    </span>
                 
             </p>
             
@@ -430,10 +450,6 @@
 
 
  
-<link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
- 
-<script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
-  
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="/js/plugin.js"></script>
 <script src="/js/obsidian.js"></script>
@@ -465,16 +481,6 @@
   
 <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
    
-<script src="/js/busuanzi.min.js"></script>
-
-<script>
-  $(document).ready(function () {
-    if ($('span[id^="busuanzi_"]').length) {
-      initialBusuanzi();
-    }
-  });
-</script>
- 
 <link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
 <link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
 
@@ -565,6 +571,38 @@
   }
 </script>
 
+ 
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+<script>
+  var valine = new Valine();
+
+  function initValine(path) {
+    if (!path) path = window.location.pathname;
+    let language = 'zn';
+    if (!language) {
+      language = 'en';
+    } else {
+      language = language.toLowerCase();
+    }
+    valine.init({
+      el: '#vcomments',
+      appId: 'p8r7Eua3HSuRiVQ8KRA14KSt-gzGzoHsz',
+      appKey: 'P7Ty6PP07ELYR1U0IoKwVC3y',
+      notify: 'false',
+      verify: 'false',
+      avatar: 'mm',
+      placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊! ',
+      visitor: 'true',
+      path: path,
+      lang: language,
+    });
+  }
+
+  $(document).ready(function () {
+    initValine();
+  });
+</script>
 
 
 
