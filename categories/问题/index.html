@@ -5,13 +5,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Linux - Krito</title>
+    <title>Category: 问题 - Krito</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="TriDiamond Obsidian,"> 
-    <meta name="description" content="用户切换普通用户切换成ROOT用户方法1：按上su，然后按照提示输入相应的root密码，就可登录到root权限下。
-方法2：按上sudo su，然后按照提示输入相应的root密码，就可登录到root,"> 
+    
     <meta name="author" content="Eli0t-g"> 
     <link rel="alternative" href="atom.xml" title="Krito" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -51,87 +50,151 @@
     </div>
     <span id="config-title" style="display:none">Krito</span>
     <div id="loader"></div>
-    <div id="single">
-    <div class="scrollbar gradient-bg-rev"></div>
-<div id="top" style="display: block;">
-    <div class="bar" style="width: 0;"></div>
-    <div class="navigation animated fadeIn fast delay-1s">
-        <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="http://example.com">
-        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
-        <h3 class="subtitle">Linux</h3>
-        <div class="social">
-            <!--        <div class="like-icon">-->
-            <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
-            <!--        </div>-->
-            <div>
-                <div class="share">
-                    
-                        <a href="javascript:;" class="iconfont icon-share1"></a>
-                        <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,tencent,google"></div>
-                    
-                </div>
-            </div>
+    <div class="nav">
+    <ul id="menu-menu" class="menu">
+        
+        <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+            <a href="/About/" title="ABOUT" external="false">ABOUT</a>
+        </li>
+        
+        <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+            <a href="/categories/" title="CATEGORIES" external="false">CATEGORIES</a>
+        </li>
+        
+        <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+            <a href="/tags/" title="TAGS" external="false">TAGS</a>
+        </li>
+        
+        <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+            <a href="/archives/" title="ARCHIVES" external="false">ARCHIVES</a>
+        </li>
+        
+        <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+            <a href="/friends/" title="LINKS" external="false">LINKS</a>
+        </li>
+        
+        <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+            <a target="_blank" rel="noopener" href="https://guizhen17534.lofter.com/" title="TRAVEL" external="false">TRAVEL</a>
+        </li>
+        
+    </ul>
+    <p class="copyright" id="copyright">
+        &copy; 2021 Eli0t-g.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+    </p>
+</div>
+
+<div id="container">
+    
+<div class="search-box">
+    <form class="site-search-form">
+        <span class="iconfont icon-search"></span>
+        <input type="text" id="local-search-input" class="st-search-input" />
+        <div class="iconfont icon-cross search-box-close"></div>
+    </form>
+    <div class="search-scrollable">
+        <div id="local-search-result" class="local-search-result-cls" data-initialise="Initialising search index..."
+            data-start="Please input search keywords." data-empty="No result found, please try other keywords.">
+            <span>Please input search keywords.</span>
         </div>
     </div>
 </div>
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-
-<span id="busuanzi_container_site_pv">
-    本站总访问量<span id="busuanzi_value_site_pv"></span>次
-</span>
-
-<span id="busuanzi_container_page_pv">
-  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-</span>
-    <div class="section">
-        <div class=article-header-wrapper>
-    <div class="article-header">
-        <div class="article-cover animated fadeIn" style="
-            animation-delay: 600ms;
-            animation-duration: 1.2s;
-            background-image: 
-                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
-                url(/img/cover.jpg) ">
+<div id="header">
+    <div>
+        <div class="logo animated fadeInDown">
+            <img src="/img/favicon.png" alt="">
+            <a class="image-logo" href="/"></a>
         </div>
-        <div class="else">
-            <p class="animated fadeInDown">
-                
-                <a href="/categories/笔记"><b>「
-                    </b>笔记<b> 」</b></a>
-                
-                March 15, 2021
-            </p>
-            <h3 class="post-title animated fadeInDown"><a href="/2021/03/15/Linux/" title="Linux" class="">Linux</a>
-            </h3>
+        <ul id="menu-menu" class="menu text-menu">
             
-            <p class="post-count animated fadeInDown">
-                
-                <span>
-                    <b class="iconfont icon-text2"></b> <i>Words count</i>
-                    575
-                </span>
-                
-                
-                <span>
-                    <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                    1 mins.
-                </span>
-                
-                
-                <span id="/2021/03/15/Linux/" class="leancloud_visitors" data-flag-title="Linux">
-                    <b class="iconfont icon-read"></b> <i>Read count</i>
-                    <span class="leancloud-visitors-count">1000000</span>
-                </span>
-                
-                
-            </p>
+            <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+                <a href="/About/" title="ABOUT" external="false" class="menu-link">ABOUT</a>
+            </li>
+            
+            <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+                <a href="/categories/" title="CATEGORIES" external="false" class="menu-link">CATEGORIES</a>
+            </li>
+            
+            <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+                <a href="/tags/" title="TAGS" external="false" class="menu-link">TAGS</a>
+            </li>
+            
+            <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+                <a href="/archives/" title="ARCHIVES" external="false" class="menu-link">ARCHIVES</a>
+            </li>
+            
+            <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+                <a href="/friends/" title="LINKS" external="false" class="menu-link">LINKS</a>
+            </li>
+            
+            <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+                <a target="_blank" rel="noopener" href="https://guizhen17534.lofter.com/" title="TRAVEL" external="false" class="menu-link">TRAVEL</a>
+            </li>
             
             
-            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li></ul>
+            <li class="animated fadeInDown search-bar iconfont icon-search"></li>
             
+        </ul>
+        <div class="iconfont icon-menu switchmenu gradient-text animated fadeInDown"></div>
+    </div>
+</div>
+<div id="screen">
+    <div id="mark">
+        <div class="cover animated fadeIn" style="
+            animation-delay: 900ms;
+            animation-duration: 2.8s;
+            background-image:
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.56), #100e17),
+                url(/img/cover.jpg);">
         </div>
     </div>
+    
+    <div id="post0" class="else">
+        <p class="animated fadeInDown">
+            
+            <a href="/categories/问题"><b>「
+                </b>问题<b> 」</b></a>
+            
+            March 15, 2021
+        </p>
+        <h3 class="post-title animated fadeInDown">
+            <a href="/2021/03/15/SSH%E8%BF%9E%E6%8E%A5%E5%A4%B1%E8%B4%A5%E5%8F%8Ahexo%E5%91%BD%E4%BB%A4%E5%A4%B1%E6%95%88/" title="SSH连接失败及hexo命令失效" class="posttitle">SSH连接失败及hexo命令失效</a></h3>
+        
+        <p class="post-count animated fadeInDown">
+            
+            <span>
+                <b class="iconfont icon-text2"></b> <i>Words count</i>
+                3.5k
+            </span>
+            
+            
+            <span>
+                <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                3 mins.
+            </span>
+            
+            
+            <span id="/2021/03/15/SSH连接失败及hexo命令失效/" class="leancloud_visitors" data-flag-title="">
+                <b class="iconfont icon-read"></b> <i>Read count</i>
+                <span class="leancloud-visitors-count">1000000</span>
+            </span>
+            
+        </p>
+        
+        
+        <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a></li></ul>
+        
+        <div class="md-content animated fadeIn">
+            
+            <blockquote>
+<p>闲的无聊就整了一下博客，结果出大问题了...</p></blockquote>
+            
+            <span class="read-more"><a href="/2021/03/15/SSH%E8%BF%9E%E6%8E%A5%E5%A4%B1%E8%B4%A5%E5%8F%8Ahexo%E5%91%BD%E4%BB%A4%E5%A4%B1%E6%95%88/" title="Read article" class="posttitle">Read article</a>
+                <b class="iconfont icon-arrow-right- gradient-text"></b></span>
+        </div>
+    </div>
+    
 </div>
 
 <div class="screen-gradient-after">
@@ -139,94 +202,20 @@
         <div class="screen-gradient-content-inside">
             <div class="bold-underline-links screen-gradient-sponsor">
                 <p>
-                    <span class="animated fadeIn delay-1s"></span>
+                    <span class="typed-text"></span>
                 </p>
             </div>
         </div>
     </div>
 </div>
 
-<div class="article">
-    <div class='main'>
-        <div class="content markdown animated fadeIn">
-            <h1 id="用户切换"><a href="#用户切换" class="headerlink" title="用户切换"></a>用户切换</h1><h2 id="普通用户切换成ROOT用户"><a href="#普通用户切换成ROOT用户" class="headerlink" title="普通用户切换成ROOT用户"></a>普通用户切换成ROOT用户</h2><p>方法1：按上su，然后按照提示输入相应的root密码，就可登录到root权限下。</p>
-<p>方法2：按上sudo su，然后按照提示输入相应的root密码，就可登录到root权限下(这个命令下，一般不需要输入相应的root密码)。</p>
-<p>方法3：按上su root，然后按照提示输入相应的root密码，就可登录到root权限下。</p>
-<h2 id="ROOT用户切换成普通用户"><a href="#ROOT用户切换成普通用户" class="headerlink" title="ROOT用户切换成普通用户"></a>ROOT用户切换成普通用户</h2><p>1、想从root用户切回user用户只需执行命令：su user (user是你自己安装时候的用户名)。</p>
-<p>2、直接输入exit。</p>
-<p>3、Ctrl+D组合键退出</p>
-
-            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
-            <audio id="audio" loop="1" preload="auto" controls="controls"
-                data-autoplay="true">
-                <source type="audio/mpeg" src="">
-            </audio>
-            
-            <ul id="audio-list" style="display:none">
-                
-                
-                <li title='0' data-url='/statics/chengdu.mp3'></li>
-                
-                    
-            </ul>
-            
-            
-            <div class="post-nav">
-                <hr>
-                
-                    <div class="post-nav-item">Previous Post:<a href="/2021/03/15/boke/" rel="prev" 
-                        title="博客重建">博客重建
-                      </a></div>
-                
-                
-                    <div class="post-nav-item">Next Post:<a href="/2021/02/16/python/" rel="next" 
-                        title="python学习心得">python学习心得</a></div>
-                                
-            </div>   
-                        
-            
-            
-            <div id="vcomments"></div>
-            
-        </div>
-        <div class="sidebar">
-            <div class="box animated fadeInRight">
-                <div class="subbox">
-                    <img src="https://res.cloudinary.com/tridiamond/image/upload/v1573019751/TriDiamond_logo_ui_xeublz.jpg" height=300 width=300></img>
-                    <p>Eli0t-g</p>
-                    <span>Think like an artist, develop like an artisan</span>
-                    <dl>
-                        <dd><a href="https://github.com/Eli0t-g" target="_blank"><span
-                                    class=" iconfont icon-github"></span></a></dd>
-                        <dd><a href="https://twitter.com/home" target="_blank"><span
-                                    class=" iconfont icon-twitter"></span></a></dd>
-                        <dd><a href="" target="_blank"><span
-                                    class=" iconfont icon-stack-overflow"></span></a></dd>
-                    </dl>
-                </div>
-                <ul>
-                    <li><a href="/">13 <p>Articles</p></a></li>
-                    <li><a href="/categories">7 <p>Categories</p></a></li>
-                    <li><a href="/tags">7 <p>Tags</p></a></li>
-                </ul>
-            </div>
-            
-            
-            
-            <div class="box sticky animated fadeInRight faster">
-                <div id="toc" class="subbox">
-                    <h4>Contents</h4>
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E5%88%87%E6%8D%A2"><span class="toc-number">1.</span> <span class="toc-text">用户切换</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%99%AE%E9%80%9A%E7%94%A8%E6%88%B7%E5%88%87%E6%8D%A2%E6%88%90ROOT%E7%94%A8%E6%88%B7"><span class="toc-number">1.1.</span> <span class="toc-text">普通用户切换成ROOT用户</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ROOT%E7%94%A8%E6%88%B7%E5%88%87%E6%8D%A2%E6%88%90%E6%99%AE%E9%80%9A%E7%94%A8%E6%88%B7"><span class="toc-number">1.2.</span> <span class="toc-text">ROOT用户切换成普通用户</span></a></li></ol></li></ol>
-                </div>
-            </div>
-            
-            
-        </div>
+    <div id="primary">
+        
     </div>
+    
 </div>
+<div id="preview"></div>
 
-    </div>
-</div>
     <div id="back-to-top" class="animated fadeIn faster">
         <div class="flow"></div>
         <span class="percentage animated fadeIn faster">0%</span>
