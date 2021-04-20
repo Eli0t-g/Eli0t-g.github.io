@@ -5,17 +5,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>markdown语法 - Krito</title>
+    <title>汇编（×86） - Krito</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="TriDiamond Obsidian,"> 
     <meta name="description" content="
-搭建好博客后没有直接开始写文章是因为写文章时遇到了很多问题，之后去b站和百度上了解了一下，学到了一些关于markdown语法的使用方法，在此分享一下
+重新复习了一遍汇编，这次看的是32位的，有了一点点收获，就随便写写
 
-标题“#”一级标题
-“##”二级标题
-……（,"> 
+寄存器
+
+x86的寄存器包括8位、16位、32位，其中32位寄存器可以分为16位或者8位，如EAX可以分为16位AX或者8位A,"> 
     <meta name="author" content="Eli0t-g"> 
     <link rel="alternative" href="atom.xml" title="Krito" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -62,7 +62,7 @@
     <div class="navigation animated fadeIn fast delay-1s">
         <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="http://example.com">
         <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
-        <h3 class="subtitle">markdown语法</h3>
+        <h3 class="subtitle">汇编（×86）</h3>
         <div class="social">
             <!--        <div class="like-icon">-->
             <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -101,29 +101,29 @@
         <div class="else">
             <p class="animated fadeInDown">
                 
-                <a href="/categories/笔记"><b>「
-                    </b>笔记<b> 」</b></a>
+                <a href="/categories/汇编"><b>「
+                    </b>汇编<b> 」</b></a>
                 
-                December 07, 2020
+                March 22, 2021
             </p>
-            <h3 class="post-title animated fadeInDown"><a href="/2020/12/07/markdown/" title="markdown语法" class="">markdown语法</a>
+            <h3 class="post-title animated fadeInDown"><a href="/2021/03/22/huibianx86/" title="汇编（×86）" class="">汇编（×86）</a>
             </h3>
             
             <p class="post-count animated fadeInDown">
                 
                 <span>
                     <b class="iconfont icon-text2"></b> <i>Words count</i>
-                    6.7k
+                    2.9k
                 </span>
                 
                 
                 <span>
                     <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                    6 mins.
+                    3 mins.
                 </span>
                 
                 
-                <span id="/2020/12/07/markdown/" class="leancloud_visitors" data-flag-title="markdown语法">
+                <span id="/2021/03/22/huibianx86/" class="leancloud_visitors" data-flag-title="汇编（×86）">
                     <b class="iconfont icon-read"></b> <i>Read count</i>
                     <span class="leancloud-visitors-count">1000000</span>
                 </span>
@@ -154,109 +154,42 @@
     <div class='main'>
         <div class="content markdown animated fadeIn">
             <blockquote>
-<p>搭建好博客后没有直接开始写文章是因为写文章时遇到了很多问题，之后去b站和百度上了解了一下，学到了一些关于markdown语法的使用方法，在此分享一下</p>
+<p>重新复习了一遍汇编，这次看的是32位的，有了一点点收获，就随便写写</p>
 </blockquote>
-<h1 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h1><p>“#”一级标题</p>
-<p>“##”二级标题</p>
-<p>……（共六级标题，“#”后面要空一格）</p>
-<p>效果如图</p>
-<img src="/images/12.jpg" height="400" width="350" />
+<h1 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h1><img src="/images/58.png" height="400" width="350">
 
+<p>x86的寄存器包括8位、16位、32位，其中32位寄存器可以分为16位或者8位，如EAX可以分为16位AX或者8位AH、AL，但是EBX以后的寄存器就不可以了，虽然是通用寄存器但是每个通用寄存器都有一些特殊的用途</p>
+<h2 id="EAX"><a href="#EAX" class="headerlink" title="EAX"></a>EAX</h2><p>EAX与STOS指令相关，STOS会将EAX的值存进EDI指定的内存单元中，同时还经常存储计算结果</p>
+<h2 id="ECX"><a href="#ECX" class="headerlink" title="ECX"></a>ECX</h2><p>ECX与REP指令相关，用于记录指令循环次数</p>
+<h2 id="EDI和ESI"><a href="#EDI和ESI" class="headerlink" title="EDI和ESI"></a>EDI和ESI</h2><p>EDI和ESI用于做地址复制，将ESI指定的地址中的值赋值到EDI指定的地址中，与movs指令有很大关系</p>
+<img src="/images/59.png" height="400" width="700">
 
-
-<h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><p>&lt;一级引用</p>
-<p>&lt;&lt;二级引用</p>
-<p>&lt;&lt;&lt;三级引用</p>
-<p>……(可不断嵌套）</p>
-<p>效果如图</p>
-<img src="/images/13.jpg" height="550" width="500" />
-
-<h1 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h1><h3 id="斜体"><a href="#斜体" class="headerlink" title="斜体"></a>斜体</h3><p>要加粗的文字左右分别用两个*号包起来</p>
-<h3 id="加粗"><a href="#加粗" class="headerlink" title="加粗"></a>加粗</h3><p>要加粗的文字左右分别用两个*号包起来</p>
-<h3 id="斜体加粗"><a href="#斜体加粗" class="headerlink" title="斜体加粗"></a>斜体加粗</h3><p>要倾斜和加粗的文字左右分别用三个*号包起来</p>
-<h3 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h3><p>要加删除线的文字左右分别用两个~号包起来</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">**这是加粗的文字**</span><br><span class="line">*这是倾斜的文字*&#96;</span><br><span class="line">***这是斜体加粗的文字***</span><br><span class="line">~~这是加删除线的文字~~</span><br></pre></td></tr></table></figure>
-
-<h3 id="字体与颜色"><a href="#字体与颜色" class="headerlink" title="字体与颜色"></a>字体与颜色</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;font face&#x3D;&quot;黑体&quot;&gt;我是黑体字&lt;&#x2F;font&gt;</span><br><span class="line">&lt;font face&#x3D;&quot;微软雅黑&quot;&gt;我是微软雅黑&lt;&#x2F;font&gt;</span><br><span class="line">&lt;font face&#x3D;&quot;STCAIYUN&quot;&gt;我是华文彩云&lt;&#x2F;font&gt;</span><br><span class="line">&lt;font color&#x3D;red&gt;我是红色&lt;&#x2F;font&gt;</span><br><span class="line">&lt;font color&#x3D;#008000&gt;我是绿色&lt;&#x2F;font&gt;</span><br><span class="line">&lt;font color&#x3D;Blue&gt;我是蓝色&lt;&#x2F;font&gt;</span><br><span class="line">&lt;font size&#x3D;5&gt;我是尺寸&lt;&#x2F;font&gt;</span><br><span class="line">&lt;font face&#x3D;&quot;黑体&quot; color&#x3D;green size&#x3D;5&gt;我是黑体，绿色，尺寸为5&lt;&#x2F;font&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h1><p>可用三个或三个以上“ - ”或者“ _ ”生成分割线（两个个效果都一样)</p>
-<h1 id="隐藏内容"><a href="#隐藏内容" class="headerlink" title="隐藏内容"></a>隐藏内容</h1><p><em>(隐藏内容不会直接显示在博客主页，需要点进去看)</em></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在&lt;!--more--&gt;输入的文章内容不会直接显示在博客页面</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h1 id="图片引用"><a href="#图片引用" class="headerlink" title="图片引用"></a>图片引用</h1><h3 id="链接引用"><a href="#链接引用" class="headerlink" title="链接引用"></a>链接引用</h3><p>在src=后面加入照片地址，width指照片宽度，height指照片高度</p>
-<p>例如</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src=<span class="string">&quot;http://pic11.photophoto.cn/20090626/0036036341009653_b.jpg&quot;</span> width=<span class="string">&quot;251&quot;</span> height=<span class="string">&quot;350&quot;</span> &gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="本地引用"><a href="#本地引用" class="headerlink" title="本地引用"></a>本地引用</h3><p>与链接引用类似，不过需要将网址改为路径（如果在相同目录里面，只需要将填写对应文件夹即可）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src&#x3D;&quot;&#x2F;images&#x2F;1.jpg&quot; height&#x3D;&quot;400&quot; width&#x3D;&quot;350&quot; &#x2F;&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h1 id="照片居中"><a href="#照片居中" class="headerlink" title="照片居中"></a>照片居中</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div align&#x3D;right&gt;&lt;img src&#x3D;&quot;http:&#x2F;&#x2F;pic11.photophoto.cn&#x2F;20090626&#x2F;0036036341009653_b.jpg&quot; width&#x3D;&quot;50%&quot; height&#x3D;&quot;50%&quot;&gt;&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h1 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[超链接名](超链接地址 &quot;超链接title&quot;)</span><br><span class="line">title可加可不加</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h1 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h1><h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">- 列表内容</span><br><span class="line">+ 列表内容</span><br><span class="line">* 列表内容</span><br><span class="line"></span><br><span class="line">注意：- + * 跟内容之间都要有一个空格</span><br></pre></td></tr></table></figure>
-
-<p>三个效果都一样</p>
-<h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><p>数字加点</p>
-<h3 id="列表嵌套"><a href="#列表嵌套" class="headerlink" title="列表嵌套"></a>列表嵌套</h3><p>上一级和下一级之间敲三个空格即可</p>
-<p>例如</p>
-<ul>
-<li><p>一级无序列表内容</p>
-<ul>
-<li>二级无序列表内容</li>
-</ul>
-<ul>
-<li>二级无序列表内容</li>
-<li>二级无序列表内容</li>
-</ul>
-</li>
-<li><p>一级无序列表内容</p>
-<ol>
-<li>二级有序列表内容</li>
-<li>二级有序列表内容</li>
-<li>二级有序列表内容</li>
-</ol>
-</li>
-</ul>
-<ol>
-<li>一级有序列表内容<ul>
-<li>二级无序列表内容</li>
-<li>二级无序列表内容</li>
-<li>二级无序列表内容</li>
-</ul>
-</li>
-<li>一级有序列表内容<ol>
-<li>二级有序列表内容</li>
-<li>二级有序列表内容</li>
-<li>二级有序列表内容</li>
-</ol>
-</li>
-</ol>
-<h1 id="视频引用"><a href="#视频引用" class="headerlink" title="视频引用"></a>视频引用</h1><p>与照片引用类似</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;video src&#x3D;&#39;&#x2F;视频路径&#x2F;选择视频&#39; heigth&#x3D;&#39;高度&#39; controls&gt;</span><br><span class="line">例如：&lt;video src&#x3D;&#39;&#x2F;video&#x2F;1.mp4&#39; heigth&#x3D;&#39;500px&#39; controls&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
+<h2 id="ESP"><a href="#ESP" class="headerlink" title="ESP"></a>ESP</h2><p>ESP用于存储当前栈堆用到的地址</p>
+<h2 id="EFL（标志寄存器）"><a href="#EFL（标志寄存器）" class="headerlink" title="EFL（标志寄存器）"></a>EFL（标志寄存器）</h2><p>EFI的第十位（DF）如果是零，使用push，pop指令后ESP会加相应数值，如果是一，则减去相应数值。</p>
+<h2 id="EIP"><a href="#EIP" class="headerlink" title="EIP"></a>EIP</h2><p>EIP用于存储计算机执行下一个指令的地址</p>
+<h1 id="堆栈"><a href="#堆栈" class="headerlink" title="堆栈"></a>堆栈</h1><blockquote>
+<p>堆栈本质就是一段内存，在程序启动前就已经被分配好了，堆栈会存储程序重要的信息，被称为“程序的心脏”</p>
+</blockquote>
+<p>32位上的应用大部分采用小端模式，手机上的应用大部分采用大端模式</p>
+<h2 id="小段模式"><a href="#小段模式" class="headerlink" title="小段模式"></a>小段模式</h2><p>从高地址开始存放，往低地址去</p>
+<h2 id="大端模式"><a href="#大端模式" class="headerlink" title="大端模式"></a>大端模式</h2><p>从低地址开始存放，往高地址去</p>
+<h1 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h1><h2 id="MOV-移动指令"><a href="#MOV-移动指令" class="headerlink" title="MOV(移动指令)"></a>MOV(移动指令)</h2><p>将指定的值移动指定位置（内存地址或寄存器）</p>
+<h2 id="ADD-加法指令"><a href="#ADD-加法指令" class="headerlink" title="ADD(加法指令)"></a>ADD(加法指令)</h2><p>将指定的两个值相加，结果返回到指定位置（内存地址或寄存器）</p>
+<h2 id="SUB-减法指令"><a href="#SUB-减法指令" class="headerlink" title="SUB(减法指令)"></a>SUB(减法指令)</h2><p>将指定的两个值相减，结果返回到指定位置（内存地址或寄存器）</p>
+<h2 id="AND-与运算指令"><a href="#AND-与运算指令" class="headerlink" title="AND(与运算指令)"></a>AND(与运算指令)</h2><p>与运算：两个为一才为一</p>
+<p>将指定的两个值进行与运算，结果返回到指定位置（内存地址或寄存器）</p>
+<h2 id="OR-或运算指令"><a href="#OR-或运算指令" class="headerlink" title="OR(或运算指令)"></a>OR(或运算指令)</h2><p>或运算：有一就为一</p>
+<p>将指定的两个值进行或运算，结果返回到指定位置（内存地址或寄存器）</p>
+<h2 id="XOR-异或运算指令"><a href="#XOR-异或运算指令" class="headerlink" title="XOR(异或运算指令)"></a>XOR(异或运算指令)</h2><p>异或运算：不一样为一</p>
+<p>将指定的两个值进行异或运算，结果返回到指定位置（内存地址或寄存器）</p>
+<h2 id="NOT-非运算指令"><a href="#NOT-非运算指令" class="headerlink" title="NOT(非运算指令)"></a>NOT(非运算指令)</h2><p>非运算：一为零，零为一</p>
+<p>将指定的一个值进行非运算，结果返回原位置（内存地址或寄存器）</p>
+<h2 id="SHL-左移指令"><a href="#SHL-左移指令" class="headerlink" title="SHL(左移指令)"></a>SHL(左移指令)</h2><p>shl（C语言：&lt;&lt;）</p>
+<p>高位丢弃,低位补零</p>
+<h2 id="右移指令"><a href="#右移指令" class="headerlink" title="右移指令"></a>右移指令</h2><p>汇编 shr：高位补零，低位丢弃</p>
+<p>​         sar：高位补符号位，地位丢弃（就是补最高位的数字）</p>
+<p>C语言 &gt;&gt; 无符号数：高位补零，低位丢弃</p>
+<p>​                 有符号数：高位补符号位，低位丢弃</p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls"
@@ -276,13 +209,13 @@
             <div class="post-nav">
                 <hr>
                 
-                    <div class="post-nav-item">Previous Post:<a href="/2020/12/08/huibian/" rel="prev" 
-                        title="汇编语言基础知识">汇编语言基础知识
+                    <div class="post-nav-item">Previous Post:<a href="/2021/03/22/huibian32/" rel="prev" 
+                        title="Assembly Language（32位）">Assembly Language（32位）
                       </a></div>
                 
                 
-                    <div class="post-nav-item">Next Post:<a href="/2020/12/06/debug%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/" rel="next" 
-                        title="debug安装与配置">debug安装与配置</a></div>
+                    <div class="post-nav-item">Next Post:<a href="/2021/03/15/SSH%E8%BF%9E%E6%8E%A5%E5%A4%B1%E8%B4%A5%E5%8F%8Ahexo%E5%91%BD%E4%BB%A4%E5%A4%B1%E6%95%88/" rel="next" 
+                        title="SSH连接失败及hexo命令失效">SSH连接失败及hexo命令失效</a></div>
                                 
             </div>   
                         
@@ -318,7 +251,7 @@
             <div class="box sticky animated fadeInRight faster">
                 <div id="toc" class="subbox">
                     <h4>Contents</h4>
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%87%E9%A2%98"><span class="toc-number">1.</span> <span class="toc-text">标题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%95%E7%94%A8"><span class="toc-number">2.</span> <span class="toc-text">引用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%97%E4%BD%93"><span class="toc-number">3.</span> <span class="toc-text">字体</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%9C%E4%BD%93"><span class="toc-number">3.0.1.</span> <span class="toc-text">斜体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A0%E7%B2%97"><span class="toc-number">3.0.2.</span> <span class="toc-text">加粗</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%9C%E4%BD%93%E5%8A%A0%E7%B2%97"><span class="toc-number">3.0.3.</span> <span class="toc-text">斜体加粗</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E7%BA%BF"><span class="toc-number">3.0.4.</span> <span class="toc-text">删除线</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E4%BD%93%E4%B8%8E%E9%A2%9C%E8%89%B2"><span class="toc-number">3.0.5.</span> <span class="toc-text">字体与颜色</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%86%E5%89%B2%E7%BA%BF"><span class="toc-number">4.</span> <span class="toc-text">分割线</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9A%90%E8%97%8F%E5%86%85%E5%AE%B9"><span class="toc-number">5.</span> <span class="toc-text">隐藏内容</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E5%BC%95%E7%94%A8"><span class="toc-number">6.</span> <span class="toc-text">图片引用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%93%BE%E6%8E%A5%E5%BC%95%E7%94%A8"><span class="toc-number">6.0.1.</span> <span class="toc-text">链接引用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E5%BC%95%E7%94%A8"><span class="toc-number">6.0.2.</span> <span class="toc-text">本地引用</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%85%A7%E7%89%87%E5%B1%85%E4%B8%AD"><span class="toc-number">7.</span> <span class="toc-text">照片居中</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%B6%85%E9%93%BE%E6%8E%A5"><span class="toc-number">8.</span> <span class="toc-text">超链接</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%97%E8%A1%A8"><span class="toc-number">9.</span> <span class="toc-text">列表</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="toc-number">9.0.1.</span> <span class="toc-text">无序列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="toc-number">9.0.2.</span> <span class="toc-text">有序列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%97%E8%A1%A8%E5%B5%8C%E5%A5%97"><span class="toc-number">9.0.3.</span> <span class="toc-text">列表嵌套</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A7%86%E9%A2%91%E5%BC%95%E7%94%A8"><span class="toc-number">10.</span> <span class="toc-text">视频引用</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-number">1.</span> <span class="toc-text">寄存器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#EAX"><span class="toc-number">1.1.</span> <span class="toc-text">EAX</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ECX"><span class="toc-number">1.2.</span> <span class="toc-text">ECX</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#EDI%E5%92%8CESI"><span class="toc-number">1.3.</span> <span class="toc-text">EDI和ESI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ESP"><span class="toc-number">1.4.</span> <span class="toc-text">ESP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#EFL%EF%BC%88%E6%A0%87%E5%BF%97%E5%AF%84%E5%AD%98%E5%99%A8%EF%BC%89"><span class="toc-number">1.5.</span> <span class="toc-text">EFL（标志寄存器）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#EIP"><span class="toc-number">1.6.</span> <span class="toc-text">EIP</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A0%86%E6%A0%88"><span class="toc-number">2.</span> <span class="toc-text">堆栈</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E6%AE%B5%E6%A8%A1%E5%BC%8F"><span class="toc-number">2.1.</span> <span class="toc-text">小段模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%A7%E7%AB%AF%E6%A8%A1%E5%BC%8F"><span class="toc-number">2.2.</span> <span class="toc-text">大端模式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4"><span class="toc-number">3.</span> <span class="toc-text">指令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#MOV-%E7%A7%BB%E5%8A%A8%E6%8C%87%E4%BB%A4"><span class="toc-number">3.1.</span> <span class="toc-text">MOV(移动指令)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ADD-%E5%8A%A0%E6%B3%95%E6%8C%87%E4%BB%A4"><span class="toc-number">3.2.</span> <span class="toc-text">ADD(加法指令)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SUB-%E5%87%8F%E6%B3%95%E6%8C%87%E4%BB%A4"><span class="toc-number">3.3.</span> <span class="toc-text">SUB(减法指令)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AND-%E4%B8%8E%E8%BF%90%E7%AE%97%E6%8C%87%E4%BB%A4"><span class="toc-number">3.4.</span> <span class="toc-text">AND(与运算指令)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OR-%E6%88%96%E8%BF%90%E7%AE%97%E6%8C%87%E4%BB%A4"><span class="toc-number">3.5.</span> <span class="toc-text">OR(或运算指令)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#XOR-%E5%BC%82%E6%88%96%E8%BF%90%E7%AE%97%E6%8C%87%E4%BB%A4"><span class="toc-number">3.6.</span> <span class="toc-text">XOR(异或运算指令)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NOT-%E9%9D%9E%E8%BF%90%E7%AE%97%E6%8C%87%E4%BB%A4"><span class="toc-number">3.7.</span> <span class="toc-text">NOT(非运算指令)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SHL-%E5%B7%A6%E7%A7%BB%E6%8C%87%E4%BB%A4"><span class="toc-number">3.8.</span> <span class="toc-text">SHL(左移指令)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%B3%E7%A7%BB%E6%8C%87%E4%BB%A4"><span class="toc-number">3.9.</span> <span class="toc-text">右移指令</span></a></li></ol></li></ol>
                 </div>
             </div>
             

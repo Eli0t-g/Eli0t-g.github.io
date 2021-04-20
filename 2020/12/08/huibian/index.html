@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Assembly Language - Krito</title>
+    <title>汇编语言基础知识 - Krito</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
@@ -58,7 +58,7 @@
     <div class="navigation animated fadeIn fast delay-1s">
         <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="http://example.com">
         <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
-        <h3 class="subtitle">Assembly Language</h3>
+        <h3 class="subtitle">汇编语言基础知识</h3>
         <div class="social">
             <!--        <div class="like-icon">-->
             <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -97,12 +97,12 @@
         <div class="else">
             <p class="animated fadeInDown">
                 
-                <a href="/categories/基础知识"><b>「
-                    </b>基础知识<b> 」</b></a>
+                <a href="/categories/汇编"><b>「
+                    </b>汇编<b> 」</b></a>
                 
                 December 08, 2020
             </p>
-            <h3 class="post-title animated fadeInDown"><a href="/2020/12/08/Assembly%20Language/" title="Assembly Language" class="">Assembly Language</a>
+            <h3 class="post-title animated fadeInDown"><a href="/2020/12/08/huibian/" title="汇编语言基础知识" class="">汇编语言基础知识</a>
             </h3>
             
             <p class="post-count animated fadeInDown">
@@ -119,7 +119,7 @@
                 </span>
                 
                 
-                <span id="/2020/12/08/Assembly Language/" class="leancloud_visitors" data-flag-title="Assembly Language">
+                <span id="/2020/12/08/huibian/" class="leancloud_visitors" data-flag-title="汇编语言基础知识">
                     <b class="iconfont icon-read"></b> <i>Read count</i>
                     <span class="leancloud-visitors-count">1000000</span>
                 </span>
@@ -128,7 +128,7 @@
             </p>
             
             
-            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Assembly-Language/" rel="tag">Assembly Language</a></li></ul>
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li></ul>
             
         </div>
     </div>
@@ -193,7 +193,7 @@
 </ul>
 <hr>
 <h1 id="编译器"><a href="#编译器" class="headerlink" title="编译器"></a>编译器</h1><p>编译器的作用，就是将高级语言写好的程序，翻译成一条条操作码。</p>
-<img src="/images/9.jpg" height="400" width="350" />
+<img src="/images/9.jpg" height="400" width="350">
 
 
 
@@ -245,17 +245,17 @@
 <p>Heap 的一个重要特点就是不会自动消失，必须手动释放，或者由垃圾回收机制来回收。</p>
 </blockquote>
 <p>程序运行的时候，操作系统会给它分配一段内存，用来储存程序和运行产生的数据。这段内存有起始地址和结束地址，比如从<code>0x1000</code>到<code>0x8000</code>，起始地址是较小的那个地址，结束地址是较大的那个地址。</p>
-<img src="/images/10.jpg" height="600" width="400" />
+<img src="/images/10.jpg" height="600" width="400">
 
 <p>程序运行过程中，对于动态的内存占用请求（比如新建对象，或者使用<code>malloc</code>命令），系统就会从预先分配好的那段内存之中，划出一部分给用户，具体规则是从起始地址开始划分（实际上，起始地址会有一段静态数据，这里忽略）。举例来说，用户要求得到10个字节内存，那么从起始地址<code>0x1000</code>开始给他分配，一直分配到地址<code>0x100A</code>，如果再要求得到22个字节，那么就分配到<code>0x1020</code>。</p>
-<img src="/images/11.jpg" height="600" width="400" />
+<img src="/images/11.jpg" height="600" width="400">
 
 <h2 id="Stack-栈"><a href="#Stack-栈" class="headerlink" title="Stack(栈)"></a>Stack(栈)</h2><blockquote>
 <p>除了内存模型 (Heap) 以外，其他的内存占用叫做 Stack（栈）。简单说，Stack 是由于函数运行而临时占用的内存区域。</p>
 <p>栈是一种具有特殊的访问方式的存储空间。特点为“先进后出，后进先出”</p>
 </blockquote>
 <h3 id="栈顶超界问题"><a href="#栈顶超界问题" class="headerlink" title="栈顶超界问题"></a>栈顶超界问题</h3><p>当栈顶超过了栈空间，栈外面的数据将被覆盖</p>
-<img src="/images/4.jpg" height="400" width="350" />
+<img src="/images/4.jpg" height="400" width="350">
 
 <h3 id="栈段"><a href="#栈段" class="headerlink" title="栈段"></a>栈段</h3><blockquote>
 <p>在编程时，可以根据需要，将一组内存单元定义为一个段</p>
@@ -368,13 +368,13 @@
             <div class="post-nav">
                 <hr>
                 
-                    <div class="post-nav-item">Previous Post:<a href="/2020/12/10/cyuyan/" rel="prev" 
-                        title="C语言基础知识">C语言基础知识
+                    <div class="post-nav-item">Previous Post:<a href="/2020/12/08/Assembly%20Language/" rel="prev" 
+                        title="Assembly Language">Assembly Language
                       </a></div>
                 
                 
-                    <div class="post-nav-item">Next Post:<a href="/2020/12/08/huibian/" rel="next" 
-                        title="汇编语言基础知识">汇编语言基础知识</a></div>
+                    <div class="post-nav-item">Next Post:<a href="/2020/12/07/markdown/" rel="next" 
+                        title="markdown语法">markdown语法</a></div>
                                 
             </div>   
                         
