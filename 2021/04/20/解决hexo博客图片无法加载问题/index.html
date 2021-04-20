@@ -5,16 +5,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>SSH连接失败及hexo命令失效 - Krito</title>
+    <title>解决hexo博客图片无法加载问题 - Krito</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="TriDiamond Obsidian,"> 
-    <meta name="description" content="
-闲的无聊就整了一下博客，结果出大问题了，之前的备份又删了，所以不得不重建，这次重建花了整整一天，虽说浪费时间但是还是有所收获
+    <meta name="description" content="起初搭建好博客时，发现照片无法上传本地照片，
 
-搭建博客视频网上一大堆，这里就不多讲了，这里就讲一些错误和如何解决
-,"> 
+根据网上的方法整了半天也没整好，最后还是室友告诉我通过下面的方法才可以引用本地照片
+1&amp;lt;img src&amp;#x3D;&amp;quot;path&amp;quot,"> 
     <meta name="author" content="Eli0t-g"> 
     <link rel="alternative" href="atom.xml" title="Krito" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -61,7 +60,7 @@
     <div class="navigation animated fadeIn fast delay-1s">
         <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="http://example.com">
         <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
-        <h3 class="subtitle">SSH连接失败及hexo命令失效</h3>
+        <h3 class="subtitle">解决hexo博客图片无法加载问题</h3>
         <div class="social">
             <!--        <div class="like-icon">-->
             <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -103,26 +102,26 @@
                 <a href="/categories/问题"><b>「
                     </b>问题<b> 」</b></a>
                 
-                March 15, 2021
+                April 20, 2021
             </p>
-            <h3 class="post-title animated fadeInDown"><a href="/2021/03/15/SSH%E8%BF%9E%E6%8E%A5%E5%A4%B1%E8%B4%A5%E5%8F%8Ahexo%E5%91%BD%E4%BB%A4%E5%A4%B1%E6%95%88/" title="SSH连接失败及hexo命令失效" class="">SSH连接失败及hexo命令失效</a>
+            <h3 class="post-title animated fadeInDown"><a href="/2021/04/20/%E8%A7%A3%E5%86%B3hexo%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E5%8A%A0%E8%BD%BD%E9%97%AE%E9%A2%98/" title="解决hexo博客图片无法加载问题" class="">解决hexo博客图片无法加载问题</a>
             </h3>
             
             <p class="post-count animated fadeInDown">
                 
                 <span>
                     <b class="iconfont icon-text2"></b> <i>Words count</i>
-                    3.5k
+                    1.8k
                 </span>
                 
                 
                 <span>
                     <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                    3 mins.
+                    2 mins.
                 </span>
                 
                 
-                <span id="/2021/03/15/SSH连接失败及hexo命令失效/" class="leancloud_visitors" data-flag-title="SSH连接失败及hexo命令失效">
+                <span id="/2021/04/20/解决hexo博客图片无法加载问题/" class="leancloud_visitors" data-flag-title="解决hexo博客图片无法加载问题">
                     <b class="iconfont icon-read"></b> <i>Read count</i>
                     <span class="leancloud-visitors-count">1000000</span>
                 </span>
@@ -152,29 +151,20 @@
 <div class="article">
     <div class='main'>
         <div class="content markdown animated fadeIn">
-            <blockquote>
-<p>闲的无聊就整了一下博客，结果出大问题了，之前的备份又删了，所以不得不重建，这次重建花了整整一天，虽说浪费时间但是还是有所收获</p>
-</blockquote>
-<p>搭建博客视频网上一大堆，这里就不多讲了，这里就讲一些错误和如何解决</p>
-<h1 id="ssh-connect-to-host-github-com-port-22-Connection-timed-out"><a href="#ssh-connect-to-host-github-com-port-22-Connection-timed-out" class="headerlink" title="ssh: connect to host github.com port 22: Connection timed out"></a>ssh: connect to host github.com port 22: Connection timed out</h1><p>这个问题烦了我几个小时，网上的解决方法参差不齐（反正我通过网上的方法没用解决），最后还是看官方的解决方法（官方是真的牛逼）<a target="_blank" rel="noopener" href="https://docs.github.com/en/github/authenticating-to-github/using-ssh-over-the-https-port">Using SSH over the HTTPS port</a>。</p>
-<p>出现这个问题是因为22端口被占用或者防火墙不允许ssh连接。解决方法是通过通过HTTPS启用SSH连接，命令：ssh -T -p 443 <a href="mailto:&#103;&#105;&#116;&#x40;&#x73;&#x73;&#104;&#46;&#103;&#105;&#x74;&#x68;&#x75;&#98;&#x2e;&#x63;&#111;&#x6d;">&#103;&#105;&#116;&#x40;&#x73;&#x73;&#104;&#46;&#103;&#105;&#x74;&#x68;&#x75;&#98;&#x2e;&#x63;&#111;&#x6d;</a>，运行时输入yes，这样可以强制连接，连接成功后就可以进行下一步操作了（不成功可以看官方给的<a target="_blank" rel="noopener" href="https://docs.github.com/en/articles/error-permission-denied-publickey">故障排除指南</a>），成功后，在.ssh文件夹中创建一个config文件（千万千万别加后缀名！）内容如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">  Hostname ssh.github.com</span><br><span class="line">  Port 443</span><br><span class="line">  User git</span><br></pre></td></tr></table></figure>
+            <p>起初搭建好博客时，发现照片无法上传本地照片，</p>
+<p><img src="/2021/04/20/%E8%A7%A3%E5%86%B3hexo%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E5%8A%A0%E8%BD%BD%E9%97%AE%E9%A2%98/image-20210420170617857.png" alt="image-20210420170617857"></p>
+<p>根据网上的方法整了半天也没整好，最后还是室友告诉我通过下面的方法才可以引用本地照片</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src&#x3D;&quot;path&quot; height&#x3D;&quot;xxx&quot; width&#x3D;&quot;xxx&quot; &#x2F;&gt;</span><br></pre></td></tr></table></figure>
 
-<p>最后输入：ssh -T <a href="mailto:&#103;&#105;&#x74;&#x40;&#x67;&#x69;&#116;&#x68;&#x75;&#x62;&#x2e;&#99;&#111;&#x6d;">&#103;&#105;&#x74;&#x40;&#x67;&#x69;&#116;&#x68;&#x75;&#x62;&#x2e;&#99;&#111;&#x6d;</a>看是否成功连接</p>
-<p>成功连接如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br><span class="line">&gt; Hi username! You&#39;ve successfully authenticated, but GitHub does not</span><br><span class="line">&gt; provide shell access.</span><br></pre></td></tr></table></figure>
+<p>但是用这个方法需要在source目录下创建一个目录来存储照片，后面写多了博客，发现这样会特别杂乱，而且最最重要的是虽然能在博客上显示，但是不能在本地显示，操作起来非常不方便。</p>
+<p><img src="/2021/04/20/%E8%A7%A3%E5%86%B3hexo%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E5%8A%A0%E8%BD%BD%E9%97%AE%E9%A2%98/image-20210420171012258.png" alt="image-20210420171012258"></p>
+<p>于是在网上找了半天，各种方法都是了一遍终于发现解决办法</p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1D7411U7Yk?p=1&share_medium=android&share_plat=android&share_source=QQ&share_tag=s_i&timestamp=1618877916&unique_k=WC367T">参考链接</a></p>
+<p>首先下载插件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1D7411U7Yk?p&#x3D;1&amp;share_medium&#x3D;android&amp;share_plat&#x3D;android&amp;share_source&#x3D;QQ&amp;share_tag&#x3D;s_i&amp;timestamp&#x3D;1618877916&amp;unique_k&#x3D;WC367T</span><br></pre></td></tr></table></figure>
 
-<p>简单介绍一下<a target="_blank" rel="noopener" href="https://ru.wikipedia.org/wiki/SSH">SSH</a>，博客上传时，如果没用通过ssh连接的话，需要输入密码，通过ssh远程连接以后就不需要了</p>
-<h1 id="hexo命令失效"><a href="#hexo命令失效" class="headerlink" title="hexo命令失效"></a>hexo命令失效</h1><p>原本搭建好了但是不知道为什么突然hexo一些命令失效了，在网上找了发现可能有几种原因：</p>
-<ol>
-<li>检查<code>_config.yml</code>中的内容<code>:</code>后面没有有一个空格。</li>
-<li>`package.json’，没有添加hexo信息用来标识这是一个hexo目录：</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;hexo&quot;: &#123;</span><br><span class="line">    &quot;version&quot;: &quot;&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>如果实在不行就重新进行<code>hexo init</code>（最有效最直接的方法）</p>
-<p>或者看看是不是不在博客根目录</p>
-<h1 id="hexo-d命令报错-ERROR-Deployer-not-found-git"><a href="#hexo-d命令报错-ERROR-Deployer-not-found-git" class="headerlink" title="hexo d命令报错 ERROR Deployer not found: git"></a>hexo d命令报错 ERROR Deployer not found: git</h1><p>上网搜了一下，就是没安装好<code>hexo-deployer-git</code>插件，重新安装一下就好了。（命令：npm install hexo-deployer-git –save）</p>
+<p>之后修改博客根目录文件_config.yml中的 <code>post_asset_folder: false</code>，将其改成<code>post_asset_folder: true</code>（注意冒号后面有个空格）,然后就可以通过markdown语法正常上传照片了</p>
+<p>这个方法不仅支持使用markdown语法，而且写博客会创建一个同名文件夹来存放照片，非常方便，而且最重要的是可以在本地预览</p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls"
@@ -194,13 +184,9 @@
             <div class="post-nav">
                 <hr>
                 
-                    <div class="post-nav-item">Previous Post:<a href="/2021/03/22/huibian32/" rel="prev" 
-                        title="Assembly Language（32位）">Assembly Language（32位）
-                      </a></div>
                 
-                
-                    <div class="post-nav-item">Next Post:<a href="/2021/02/16/python/" rel="next" 
-                        title="python学习心得">python学习心得</a></div>
+                    <div class="post-nav-item">Next Post:<a href="/2021/04/09/PWN%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="next" 
+                        title="checksec及其保护机制">checksec及其保护机制</a></div>
                                 
             </div>   
                         
@@ -232,13 +218,6 @@
             </div>
             
             
-            
-            <div class="box sticky animated fadeInRight faster">
-                <div id="toc" class="subbox">
-                    <h4>Contents</h4>
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ssh-connect-to-host-github-com-port-22-Connection-timed-out"><span class="toc-number">1.</span> <span class="toc-text">ssh: connect to host github.com port 22: Connection timed out</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo%E5%91%BD%E4%BB%A4%E5%A4%B1%E6%95%88"><span class="toc-number">2.</span> <span class="toc-text">hexo命令失效</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo-d%E5%91%BD%E4%BB%A4%E6%8A%A5%E9%94%99-ERROR-Deployer-not-found-git"><span class="toc-number">3.</span> <span class="toc-text">hexo d命令报错 ERROR Deployer not found: git</span></a></li></ol>
-                </div>
-            </div>
             
             
         </div>
