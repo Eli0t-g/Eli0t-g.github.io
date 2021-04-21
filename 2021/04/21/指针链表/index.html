@@ -5,16 +5,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>SSH连接失败及hexo命令失效 - Krito</title>
+    <title>指针链表 - Krito</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="TriDiamond Obsidian,"> 
-    <meta name="description" content="
-闲的无聊就整了一下博客，结果出大问题了，之前的备份又删了，所以不得不重建，这次重建花了整整一天，虽说浪费时间但是还是有所收获
-
-搭建博客视频网上一大堆，这里就不多讲了，这里就讲一些错误和如何解决
-,"> 
+    <meta name="description" content="问题情景：将一个数插入一段有序数列的链表之中
+解决这个问题的方法很多，比如可以使用桶排序，冒泡排序……但这次采用指针和动态空间去解决
+首先将有序数列（例如：2,3,5,8,9,10,18,26,32,"> 
     <meta name="author" content="Eli0t-g"> 
     <link rel="alternative" href="atom.xml" title="Krito" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -61,7 +59,7 @@
     <div class="navigation animated fadeIn fast delay-1s">
         <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="http://example.com">
         <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
-        <h3 class="subtitle">SSH连接失败及hexo命令失效</h3>
+        <h3 class="subtitle">指针链表</h3>
         <div class="social">
             <!--        <div class="like-icon">-->
             <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -100,29 +98,29 @@
         <div class="else">
             <p class="animated fadeInDown">
                 
-                <a href="/categories/问题"><b>「
-                    </b>问题<b> 」</b></a>
+                <a href="/categories/C语言"><b>「
+                    </b>C语言<b> 」</b></a>
                 
-                March 15, 2021
+                April 21, 2021
             </p>
-            <h3 class="post-title animated fadeInDown"><a href="/2021/03/15/SSH%E8%BF%9E%E6%8E%A5%E5%A4%B1%E8%B4%A5%E5%8F%8Ahexo%E5%91%BD%E4%BB%A4%E5%A4%B1%E6%95%88/" title="SSH连接失败及hexo命令失效" class="">SSH连接失败及hexo命令失效</a>
+            <h3 class="post-title animated fadeInDown"><a href="/2021/04/21/%E6%8C%87%E9%92%88%E9%93%BE%E8%A1%A8/" title="指针链表" class="">指针链表</a>
             </h3>
             
             <p class="post-count animated fadeInDown">
                 
                 <span>
                     <b class="iconfont icon-text2"></b> <i>Words count</i>
-                    3.5k
+                    12k
                 </span>
                 
                 
                 <span>
                     <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                    3 mins.
+                    11 mins.
                 </span>
                 
                 
-                <span id="/2021/03/15/SSH连接失败及hexo命令失效/" class="leancloud_visitors" data-flag-title="SSH连接失败及hexo命令失效">
+                <span id="/2021/04/21/指针链表/" class="leancloud_visitors" data-flag-title="指针链表">
                     <b class="iconfont icon-read"></b> <i>Read count</i>
                     <span class="leancloud-visitors-count">1000000</span>
                 </span>
@@ -131,7 +129,7 @@
             </p>
             
             
-            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a></li></ul>
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E6%94%B6%E8%8E%B7/" rel="tag">收获</a></li></ul>
             
         </div>
     </div>
@@ -152,29 +150,27 @@
 <div class="article">
     <div class='main'>
         <div class="content markdown animated fadeIn">
-            <blockquote>
-<p>闲的无聊就整了一下博客，结果出大问题了，之前的备份又删了，所以不得不重建，这次重建花了整整一天，虽说浪费时间但是还是有所收获</p>
-</blockquote>
-<p>搭建博客视频网上一大堆，这里就不多讲了，这里就讲一些错误和如何解决</p>
-<h1 id="ssh-connect-to-host-github-com-port-22-Connection-timed-out"><a href="#ssh-connect-to-host-github-com-port-22-Connection-timed-out" class="headerlink" title="ssh: connect to host github.com port 22: Connection timed out"></a>ssh: connect to host github.com port 22: Connection timed out</h1><p>这个问题烦了我几个小时，网上的解决方法参差不齐（反正我通过网上的方法没用解决），最后还是看官方的解决方法（官方是真的牛逼）<a target="_blank" rel="noopener" href="https://docs.github.com/en/github/authenticating-to-github/using-ssh-over-the-https-port">Using SSH over the HTTPS port</a>。</p>
-<p>出现这个问题是因为22端口被占用或者防火墙不允许ssh连接。解决方法是通过通过HTTPS启用SSH连接，命令：ssh -T -p 443 <a href="mailto:&#103;&#105;&#116;&#x40;&#x73;&#x73;&#104;&#46;&#103;&#105;&#x74;&#x68;&#x75;&#98;&#x2e;&#x63;&#111;&#x6d;">&#103;&#105;&#116;&#x40;&#x73;&#x73;&#104;&#46;&#103;&#105;&#x74;&#x68;&#x75;&#98;&#x2e;&#x63;&#111;&#x6d;</a>，运行时输入yes，这样可以强制连接，连接成功后就可以进行下一步操作了（不成功可以看官方给的<a target="_blank" rel="noopener" href="https://docs.github.com/en/articles/error-permission-denied-publickey">故障排除指南</a>），成功后，在.ssh文件夹中创建一个config文件（千万千万别加后缀名！）内容如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">  Hostname ssh.github.com</span><br><span class="line">  Port 443</span><br><span class="line">  User git</span><br></pre></td></tr></table></figure>
+            <p>问题情景：将一个数插入一段有序数列的链表之中</p>
+<p>解决这个问题的方法很多，比如可以使用桶排序，冒泡排序……但这次采用指针和动态空间去解决</p>
+<p>首先将有序数列（例如：2,3,5,8,9,10,18,26,32）放在一个链表中</p>
+<img src="/2021/04/21/%E6%8C%87%E9%92%88%E9%93%BE%E8%A1%A8/04/21/%E6%8C%87%E9%92%88%E9%93%BE%E8%A1%A8/image-20210421113305778.png" class title="image-20210421113305778">
 
-<p>最后输入：ssh -T <a href="mailto:&#103;&#105;&#x74;&#x40;&#x67;&#x69;&#116;&#x68;&#x75;&#x62;&#x2e;&#99;&#111;&#x6d;">&#103;&#105;&#x74;&#x40;&#x67;&#x69;&#116;&#x68;&#x75;&#x62;&#x2e;&#99;&#111;&#x6d;</a>看是否成功连接</p>
-<p>成功连接如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br><span class="line">&gt; Hi username! You&#39;ve successfully authenticated, but GitHub does not</span><br><span class="line">&gt; provide shell access.</span><br></pre></td></tr></table></figure>
+<p>链表是由多个结点组成，每个结点由两部分组成：data和* next，其中data用于存放数据，因为是动态空间，所以使用相邻两个数的地址并不是连续的，要采用* next记录下一个结点地址。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> data;    <span class="comment">//存储数值</span></span><br><span class="line">         <span class="class"><span class="keyword">struct</span> <span class="title">node</span> *<span class="title">next</span>;</span>   <span class="comment">//存储下一个链表的地址</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-<p>简单介绍一下<a target="_blank" rel="noopener" href="https://ru.wikipedia.org/wiki/SSH">SSH</a>，博客上传时，如果没用通过ssh连接的话，需要输入密码，通过ssh远程连接以后就不需要了</p>
-<h1 id="hexo命令失效"><a href="#hexo命令失效" class="headerlink" title="hexo命令失效"></a>hexo命令失效</h1><p>原本搭建好了但是不知道为什么突然hexo一些命令失效了，在网上找了发现可能有几种原因：</p>
-<ol>
-<li>检查<code>_config.yml</code>中的内容<code>:</code>后面没有有一个空格。</li>
-<li>`package.json’，没有添加hexo信息用来标识这是一个hexo目录：</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;hexo&quot;: &#123;</span><br><span class="line">    &quot;version&quot;: &quot;&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>下一步就是考虑如何插入进去一个数，首先将要插入的数放进申请的结点中，之后判断插在哪里（判断条件：后面的数是否大于等于要插入的数），然后将要插入的数的* next指向下一个大于它的数的结点地址，将上一个结点的* next指向插入结点的地址</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> *<span class="title">p</span>    </span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    p=(struct node *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct node))     <span class="comment">//申请一个空间，用于存放结点并让p指</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>如果实在不行就重新进行<code>hexo init</code>（最有效最直接的方法）</p>
-<p>或者看看是不是不在博客根目录</p>
-<h1 id="hexo-d命令报错-ERROR-Deployer-not-found-git"><a href="#hexo-d命令报错-ERROR-Deployer-not-found-git" class="headerlink" title="hexo d命令报错 ERROR Deployer not found: git"></a>hexo d命令报错 ERROR Deployer not found: git</h1><p>上网搜了一下，就是没安装好<code>hexo-deployer-git</code>插件，重新安装一下就好了。（命令：npm install hexo-deployer-git –save）</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">        <span class="keyword">if</span> (t-&gt;next == <span class="literal">NULL</span> || t-&gt;next-&gt;data &gt; a) <span class="comment">//当t指针指向链表尾时或者下一个结点的值大于待插入值</span></span><br><span class="line">        &#123;</span><br><span class="line">            p = (struct node *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct node)); <span class="comment">//动态申请一个空间，存储结点</span></span><br><span class="line">            p-&gt;data = a;                                    <span class="comment">//将a的值存储在当前结点data域中</span></span><br><span class="line">            p-&gt;next = t-&gt;next;                              <span class="comment">//将插入的结点的next指针指向大于p.data的地址</span></span><br><span class="line">            t-&gt;next = p;                                    <span class="comment">//将当前t的next指针指向p的地址</span></span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        t = t-&gt;next; <span class="comment">//让t指针指向下一个结点</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<img src="/2021/04/21/%E6%8C%87%E9%92%88%E9%93%BE%E8%A1%A8/04/21/%E6%8C%87%E9%92%88%E9%93%BE%E8%A1%A8/image-20210421114303258.png" class title="image-20210421114303258">
+
+<p>最后就是输出这个链表</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">t = head;  <span class="comment">//将头指针赋给t指针</span></span><br><span class="line">    <span class="keyword">while</span> (t != <span class="literal">NULL</span>) <span class="comment">//当t指针指向链表尾时退出</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, t-&gt;data); <span class="comment">//输出data域的值</span></span><br><span class="line">        t = t-&gt;next;            <span class="comment">//让t指针指向下一个结点</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>理清思路后就是编写代码了，完整代码如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">node</span> *<span class="title">next</span>;</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">node</span> *<span class="title">head</span>, *<span class="title">p</span>, *<span class="title">q</span>, *<span class="title">t</span>;</span></span><br><span class="line">    <span class="keyword">int</span> i, n, a;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">    head = <span class="literal">NULL</span>;             <span class="comment">//让头指针初始为空</span></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= n; i++) <span class="comment">//依次输入n个数</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;a);</span><br><span class="line">        p = (struct node *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct node)); <span class="comment">//动态申请一个空间，存储结点</span></span><br><span class="line">        p-&gt;data = a;                                    <span class="comment">//将当前a的值存储到当前结点的data域中</span></span><br><span class="line">        p-&gt;next = <span class="literal">NULL</span>;                                 <span class="comment">//设置当前结点的后继指针指向空</span></span><br><span class="line">        <span class="keyword">if</span> (head == <span class="literal">NULL</span>)                               <span class="comment">//如果是第一个结点，则将头指针指向这个结点</span></span><br><span class="line">            head = p;</span><br><span class="line">        <span class="keyword">else</span> <span class="comment">//如果不是第一个结点，则将上一个结点的后继指针指向当前结点</span></span><br><span class="line">            q-&gt;next = p;</span><br><span class="line">        q = p; <span class="comment">//让指针q指向当前结点</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;a);  <span class="comment">//输入要插入的数</span></span><br><span class="line">    t = head;         <span class="comment">//从链表头开始遍历</span></span><br><span class="line">    <span class="keyword">while</span> (t != <span class="literal">NULL</span>) <span class="comment">//到达链表尾时退出循环</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (t-&gt;next == <span class="literal">NULL</span> || t-&gt;next-&gt;data &gt; a) <span class="comment">//当t指针指向链表尾时或者下一个结点的值大于待插入值</span></span><br><span class="line">        &#123;</span><br><span class="line">            p = (struct node *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct node)); <span class="comment">//动态申请一个空间，存储结点</span></span><br><span class="line">            p-&gt;data = a;                                    <span class="comment">//将a的值存储在当前结点data域中</span></span><br><span class="line">            p-&gt;next = t-&gt;next;                              <span class="comment">//将插入的结点的next指针指向大于p.data的地址</span></span><br><span class="line">            t-&gt;next = p;                                    <span class="comment">//将当前t的next指针指向p的地址</span></span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        t = t-&gt;next; <span class="comment">//让t指针指向下一个结点</span></span><br><span class="line">    &#125;</span><br><span class="line">    t = head;</span><br><span class="line">    <span class="keyword">while</span> (t != <span class="literal">NULL</span>) <span class="comment">//当t指针指向链表尾时退出</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, t-&gt;data); <span class="comment">//输出data域的值</span></span><br><span class="line">        t = t-&gt;next;            <span class="comment">//让t指针指向下一个结点</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls"
@@ -194,13 +190,9 @@
             <div class="post-nav">
                 <hr>
                 
-                    <div class="post-nav-item">Previous Post:<a href="/2021/03/22/huibianx86/" rel="prev" 
-                        title="汇编（×86）">汇编（×86）
-                      </a></div>
                 
-                
-                    <div class="post-nav-item">Next Post:<a href="/2021/03/15/boke/" rel="next" 
-                        title="博客重建">博客重建</a></div>
+                    <div class="post-nav-item">Next Post:<a href="/2021/04/20/%E8%A7%A3%E5%86%B3hexo%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E5%8A%A0%E8%BD%BD%E9%97%AE%E9%A2%98/" rel="next" 
+                        title="解决hexo博客图片无法加载问题">解决hexo博客图片无法加载问题</a></div>
                                 
             </div>   
                         
@@ -232,13 +224,6 @@
             </div>
             
             
-            
-            <div class="box sticky animated fadeInRight faster">
-                <div id="toc" class="subbox">
-                    <h4>Contents</h4>
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ssh-connect-to-host-github-com-port-22-Connection-timed-out"><span class="toc-number">1.</span> <span class="toc-text">ssh: connect to host github.com port 22: Connection timed out</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo%E5%91%BD%E4%BB%A4%E5%A4%B1%E6%95%88"><span class="toc-number">2.</span> <span class="toc-text">hexo命令失效</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo-d%E5%91%BD%E4%BB%A4%E6%8A%A5%E9%94%99-ERROR-Deployer-not-found-git"><span class="toc-number">3.</span> <span class="toc-text">hexo d命令报错 ERROR Deployer not found: git</span></a></li></ol>
-                </div>
-            </div>
             
             
         </div>
