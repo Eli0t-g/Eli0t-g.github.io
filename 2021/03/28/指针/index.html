@@ -10,8 +10,10 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="TriDiamond Obsidian,"> 
-    <meta name="description" content="今天学习C语言的指针的时候，被一个问题难住了
-12345678910111213141516171819202122232425262728293031323334353637383940#incl,"> 
+    <meta name="description" content="
+指针，并不像一些书上写的只是用于存储地址，它是一种类型数据，存储什么都可以，并不是只能存储地址。
+
+指针大小常见的指针有：char *，int *，float * …，但char * * *，in,"> 
     <meta name="author" content="Eli0t-g"> 
     <link rel="alternative" href="atom.xml" title="Krito" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -109,13 +111,13 @@
                 
                 <span>
                     <b class="iconfont icon-text2"></b> <i>Words count</i>
-                    8k
+                    11k
                 </span>
                 
                 
                 <span>
                     <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                    7 mins.
+                    10 mins.
                 </span>
                 
                 
@@ -149,16 +151,34 @@
 <div class="article">
     <div class='main'>
         <div class="content markdown animated fadeIn">
-            <p>今天学习C语言的指针的时候，被一个问题难住了</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 10</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap1</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap2</span><span class="params">(<span class="keyword">int</span> *a,<span class="keyword">int</span> *b)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap3</span><span class="params">(<span class="keyword">int</span> *a,<span class="keyword">int</span> *b)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> c=<span class="number">1</span>,d=<span class="number">2</span>;</span><br><span class="line">  swap1(c,d);</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;%d %d\n&quot;</span>,c,d);</span><br><span class="line">  swap2(&amp;c,&amp;d);</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;%d %d\n&quot;</span>,c,d);</span><br><span class="line">  swap3(&amp;c,&amp;d);</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;%d %d\n&quot;</span>,c,d);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap1</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> t;</span><br><span class="line">  t=a;</span><br><span class="line">  a=b;</span><br><span class="line">  b=t;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap2</span><span class="params">(<span class="keyword">int</span> *a,<span class="keyword">int</span> *b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> t;</span><br><span class="line">  t=a;</span><br><span class="line">  a=b;</span><br><span class="line">  b=t;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap3</span><span class="params">(<span class="keyword">int</span> *a,<span class="keyword">int</span> *b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> t;</span><br><span class="line">  t=*a;</span><br><span class="line">  *a=*b;</span><br><span class="line">  *b=t;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <blockquote>
+<p>指针，并不像一些书上写的只是用于存储地址，它是一种类型数据，存储什么都可以，并不是只能存储地址。</p>
+</blockquote>
+<h1 id="指针大小"><a href="#指针大小" class="headerlink" title="指针大小"></a>指针大小</h1><p>常见的指针有：char *，int *，float * …，但char * * *，int * * *…同样也是指针，同时虽然指针类型有很多种，但是无论是什么指针，它的大小都是4字节</p>
+<img src="/2021/03/28/%E6%8C%87%E9%92%88/03/28/%E6%8C%87%E9%92%88/image-20210424091239641.png" class title="image-20210424091239641">
 
-<p>这段代码中就只有swap3成功交换了c与d的值，之后我询问了一下同学看了一些资料，明白了为什么会这样</p>
-<p>首先swap1(c,d)是将c与d的值复制进函数，c与d本身是没有进入的，所以函数里面再怎么交换也不会影响的c与d的值</p>
-<p>同样也是如此，只不过是复制了c与d的地址而已，c与d本身是不受影响的</p>
-<p>而最后的swap3虽然也是复制了c与d的地址，但*a则是同过地址找到了a(也就是c)，相当于通过地址找到了本身(也就是把c揪出来了)，找到了本身以后接下来的操作自然就会作用在本身上了，所以swap3可以交换c与d的值</p>
+<img src="/2021/03/28/%E6%8C%87%E9%92%88/03/28/%E6%8C%87%E9%92%88/image-20210424091147106.png" class title="image-20210424091147106">
+
+<img src="/2021/03/28/%E6%8C%87%E9%92%88/03/28/%E6%8C%87%E9%92%88/image-20210424091058737.png" class title="image-20210424091058737">
+
+<p>可以看到没有声明指针时抬栈40字节，声明以后抬栈44字节，说明声明变量消耗0x50-0x44h也就是12字节，也就是说每个指针占4字节空间</p>
+<h1 id="指针运算"><a href="#指针运算" class="headerlink" title="指针运算"></a>指针运算</h1><p>指针只能进行加减法运算，不能乘除运算，同时加法运算并不是普通加法运算，其中遵守着一些规则</p>
+<img src="/2021/03/28/%E6%8C%87%E9%92%88/03/28/%E6%8C%87%E9%92%88/image-20210423211741031.png" class title="image-20210423211741031">
+
+<p>如上，左边的输出：101  101  101 ，右边输出：104  104  104，因为右边去掉一个* 还是指针类型数据，如果去掉 * 是char或者int等就是加或减那个类型的大小。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> *a;</span><br><span class="line">         <span class="keyword">char</span> *b;</span><br><span class="line">	a=<span class="number">100</span>;</span><br><span class="line">         b=<span class="number">100</span>;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,++a);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,++b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出结果：104 101</p>
+<h1 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 10</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap1</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap2</span><span class="params">(<span class="keyword">int</span> *a,<span class="keyword">int</span> *b)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap3</span><span class="params">(<span class="keyword">int</span> *a,<span class="keyword">int</span> *b)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> c=<span class="number">1</span>,d=<span class="number">2</span>;</span><br><span class="line">  swap1(c,d);</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;%d %d\n&quot;</span>,c,d);</span><br><span class="line">  swap2(&amp;c,&amp;d);</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;%d %d\n&quot;</span>,c,d);</span><br><span class="line">  swap3(&amp;c,&amp;d);</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;%d %d\n&quot;</span>,c,d);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap1</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> t;</span><br><span class="line">  t=a;</span><br><span class="line">  a=b;</span><br><span class="line">  b=t;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap2</span><span class="params">(<span class="keyword">int</span> *a,<span class="keyword">int</span> *b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> t;</span><br><span class="line">  t=a;</span><br><span class="line">  a=b;</span><br><span class="line">  b=t;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap3</span><span class="params">(<span class="keyword">int</span> *a,<span class="keyword">int</span> *b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> t;</span><br><span class="line">  t=*a;</span><br><span class="line">  *a=*b;</span><br><span class="line">  *b=t;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这段代码中就只有swap3成功交换了c与d的值，首先每个全局变量或者被调用的变量都有个地址，变量被修改其实就是变量对应的地址的值被修改，如果被修改的值不能返回到地址中，变量就不会改变。在swap1(c,d)中，c与d的值被压入栈中，swap1(c,d)只是处理栈中的值，被修改的值并不会返回到c和d的地址中，所以函数里面再怎么交换也不会影响变量c与d，而swap2(c,d)虽然可以运行，但是是错误的写法，int与int*不能相互赋值，系统并不会执行，同时还会产生警告</p>
+<img src="/2021/03/28/%E6%8C%87%E9%92%88/03/28/%E6%8C%87%E9%92%88/image-20210423201704008.png" class title="image-20210423201704008">
+
+<p>而最后的swap3函数则是处理c与d的地址，先将a地址对应的值赋给t，在将b地址的值存入a地址中，最后向b地址存入t值（也就是a的值），符合编译器的调用约定，系统可以执行</p>
+<p>通过这个可知，如果只是将变量的值传入子函数中，并不会影响变量，要想通过子函数修改子函数外的变量，需要找出变量的地址，并将修改的值存入变量地址中。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> b,<span class="keyword">int</span> c)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> i,a[<span class="number">5</span>]=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br><span class="line">  add(a,<span class="number">1</span>,<span class="number">5</span>);</span><br><span class="line">  <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">5</span>;i++)</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,a[i]);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> b,<span class="keyword">int</span> c)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span> (;i&lt;c;i++)</span><br><span class="line">    a[i]+=b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>这段代码是处理数组的，虽然没有用到指针，但会发现数组依旧被改变了。这是因为编译器在处理C语言数组时不会创建副本，而是直接在数组本身进行修改，所以会导致数组发生变化。（为了防止数组被函数修改，可以使用const，只要函数要修改数组，编译器就会报错。）</p>
+<p>这段代码是处理数组的，子函数调用数组时，传入的其实就是该数组的首地址，所以会直接修改数组的值。（为了防止数组被函数修改，可以在调用数组前加const，只要函数修改数组，编译器就会报错。）</p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls"
@@ -183,7 +203,7 @@
                       </a></div>
                 
                 
-                    <div class="post-nav-item">Next Post:<a href="/2021/03/22/huibian32/" rel="next" 
+                    <div class="post-nav-item">Next Post:<a href="/2021/03/22/Assembly%20Language%EF%BC%8832%E4%BD%8D%EF%BC%89/" rel="next" 
                         title="Assembly Language（32位）">Assembly Language（32位）</a></div>
                                 
             </div>   
@@ -209,13 +229,20 @@
                     </dl>
                 </div>
                 <ul>
-                    <li><a href="/">20 <p>Articles</p></a></li>
-                    <li><a href="/categories">10 <p>Categories</p></a></li>
-                    <li><a href="/tags">11 <p>Tags</p></a></li>
+                    <li><a href="/">15 <p>Articles</p></a></li>
+                    <li><a href="/categories">8 <p>Categories</p></a></li>
+                    <li><a href="/tags">10 <p>Tags</p></a></li>
                 </ul>
             </div>
             
             
+            
+            <div class="box sticky animated fadeInRight faster">
+                <div id="toc" class="subbox">
+                    <h4>Contents</h4>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8C%87%E9%92%88%E5%A4%A7%E5%B0%8F"><span class="toc-number">1.</span> <span class="toc-text">指针大小</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8C%87%E9%92%88%E8%BF%90%E7%AE%97"><span class="toc-number">2.</span> <span class="toc-text">指针运算</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B"><span class="toc-number">3.</span> <span class="toc-text">实例</span></a></li></ol>
+                </div>
+            </div>
             
             
         </div>

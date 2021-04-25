@@ -60,7 +60,7 @@
                 <div class="content animated fadeIn">
                     <div class="set">
                         <h1 style="text-align: center">Archived</h1>
-                        <p style="text-align: center">「 20 」</p>
+                        <p style="text-align: center">「 15 」</p>
                         <ul class="timeline timeline-centered">
                             
                             
@@ -72,6 +72,31 @@
                                         <h2 class="timeline-title">April 2021</h2>
                                     </div>
                                 </li>
+                                
+                                <li class="timeline-item">
+                                    <div class="timeline-info">
+                                        <span class="gradient-text">April 25, 2021</span>
+                                    </div>
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        <a class="timeline-title" target="_self" href="/2021/04/25/switch%E8%AF%AD%E5%8F%A5%E9%AB%98%E6%95%88%E7%9A%84%E5%8E%9F%E5%9B%A0/">switch语句高效的原因</a>
+                                        <p>
+                                            switch语句和if语句都是条件判断语句，但是switch语句更加高效，因而许多公司在设计时大多采用switch语句
+
+当分支语句较少时，switch与if语句并没有什么区别都是先判断，之后再跳转
+
+
+
+当分支较多时，switch语句就发生变化，并没有挨个判断再跳转，只跳转了一次
+
+
+
+
+switch语句会维护一张跳转表，不管case判断语句的值是不是按照顺序的，内存中的地址表都会按照顺序...
+                                        </p>
+                                    </div>
+                                </li>
+                            
                                 
                                 <li class="timeline-item">
                                     <div class="timeline-info">
@@ -148,28 +173,17 @@
                                     <div class="timeline-content">
                                         <a class="timeline-title" target="_self" href="/2021/03/28/%E6%8C%87%E9%92%88/">指针</a>
                                         <p>
-                                            今天学习C语言的指针的时候，被一个问题难住了
-12345678910111213141516171819202122232425262728293031323334353637383940#include&lt;stdio.h&gt;#define N 10void swap1(int a,int b);void swap2(int *a,int *b);void swap3(int *a,...
-                                        </p>
-                                    </div>
-                                </li>
-                            
-                                
-                                <li class="timeline-item">
-                                    <div class="timeline-info">
-                                        <span class="gradient-text">March 22, 2021</span>
-                                    </div>
-                                    <div class="timeline-marker"></div>
-                                    <div class="timeline-content">
-                                        <a class="timeline-title" target="_self" href="/2021/03/22/huibian32/">Assembly Language（32位）</a>
-                                        <p>
                                             
-重新复习了一遍汇编，这次看的是32位的，有了一点点收获，就随便写写
+指针，并不像一些书上写的只是用于存储地址，它是一种类型数据，存储什么都可以，并不是只能存储地址。
 
-寄存器
+指针大小常见的指针有：char *，int *，float * …，但char * * *，int * * *…同样也是指针，同时虽然指针类型有很多种，但是无论是什么指针，它的大小都是4字节
 
-x86的寄存器包括8位、16位、32位，其中32位寄存器可以分为16位或者8位，如EAX可以分为16位AX或者8位AH、AL，但是EBX以后的寄存器就不可以了，虽然是通用寄存器但是每个通用寄存器都有一些特殊的用途
-EAXEAX与STOS指令相关，STOS会将EAX的值存进EDI指定的内存单元中，同时还经常存储计...
+
+
+
+
+
+可以看到没有声明指针时抬栈40字节，声明以后抬栈44字节，说明声明变量消耗0x50-0x...
                                         </p>
                                     </div>
                                 </li>
@@ -181,7 +195,7 @@ EAXEAX与STOS指令相关，STOS会将EAX的值存进EDI指定的内存单元中
                                     </div>
                                     <div class="timeline-marker"></div>
                                     <div class="timeline-content">
-                                        <a class="timeline-title" target="_self" href="/2021/03/22/huibianx86/">汇编（×86）</a>
+                                        <a class="timeline-title" target="_self" href="/2021/03/22/Assembly%20Language%EF%BC%8832%E4%BD%8D%EF%BC%89/">Assembly Language（32位）</a>
                                         <p>
                                             
 重新复习了一遍汇编，这次看的是32位的，有了一点点收获，就随便写写
@@ -208,41 +222,6 @@ EAXEAX与STOS指令相关，STOS会将EAX的值存进EDI指定的内存单元中
 
 搭建博客视频网上一大堆，这里就不多讲了，这里就讲一些错误和如何解决
 ssh: connect to host github.com port 22: Connection timed out这个问题烦了我几个小时，网上的解决方法参差不齐（反正我通过网上的方法没用解...
-                                        </p>
-                                    </div>
-                                </li>
-                            
-                                
-                                <li class="timeline-item">
-                                    <div class="timeline-info">
-                                        <span class="gradient-text">March 15, 2021</span>
-                                    </div>
-                                    <div class="timeline-marker"></div>
-                                    <div class="timeline-content">
-                                        <a class="timeline-title" target="_self" href="/2021/03/15/boke/">博客重建</a>
-                                        <p>
-                                            
-闲的无聊就整了一下博客，结果出大问题了，之前的备份又删了，所以不得不重建，这次重建花了整整一天，虽说浪费时间但是还是有所收获
-
-搭建博客视频网上一大堆，这里就不多讲了，这里就讲一些错误和如何解决
-ssh: connect to host github.com port 22: Connection timed out这个问题烦了我几个小时，网上的解决方法参差不齐（反正我通过网上的方法没用解...
-                                        </p>
-                                    </div>
-                                </li>
-                            
-                                
-                                <li class="timeline-item">
-                                    <div class="timeline-info">
-                                        <span class="gradient-text">March 15, 2021</span>
-                                    </div>
-                                    <div class="timeline-marker"></div>
-                                    <div class="timeline-content">
-                                        <a class="timeline-title" target="_self" href="/2021/03/15/Linux/">Linux</a>
-                                        <p>
-                                            用户切换普通用户切换成ROOT用户方法1：按上su，然后按照提示输入相应的root密码，就可登录到root权限下。
-方法2：按上sudo su，然后按照提示输入相应的root密码，就可登录到root权限下(这个命令下，一般不需要输入相应的root密码)。
-方法3：按上su root，然后按照提示输入相应的root密码，就可登录到root权限下。
-ROOT用户切换成普通用户1、想从root用户...
                                         </p>
                                     </div>
                                 </li>
@@ -356,53 +335,11 @@ ROOT用户切换成普通用户1、想从root用户...
                                 
                                 <li class="timeline-item">
                                     <div class="timeline-info">
-                                        <span class="gradient-text">December 10, 2020</span>
-                                    </div>
-                                    <div class="timeline-marker"></div>
-                                    <div class="timeline-content">
-                                        <a class="timeline-title" target="_self" href="/2020/12/10/cyuyan/">C语言基础知识</a>
-                                        <p>
-                                            原本早就开始学习C语言，但是因为过于心急直接开始实操（如果只是对C语言感兴趣或者想要了解一下C语言，个人推荐《啊哈C》），最后发现学习难以进行下去，于是重新开始再学一遍。在学习C语言之前，个人建议先学习汇编语言，汇编语言可以加深对计算机的理解，方便日后的学习。
-初步认识C 语言是一种通用的、面向过程式的计算机程序设计语言，C 语言是一种通用的高级语言。C语言的特点有：
-
-易于学习
-结构化语言...
-                                        </p>
-                                    </div>
-                                </li>
-                            
-                                
-                                <li class="timeline-item">
-                                    <div class="timeline-info">
                                         <span class="gradient-text">December 08, 2020</span>
                                     </div>
                                     <div class="timeline-marker"></div>
                                     <div class="timeline-content">
                                         <a class="timeline-title" target="_self" href="/2020/12/08/Assembly%20Language/">Assembly Language</a>
-                                        <p>
-                                            学习目的通过用汇编语言进行编程而深入地理解计算机底层的基本工作机理，达到随心所欲地控制计算机的目的
-汇编语言的由来对于人类来说，二进制程序是不可读的，根本看不出来机器干了什么。为了解决可读性的问题，以及偶尔的编辑需求，就诞生了汇编语言。
-
-汇编语言的特点
-机器相关性：
-一种面向机器的低级语言，几乎接近机器语言
-
-不可移植：
-不同类型的CPU有不同的机器指令系统，也就有不同的汇编语言
-
-操作对...
-                                        </p>
-                                    </div>
-                                </li>
-                            
-                                
-                                <li class="timeline-item">
-                                    <div class="timeline-info">
-                                        <span class="gradient-text">December 08, 2020</span>
-                                    </div>
-                                    <div class="timeline-marker"></div>
-                                    <div class="timeline-content">
-                                        <a class="timeline-title" target="_self" href="/2020/12/08/huibian/">汇编语言基础知识</a>
                                         <p>
                                             学习目的通过用汇编语言进行编程而深入地理解计算机底层的基本工作机理，达到随心所欲地控制计算机的目的
 汇编语言的由来对于人类来说，二进制程序是不可读的，根本看不出来机器干了什么。为了解决可读性的问题，以及偶尔的编辑需求，就诞生了汇编语言。
@@ -468,29 +405,6 @@ ROOT用户切换成普通用户1、想从root用户...
 
 安装地址：链接：https://pan.baidu.com/s/1B0dzSc--Ok_ds67ai4flmQ     提取码：a7tp 
 2、因为软件比较小，为了避免麻烦...
-                                        </p>
-                                    </div>
-                                </li>
-                            
-                                
-                                <li class="timeline-item">
-                                    <div class="timeline-info">
-                                        <span class="gradient-text">December 06, 2020</span>
-                                    </div>
-                                    <div class="timeline-marker"></div>
-                                    <div class="timeline-content">
-                                        <a class="timeline-title" target="_self" href="/2020/12/06/dos/">dos</a>
-                                        <p>
-                                            win64位系统进入debug
-最近一直在看汇编语言，想要实操，于是要进入debug模式，但是发现win64位系统无法直接进入，但最后经过几次尝试终于成功进入
-
-
-
-安装1、首先要下载安装DOSBox，也就是下面这个东西
-
-
-安装地址：链接：https://pan.baidu.com/s/1B0dzSc--Ok_ds67ai4flmQ     提取码：a7tp 
-2、因为软件比较小，为了避免...
                                         </p>
                                     </div>
                                 </li>
