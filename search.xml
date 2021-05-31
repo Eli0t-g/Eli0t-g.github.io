@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>BUU MISC刷题记录</title>
+      <link href="/post/BUU-MISC%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95.html"/>
+      <url>/post/BUU-MISC%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="金三胖"><a href="#金三胖" class="headerlink" title="金三胖"></a>金三胖</h1><p>下载附件，打开是gif，仔细看发现gif会闪现一些字符，通过利用Stegsolve或者PS逐帧分析合并就可得到flag</p><p><img src="https://i.loli.net/2021/05/31/ZtEXme1fY8UwHIh.png" alt="image.png"></p><h1 id="二维码"><a href="#二维码" class="headerlink" title="二维码"></a>二维码</h1><p>在线扫码，得到secret is here<img src="https://i.loli.net/2021/05/31/Epm1lNvPsoIa8Xj.png" alt="image.png"></p><p>用winhex打开发现图片里面藏了压缩包，压缩包里面有一个4number.txt文件<img src="https://i.loli.net/2021/05/31/a7PysrT9jidQIxD.png" alt="image.png"></p><p>利用binwalk分离得到一个加密的文件，4number应该是提示，提示密码只有四位数，直接爆破得到密码，打开flag<img src="https://i.loli.net/2021/05/31/8gVBjHrO3ZCDJqy.png" alt="image.png"></p><h1 id="N种方法解决"><a href="#N种方法解决" class="headerlink" title="N种方法解决"></a>N种方法解决</h1><p>附件是exe文件，无法直接运行，拖进winhex里面发现是十六进制是base64编码的图片，解码得到二维码，扫码得到flag<img src="https://i.loli.net/2021/05/31/F2RNhSZXUWYTDt4.png" alt="image.png"></p><h1 id="大白"><a href="#大白" class="headerlink" title="大白"></a>大白</h1><p>题目给了提示，是不是屏幕太小了，再看看附件，发现高度明显有问题，直接修改高度得到flag<img src="https://i.loli.net/2021/05/31/PFhSz3gIAQYWTVy.png" alt="image.png"></p><h1 id="你竟然赶我走"><a href="#你竟然赶我走" class="headerlink" title="你竟然赶我走"></a>你竟然赶我走</h1><p>签到题，将附件拖进winhex，在最下面发现flag</p><h1 id="基础破解"><a href="#基础破解" class="headerlink" title="基础破解"></a>基础破解</h1><p>提示密码是四位数，直接爆破，得到密码，打开发现内容被加密，猜测是base64<img src="https://i.loli.net/2021/05/31/GlDCamAKp9hgwrq.png" alt="image.png"></p><p>base64解码得到flag</p><p><img src="https://i.loli.net/2021/05/31/37SVqiBK9oNsehD.png" alt="image.png"></p><h1 id="乌镇峰会种图"><a href="#乌镇峰会种图" class="headerlink" title="乌镇峰会种图"></a>乌镇峰会种图</h1><p>签到题，拖进winhex拉到最底下就可以看到flag<img src="https://i.loli.net/2021/05/31/wyGEb3q8SR9fsNC.png" alt="image.png"></p><h1 id="LSB"><a href="#LSB" class="headerlink" title="LSB"></a>LSB</h1><p>题目就是提示，<strong>LSB</strong>（Least Significant Bit），意为最低有效位；<strong>MSB</strong>（Most Significant Bit），意为最高有效位。使用Stegsolve<img src="https://i.loli.net/2021/05/31/c5A3vWR4oG8rhdN.png" alt="image.png"></p><p>保存，发现是一个二维码，扫码得到flag</p><h1 id="文件中的秘密"><a href="#文件中的秘密" class="headerlink" title="文件中的秘密"></a>文件中的秘密</h1><p>拖进winhex，使用binwalk没有发现什么东西，打开照片属性里面发现备注有flag<img src="https://i.loli.net/2021/05/31/RyiONSDtKWF62Ap.png" alt="image.png"></p><h1 id="rar"><a href="#rar" class="headerlink" title="rar"></a>rar</h1><p>根据提示爆破，得到密码打开就是flag</p><p><img src="https://i.loli.net/2021/05/31/P6Lf4htqcjn2sSx.png" alt="image.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> MISC </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> write up </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>栈溢出</title>
       <link href="/post/%E6%A0%88%E6%BA%A2%E5%87%BA.html"/>
       <url>/post/%E6%A0%88%E6%BA%A2%E5%87%BA.html</url>
